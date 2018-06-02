@@ -16,7 +16,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             }
             frontmatter {
               tags
-              templateKey
+              templateKey,
+              images,
+              featured_image
             }
           }
         }
