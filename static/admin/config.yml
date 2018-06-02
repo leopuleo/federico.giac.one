@@ -6,6 +6,26 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/pages/portfolio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "portfolio-post"}
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: true}
+      - {label: "Images", name: "images", widget: "list", allow_add: true, 
+          fields: [
+            {label: "Image", name: "image", widget: "image"}, 
+            {label: "Alt Text", name: "alt_text", widget: "string"},
+            {label: "Title", name: "title", widget: "string"}
+          ]
+        }
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: true}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
