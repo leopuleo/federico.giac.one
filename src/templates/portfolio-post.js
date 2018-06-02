@@ -96,7 +96,7 @@ export const pageQuery = graphql`
         title
         description,
         featured_image,
-        images{
+        images {
           image,
           alt_text
           title
