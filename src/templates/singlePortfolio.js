@@ -1,10 +1,30 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-export default function SinglePortfolio() {
+export default function SinglePortfolio({data}) {
+	const post = data.markdownRemark
+
 	return(
 		<div>
-			<h1>Single Portfolio</h1>
+			<Link to='/portfolio'>Go Back</Link>
+			<h1>{post.frontmatter.title}</h1>
+			<h4>{post.frontmatter.date}</h4>
+			<img src={ post.frontmatter.featured_image } alt={post.frontmatter.title} />
+			<div dangerouslySetInnerHTML={{ __html: post.frontmatter.content }} />
 		</div>
 	)
 }
+
+export const postQuery = graphql`
+	query PostByPath($id: String!) {
+		markdownRemark(id: { eq: $id }) {
+			html, 
+			frontmatter {
+				date(formatString: "MMMM DD, YYYY")
+        		title
+        		content
+        		featured_image
+			}
+		}
+	}
+`
