@@ -16,7 +16,7 @@ export default function SinglePortfolio({data}) {
 }
 
 export const postQuery = graphql`
-	query PostByPath($id: String!) {
+	query PortfolioByPath($id: String!) {
 		markdownRemark(id: { eq: $id }) {
 			html, 
 			frontmatter {

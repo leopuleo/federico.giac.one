@@ -9,7 +9,7 @@ images:
     title: Immagine 2
   - image: /img/1600x1000.png
     title: Immagine 3
-featured_image: /img/1600x1600.png
+featured_image: img/1600x1600.png
 content: Content
 tags:
   - Case
