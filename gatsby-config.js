@@ -3,24 +3,43 @@ module.exports = {
     title: 'Federico Giacone',
   },
   plugins: [
-	  'gatsby-plugin-react-helmet',
-	  'gatsby-plugin-catch-links',
-	  {
+  	'gatsby-plugin-react-helmet',
+  	'gatsby-plugin-catch-links',
+	'gatsby-transformer-sharp',
+	'gatsby-plugin-sharp',
+  	{
 	  	resolve: 'gatsby-source-filesystem',
 	  	options: {
 	  		path: `${__dirname}/src/pages`,
 	  		name: 'pages'
-	  	}
-	  },
-	  {
+		}
+  	},
+  	{
 	    resolve: `gatsby-source-filesystem`,
 	    options: {
-	      name: `images`,
-	      path: `${__dirname}/static/img/`
-	    }
-	  },
-	  'gatsby-transformer-remark', 
-	  'gatsby-transformer-sharp',
-	  'gatsby-plugin-sharp'
+	      	name: `images`,
+	      	path: `${__dirname}/static/img/`
+    	}
+  	},
+  	{
+    	resolve: "gatsby-transformer-remark",
+    	options: {
+      	plugins: [
+      		{
+	        	resolve: `gatsby-remark-relative-images`,
+	        	options: {
+	        		name: 'img'
+	        	}
+	        },
+        		{
+          		resolve: "gatsby-remark-images",
+          		options: {
+              		maxWidth: 690,
+              		linkImagesToOriginal: false
+         			}
+       		}
+   		  ]
+   	  }
+	  }
   ],
 }

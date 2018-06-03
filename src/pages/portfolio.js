@@ -8,7 +8,7 @@ const PortfolioArchive = ({ data }) => (
     	<div key={ post.node.id }>
     		<Link to={ post.node.fields.slug }>
     			<h3>{ post.node.frontmatter.title }</h3>
-    			<img src={ post.node.frontmatter.featured_image } alt={ post.node.frontmatter.title } />
+    			<img src={ post.node.frontmatter.featured_image.childImageSharp.sizes.src } alt={ post.node.frontmatter.title } />
     		</Link>
     	</div>
     ))}
@@ -30,7 +30,13 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            featured_image
+            featured_image {
+            	childImageSharp {
+    				sizes(maxWidth: 630) {
+    					src
+    				}
+    			}
+            }
           }
         }
       }
