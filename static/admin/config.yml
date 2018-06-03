@@ -12,7 +12,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "SinglePortfolio"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "singlePortfolio"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Publish Date", name: "date", widget: "datetime", required: true}
       - {label: "Images", name: "images", widget: "list", allow_add: true, 
@@ -31,6 +31,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields: 
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Page"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "singlePage"}
       - {label: "Title", name: "title", widget: "string", required: true}
       - {label: "Content", name: "content", widget: "markdown"}

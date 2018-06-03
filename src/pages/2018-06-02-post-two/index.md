@@ -1,4 +1,5 @@
 ---
+templateKey: singlePost
 path: "/post-two"
 date: "2018-06-02"
 title: "Second post with Gatsby"

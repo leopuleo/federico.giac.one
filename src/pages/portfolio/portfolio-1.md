@@ -1,5 +1,5 @@
 ---
-templateKey: portfolio-post
+templateKey: singlePortfolio
 title: Portfolio 1
 date: '2018-06-02T20:15:24+02:00'
 images:
