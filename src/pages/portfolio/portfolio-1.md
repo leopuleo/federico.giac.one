@@ -10,7 +10,7 @@ images:
   - image: /img/1600x1000.png
     title: Immagine 3
 featured_image: /img/1600x1600.png
-description: Test di portfolio 1
+content: Test di portfolio 1
 tags:
   - Case
   - Legno
