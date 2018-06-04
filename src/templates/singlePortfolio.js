@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 
 export default function SinglePortfolio({data}) {
 	const post = data.markdownRemark
-
 	return(
 		<div>
 			<Link to='/portfolio'>Go Back</Link>
@@ -21,15 +20,15 @@ export const postQuery = graphql`
 			html, 
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")
-        		title
-        		content
-        		featured_image {
-        			childImageSharp {
-        				sizes(maxWidth: 630) {
-        					src
-        				}
-        			}
-        		}
+        title
+        content
+        featured_image {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              src
+            }
+          }
+				}
 			}
 		}
 	}

@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
+const Footer = ({ siteTitle }) => (
   <div>
-    <h1>Home</h1>
+      {siteTitle}
   </div>
 )
 
-export default IndexPage
+export default Footer

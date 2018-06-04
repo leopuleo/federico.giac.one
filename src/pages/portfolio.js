@@ -32,10 +32,10 @@ export const pageQuery = graphql`
             templateKey
             featured_image {
             	childImageSharp {
-    				sizes(maxWidth: 630) {
-    					src
-    				}
-    			}
+                sizes(maxWidth: 630) {
+                  src
+                }
+              }
             }
           }
         }
