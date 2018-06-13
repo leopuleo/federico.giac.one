@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: 'Federico Giacone',
@@ -5,41 +8,32 @@ module.exports = {
   plugins: [
   	'gatsby-plugin-react-helmet',
   	'gatsby-plugin-catch-links',
-	'gatsby-transformer-sharp',
-	'gatsby-plugin-sharp',
-  	{
-	  	resolve: 'gatsby-source-filesystem',
-	  	options: {
-	  		path: `${__dirname}/src/pages`,
-	  		name: 'pages'
-		}
-  	},
-  	{
-	    resolve: `gatsby-source-filesystem`,
-	    options: {
-	      	name: `images`,
-	      	path: `${__dirname}/static/img/`
-    	}
-  	},
-  	{
-    	resolve: "gatsby-transformer-remark",
-    	options: {
-      	plugins: [
-      		{
-	        	resolve: `gatsby-remark-relative-images`,
-	        	options: {
-	        		name: 'img'
-	        	}
-	        },
-        		{
-          		resolve: "gatsby-remark-images",
-          		options: {
-              		maxWidth: 690,
-              		linkImagesToOriginal: false
-         			}
-       		}
-   		  ]
-   	  }
-	  }
+  	'gatsby-transformer-sharp',
+  	'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'federicogiaconeportfolio',
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => doc =>  {
+
+          let rootLang = '/'
+          if(doc.lang === 'en-gb') {
+            rootLang = '/en/'
+          }
+          
+          switch(doc.type) {
+            case 'case_study':
+              return `${rootLang}portfolio/${doc.uid}/`
+              break;
+            default:
+              return `${rootLang}${doc.uid}/`
+          }
+        },
+        htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
+          // Your HTML serializer
+        },
+      },
+    },
   ],
 }
