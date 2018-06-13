@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "federico.giac.one",
+  "description": "Gatsby website for Federico Giacone",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Leonardo Giacone <leonardo.giacone@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-image": "^1.0.51",
@@ -10,10 +10,8 @@
     "gatsby-plugin-catch-links": "^1.0.22",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-sharp": "^1.6.46",
-    "gatsby-remark-images": "^1.5.65",
-    "gatsby-remark-relative-images": "^0.1.1",
     "gatsby-source-filesystem": "^1.5.38",
-    "gatsby-transformer-remark": "^1.7.41",
+    "gatsby-source-prismic": "^1.0.1",
     "gatsby-transformer-sharp": "^1.6.26",
     "react-helmet": "^5.2.0"
   },
@@ -32,6 +30,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/leopuleo/federico.giac.one"
   }
 }
