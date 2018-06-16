@@ -13,7 +13,11 @@
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-source-prismic": "^1.0.1",
     "gatsby-transformer-sharp": "^1.6.26",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-devtools": "^3.4.1"
   },
   "keywords": [
     "gatsby"

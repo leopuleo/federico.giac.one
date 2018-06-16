@@ -23,7 +23,7 @@ module.exports = {
           }
           
           switch(doc.type) {
-            case 'case_study':
+            case 'portfolio':
               return `${rootLang}portfolio/${doc.uid}/`
               break;
             default:
