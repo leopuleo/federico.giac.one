@@ -6,7 +6,7 @@ import Hamburger from '../components/hamburger'
 
 const Header = ({ siteTitle }) => (
   <div>
-    <h1>
+    <h1 className="font-accent-bold">
       <Link to="/">
         {siteTitle}
       </Link>

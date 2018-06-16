@@ -5,10 +5,11 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-import "./index.css";
+import "./index.css"
+import "./globalStyles.js"
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div className="font-sans">
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
