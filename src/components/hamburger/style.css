@@ -1,0 +1,6 @@
+.drawer__toogle {
+	position: absolute;
+	top: 0;
+	right: -50px;
+	background: red;
+}

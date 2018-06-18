@@ -4,8 +4,7 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import WebfontLoader from '@dr-kobros/react-webfont-loader'
 
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Drawer from '../components/drawer'
 
 import "./index.css"
 import "./globalStyles.js"
@@ -15,7 +14,7 @@ import { loadingFonts as loadingFontsAction } from '../store/actions'
 class Index extends Component {
   render() {
 
-    const { loadingFonts } = this.props
+    const { loadingFonts, drawerOpen } = this.props
 
     // webfontloader configuration object. *REQUIRED*.
     const fontConfig = {
@@ -26,13 +25,22 @@ class Index extends Component {
 
     // Callback receives the status of the general webfont loading process. *OPTIONAL*
     const fontCallback = status => {
-      console.log(status)
+      // console.log(status)
       loadingFonts(status)
     };
 
+    const wrapperClass = () => {
+      if(drawerOpen === true) {
+        return 'drawer_open'
+      } else {
+        return 'drawer_closed'
+      }
+    }
+
     return (
+
       <WebfontLoader config={fontConfig} onStatus={fontCallback}>
-        <div className="font-sans">
+        <div className={ wrapperClass() }>
           <Helmet
             title={this.props.data.site.siteMetadata.title}
             meta={[
@@ -40,11 +48,10 @@ class Index extends Component {
               { name: 'keywords', content: 'sample, something' },
             ]}
           />
-          <Header siteTitle={this.props.data.site.siteMetadata.title} />
-          <div>
+          <Drawer siteTitle={this.props.data.site.siteMetadata.title} />
+          <div className="main">
             {this.props.children()}
           </div>
-          <Footer />
         </div>
       </WebfontLoader>
     )
@@ -55,6 +62,12 @@ Index.propTypes = {
   children: PropTypes.func,
 }
 
+const mapStateToProps = ( { drawerOpen } ) => {
+  return {
+    drawerOpen
+  }
+}
+
 const mapDispatchToProps = ( dispatch ) => {
   return { 
     loadingFonts: status => dispatch(loadingFontsAction(status))
@@ -62,7 +75,7 @@ const mapDispatchToProps = ( dispatch ) => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Index)
 
