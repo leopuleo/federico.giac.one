@@ -34,4 +34,12 @@ export default injectGlobal`
     font-weight: normal;
     font-style: normal;
 	}
+
+    .wf-loading .font-accent-bold {
+        opacity: 0;
+    }
+
+    .wf-gilroyextrabold-n4-active .font-accent-bold {
+        opacity: 1;
+    }
 `
