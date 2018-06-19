@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hamburger from 'react-hamburgers'
 
-import { toggleDrawer as toggleDrawerAction } from '../../store/actions'
+import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
 
 import './style.css'
 import 'hamburgers/dist/hamburgers.css'
