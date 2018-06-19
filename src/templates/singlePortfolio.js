@@ -1,14 +1,12 @@
 import React from 'react'
-import Link from 'gatsby-link'
+
+import SingleProject from '../components/singleProject'
 
 export default function SinglePortfolio({ data: { prismicPortfolio: projectNode } }) {
-	const { data } = projectNode;
+	const { data } = projectNode
+
 	return(
-		<div>
-			<Link to='/portfolio'>Go Back</Link>
-			<h1>{data.title.text}</h1>
-			<div dangerouslySetInnerHTML={{ __html: data.content.html }} />
-		</div>
+		<SingleProject data={ data } />
 	)
 }
 
@@ -22,6 +20,20 @@ export const pageQuery = graphql`
         }
         content {
           html
+        }
+        gallery {
+          gallery_image {
+            localFile {
+              childImageSharp {
+                sizes(maxWidth: 1200, maxHeight: 900, quality: 80,) {
+                  src
+                  srcSet,
+                  sizes,
+                  originalImg
+                }
+              }
+            }
+          }
         }
       }
     }
