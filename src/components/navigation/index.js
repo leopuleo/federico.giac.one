@@ -17,8 +17,8 @@ const Navigation = ({}) => (
       	</Link>
       </li>
     	<li>
-    		<Link to="/portfolio/">
-    			<span className="big-link">portfolio</span>
+    		<Link to="/curriculum/">
+    			<span className="big-link">curriculum</span>
       		<span className="small-link">Lorem ipsum docet</span>
     		</Link>
     	</li>

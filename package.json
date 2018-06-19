@@ -13,6 +13,8 @@
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-source-prismic": "^1.0.1",
     "gatsby-transformer-sharp": "^1.6.26",
+    "hamburgers": "^0.9.3",
+    "react-hamburgers": "^1.0.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",

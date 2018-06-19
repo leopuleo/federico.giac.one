@@ -1,24 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Hamburger from 'react-hamburgers'
 
 import { toggleDrawer as toggleDrawerAction } from '../../store/actions'
 
 import './style.css'
+import 'hamburgers/dist/hamburgers.css'
 
-const Hamburger = ({ drawerOpen, toggleDrawer }) => (
-  <div className="drawer__toogle">
-    <button 
-      type="button" 
-      className="drawer-toogle__button"
-      onClick={() => toggleDrawer(!drawerOpen)}
-    >
-      <span className="sr-only">Toggle navigation</span>
-      <span className="drawer-toogle__-bar"></span>
-      <span className="drawer-toogle__-bar"></span>
-      <span className="drawer-toogle__-bar"></span>
-    </button>
-  </div>
-)
+class HamburgerButton extends Component {
+
+  render() {
+    const { drawerOpen, toggleDrawer } = this.props
+
+    return(
+      <div className="drawer__toogle">
+        <Hamburger
+          active={ drawerOpen }
+          type="spin"
+          onClick={ () => toggleDrawer( !drawerOpen ) }
+        />
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = ( { drawerOpen } ) => {
   return {
@@ -35,4 +39,4 @@ const mapDispatchToProps = ( dispatch ) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Hamburger)
+)(HamburgerButton)
