@@ -2,7 +2,6 @@ import React , { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
-import WebfontLoader from '@dr-kobros/react-webfont-loader'
 
 import Drawer from '../components/drawer'
 
