@@ -9,25 +9,10 @@ import Drawer from '../components/drawer'
 import "./index.css"
 import "./globalStyles.js"
 
-import { loadingFonts as loadingFontsAction } from '../store/actions'
-
 class Index extends Component {
   render() {
 
-    const { loadingFonts, drawerOpen } = this.props
-
-    // webfontloader configuration object. *REQUIRED*.
-    const fontConfig = {
-      custom: {
-        families: ['titilliumregular', 'titilliumitalic', 'titilliumbold', 'gilroyextrabold'],
-      },
-    };
-
-    // Callback receives the status of the general webfont loading process. *OPTIONAL*
-    const fontCallback = status => {
-      // console.log(status)
-      loadingFonts(status)
-    };
+    const { drawerOpen } = this.props
 
     const wrapperClass = () => {
       if(drawerOpen === true) {
@@ -38,22 +23,19 @@ class Index extends Component {
     }
 
     return (
-
-      <WebfontLoader config={fontConfig} onStatus={fontCallback}>
-        <div className={ wrapperClass() }>
-          <Helmet
-            title={this.props.data.site.siteMetadata.title}
-            meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
-            ]}
-          />
-          <Drawer siteTitle={this.props.data.site.siteMetadata.title} />
-          <div className="main">
-            {this.props.children()}
-          </div>
+      <div className={ wrapperClass() }>
+        <Helmet
+          title={this.props.data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
+          ]}
+        />
+        <Drawer siteTitle={this.props.data.site.siteMetadata.title} />
+        <div className="main">
+          {this.props.children()}
         </div>
-      </WebfontLoader>
+      </div>
     )
   }
 }
@@ -68,15 +50,9 @@ const mapStateToProps = ( { drawerOpen } ) => {
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => {
-  return { 
-    loadingFonts: status => dispatch(loadingFontsAction(status))
-  }
-}
-
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Index)
 
 export const query = graphql`

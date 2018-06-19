@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Leonardo Giacone <leonardo.giacone@gmail.com>",
   "dependencies": {
-    "@dr-kobros/react-webfont-loader": "^8.0.0",
     "gatsby": "^1.9.247",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.40",

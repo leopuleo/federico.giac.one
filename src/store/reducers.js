@@ -11,17 +11,6 @@ function drawerOpen(state = false, action) {
   }
 }
 
-function loadingFonts(state = 'loading', action) {
-  const { type, status } = action
-  switch (type) {
-    case actions.FONTS_STATUS :
-      return status
-    default :
-      return state
-  }
-}
-
 export default combineReducers({
   drawerOpen,
-  loadingFonts
 })
