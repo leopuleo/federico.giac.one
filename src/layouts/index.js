@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import Drawer from '../components/drawer'
 
 import "./index.css"
+import "./tailwind.css"
 import "./globalStyles.js"
 
 class Index extends Component {
