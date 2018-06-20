@@ -6,7 +6,7 @@ class Gallery extends Component {
 		const { gallery, title } = this.props
 
 		return (
-      <div className="singleProject__gallery">
+      <div className="gallery">
       	{ gallery.map((image, i) => {
           // Immagini 1, 5, 11, 15, 21, 25 etc...
           if((i % 5 === 0 && i !== 0 && i % 10 !== 0) || ((i - 1) % 10 === 0)) {

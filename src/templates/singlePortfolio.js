@@ -10,6 +10,7 @@ export default function SinglePortfolio({ data: { prismicPortfolio: projectNode 
 	)
 }
 
+
 export const pageQuery = graphql`
   query PortfolioBySlug($uid: String!) {
     prismicPortfolio(uid: { eq: $uid }) {
