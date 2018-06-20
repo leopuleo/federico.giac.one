@@ -11,7 +11,7 @@ export default function SingleProject({ data }) {
 		<div className="single-project">
 			<Title title={ title } />
 			<Content content={ content } />
-			<Gallery gallery={ gallery } />
+			<Gallery gallery={ gallery } title={ title } />
 		</div>
 	)
 }
