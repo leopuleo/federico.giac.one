@@ -25,11 +25,11 @@ export const pageQuery = graphql`
           gallery_image {
             localFile {
               childImageSharp {
-                sizes(maxWidth: 1200, maxHeight: 900, quality: 80,) {
-                  src
-                  srcSet,
-                  sizes,
-                  originalImg
+                horizontal: sizes(maxWidth: 1200, maxHeight: 770, quality: 80, cropFocus: CENTER) {
+                  ...GatsbyImageSharpSizes
+                }
+                vertical: sizes(maxWidth: 565, maxHeight: 770, quality: 80, cropFocus: CENTER) {
+                  ...GatsbyImageSharpSizes
                 }
               }
             }
