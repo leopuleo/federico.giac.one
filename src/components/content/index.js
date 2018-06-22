@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Content = ({ content }) => (
-  <div className="entryContent">
-    <div dangerouslySetInnerHTML={{ __html: content }} />
-  </div>
+  <div className="entryContent" dangerouslySetInnerHTML={{ __html: content }} />
 )
 
 export default Content
