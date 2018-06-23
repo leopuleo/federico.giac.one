@@ -1,12 +1,12 @@
 import React from 'react'
 
-import SingleProject from '../components/singleProject'
+import ProjectSingle from '../components/projectSingle'
 
 export default function SinglePortfolio({ data: { prismicPortfolio: projectNode } }) {
 	const { data } = projectNode
 
 	return(
-		<SingleProject data={ data } />
+		<ProjectSingle data={ data } />
 	)
 }
 

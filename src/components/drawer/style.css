@@ -1,15 +1,12 @@
 .drawer {
 	position: fixed;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  left: 0;
   height: 100vh;
-  width: 30vw;
+  width: 600px;
   background: #fff;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(-30vw);
+  transform: translateX(-510px);
+  z-index: 100;
+  padding: 50px 90px;
 }
 
 .drawer_open .drawer {

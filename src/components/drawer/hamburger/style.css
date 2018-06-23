@@ -1,5 +1,25 @@
-.drawer__toogle {
-	position: absolute;
-	top: 0;
-	right: -50px;
+.drawer-toogle {
+	position: fixed;
+	top: 40px;
+	right: -33px;
+  z-index: 120;
+}
+
+.hamburger {
+  width: 66px;
+  height: 66px;
+  padding: 0;
+  outline: none!important;
+}
+
+.hamburger-box {
+  width: 32px;
+  margin-top: 4px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 32px;
+  border-radius: 0;
 }

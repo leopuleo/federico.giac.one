@@ -1,0 +1,18 @@
+.header {
+  position: fixed;
+  z-index: 110;
+}
+.brand {
+  display: block;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: fixed;
+  bottom: 7.5rem;
+  left: -2.7rem;
+  text-transform: uppercase;
+  font-size: 1.313em;
+  text-decoration: none!important;
+}

@@ -7,13 +7,8 @@ import Footer from './footer'
 
 import './style.css'
 
-const Drawer = ({ siteTitle }) => (
-  <div className="drawer">
-    <h1 className="brand">
-      <Link to="/">
-        {siteTitle}
-      </Link>
-    </h1>
+const Drawer = ({ siteName }) => (
+  <div className="drawer h-screen font-sans">
     <Hamburger />
     <Navigation />
     <Footer />

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
+import Header from '../components/header'
 import Drawer from '../components/drawer'
 
 import "./index.css"
@@ -31,8 +32,9 @@ class Index extends Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Drawer siteTitle={this.props.data.site.siteMetadata.title} />
-        <div className="main">
+        <Header title={ this.props.data.site.siteMetadata.title } />
+        <Drawer />
+        <div className="main ml-auto text-grey bg-grey-lightest font-sans text-antialiased">
           {this.props.children()}
         </div>
       </div>
