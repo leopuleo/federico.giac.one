@@ -1,4 +1,4 @@
-import React , { Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
@@ -6,17 +6,16 @@ import { connect } from 'react-redux'
 import Header from '../components/header'
 import Drawer from '../components/drawer'
 
-import "./index.css"
-import "./tailwind.css"
-import "./globalStyles.js"
+import './index.css'
+import './tailwind.css'
+import './globalStyles.js'
 
 class Index extends Component {
   render() {
-
     const { drawerOpen } = this.props
 
     const wrapperClass = () => {
-      if(drawerOpen === true) {
+      if (drawerOpen === true) {
         return 'drawer_open'
       } else {
         return 'drawer_closed'
@@ -24,7 +23,7 @@ class Index extends Component {
     }
 
     return (
-      <div className={ wrapperClass() }>
+      <div className={wrapperClass()}>
         <Helmet
           title={this.props.data.site.siteMetadata.title}
           meta={[
@@ -32,7 +31,7 @@ class Index extends Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header title={ this.props.data.site.siteMetadata.title } />
+        <Header title={this.props.data.site.siteMetadata.title} />
         <Drawer />
         <div className="main ml-auto text-grey bg-grey-lightest font-sans text-antialiased">
           {this.props.children()}
@@ -46,9 +45,9 @@ Index.propTypes = {
   children: PropTypes.func,
 }
 
-const mapStateToProps = ( { drawerOpen } ) => {
+const mapStateToProps = ({ drawerOpen }) => {
   return {
-    drawerOpen
+    drawerOpen,
   }
 }
 

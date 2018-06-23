@@ -1,5 +1,5 @@
-import { injectGlobal } from "styled-components";
-import fontFiles from "../fonts";
+import { injectGlobal } from 'styled-components'
+import fontFiles from '../fonts'
 
 export default injectGlobal`
 

@@ -2,14 +2,13 @@ import React from 'react'
 
 import ProjectSingle from '../components/projectSingle'
 
-export default function SinglePortfolio({ data: { prismicPortfolio: projectNode } }) {
-	const { data } = projectNode
+export default function SinglePortfolio({
+  data: { prismicPortfolio: projectNode },
+}) {
+  const { data } = projectNode
 
-	return(
-		<ProjectSingle data={ data } />
-	)
+  return <ProjectSingle data={data} />
 }
-
 
 export const pageQuery = graphql`
   query PortfolioBySlug($uid: String!) {
@@ -26,10 +25,20 @@ export const pageQuery = graphql`
           gallery_image {
             localFile {
               childImageSharp {
-                horizontal: sizes(maxWidth: 1200, maxHeight: 770, quality: 80, cropFocus: CENTER) {
+                horizontal: sizes(
+                  maxWidth: 1200
+                  maxHeight: 770
+                  quality: 80
+                  cropFocus: CENTER
+                ) {
                   ...GatsbyImageSharpSizes
                 }
-                vertical: sizes(maxWidth: 565, maxHeight: 770, quality: 80, cropFocus: CENTER) {
+                vertical: sizes(
+                  maxWidth: 565
+                  maxHeight: 770
+                  quality: 80
+                  cropFocus: CENTER
+                ) {
                   ...GatsbyImageSharpSizes
                 }
               }
@@ -39,4 +48,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

@@ -4,9 +4,9 @@ import { combineReducers } from 'redux'
 function drawerOpen(state = false, action) {
   const { type, open } = action
   switch (type) {
-    case actions.DRAWER_OPEN :
+    case actions.DRAWER_OPEN:
       return open
-    default :
+    default:
       return state
   }
 }
