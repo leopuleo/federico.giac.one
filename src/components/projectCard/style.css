@@ -1,0 +1,27 @@
+.portfolio-card__horizontal .project-card-content {
+    -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.project-card-wrapper {
+  position: relative;
+}
+
+.project-card-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.4);
+}
+
+.project-card .title {
+  font-size: 2.000rem;
+  line-height: 1em;
+}
+
+.project-card .excerpt {
+  font-size: 1.063rem;
+  line-height: 1.2em;
+}

@@ -2,6 +2,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.text-lowercase {
+  text-transform: lowercase;
+}
+
 body {
   background: #f5f5f5;
 }
@@ -51,5 +55,5 @@ a:hover {
 }
 
 .main {
-  padding: 120px 0 30px;
+  padding: 100px 0 30px;
 }

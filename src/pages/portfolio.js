@@ -12,33 +12,43 @@ class PortfolioArchive extends Component {
       data: { projects },
     } = this.props
 
-    const getImageFormat = (image, i) => {
+    const getCardFormat = (image, i) => {
       if ((i % 5 === 0 && i !== 0 && i % 10 !== 0) || (i - 1) % 10 === 0) {
-        return image.horizontal
+        return {
+          image: image.horizontal,
+          cssClass: 'project-card portfolio-card__horizontal w-2/3 p-5',
+        }
       } else {
-        return image.vertical
+        return {
+          image: image.vertical,
+          cssClass: 'project-card portfolio-card__vertical w-1/3 p-5',
+        }
       }
     }
 
     return (
-      <div className="portfolioArchive">
+      <div className="portfolio-archive">
         <Title title="Portfolio" />
         <Content content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis, non molestie mi sagittis. Curabitur condimentum dolor orci, vitae sagittis metus consequat nec." />
+        <div className="portfolio-grid flex flex-wrap -mx-5 -mx-5">
+          {projects.edges.map((project, i) => {
+            const card = getCardFormat(
+              project.node.data.featured_image.localFile.childImageSharp,
+              i
+            )
 
-        {projects.edges.map((project, i) => {
-          return (
-            <ProjectCard
-              key={project.node.uid}
-              link={project.node.uid}
-              title={project.node.data.title.text}
-              featuredImage={getImageFormat(
-                project.node.data.featured_image.localFile.childImageSharp,
-                i
-              )}
-              excerpt={project.node.data.excerpt.html}
-            />
-          )
-        })}
+            return (
+              <ProjectCard
+                key={project.node.uid}
+                link={project.node.uid}
+                title={project.node.data.title.text}
+                featuredImage={card.image}
+                cssClass={card.cssClass}
+                excerpt={project.node.data.excerpt.html}
+              />
+            )
+          })}
+        </div>
       </div>
     )
   }
