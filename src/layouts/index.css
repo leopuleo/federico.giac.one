@@ -18,3 +18,34 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.root {
+  overflow-x: hidden;
+}
+
+.main {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.main-overlay {
+  opacity: 0;
+  transition: opacity .3s ease-in-out 166.66667ms;
+}
+
+.drawer_open .main {
+  transform: translateX(510px);
+}
+
+.drawer_open .main-overlay{
+  content: "";
+  display: block;
+  background: rgba(0,0,0,.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  opacity: 1;
+}

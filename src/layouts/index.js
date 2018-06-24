@@ -14,16 +14,16 @@ class Index extends Component {
   render() {
     const { drawerOpen } = this.props
 
-    const wrapperClass = () => {
+    const changeClass = cssClass => {
       if (drawerOpen === true) {
-        return 'drawer_open'
+        return `${cssClass} drawer_open`
       } else {
-        return 'drawer_closed'
+        return `${cssClass} drawer_closed`
       }
     }
 
     return (
-      <div className={wrapperClass()}>
+      <div className={changeClass('root')}>
         <Helmet
           title={this.props.data.site.siteMetadata.title}
           meta={[
@@ -34,6 +34,7 @@ class Index extends Component {
         <Header title={this.props.data.site.siteMetadata.title} />
         <Drawer />
         <div className="main ml-auto text-grey bg-grey-lightest font-sans text-antialiased">
+          <div className="main-overlay" />
           {this.props.children()}
         </div>
       </div>
