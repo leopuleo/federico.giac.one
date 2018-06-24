@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import Link from 'gatsby-link'
+
+import { toggleDrawer as toggleDrawerAction } from '../../store/actions'
 
 import './style.css'
 
-const Header = ({ title }) => (
-  <div className="header bg-white font-sans">
-    <Link to="/" className="brand text-grey-darkest bg-white text-antialiased">
-      { title }
-    </Link>
-  </div>
-)
+class Header extends Component {
+  render() {
+    const { title, toggleDrawer } = this.props
 
-export default Header
+    return(
+      <div className="header bg-white font-sans">
+        <Link
+          className="brand text-grey-darkest bg-white text-antialiased"
+          to="/"
+          onClick={() => {
+            toggleDrawer(false);
+          }}
+        >
+          { title }
+        </Link>
+      </div>
+    )
+  }
+}
+
+const mapDispatchToProps = ( dispatch ) => {
+  return {
+    toggleDrawer: open => dispatch(toggleDrawerAction(open))
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Header)

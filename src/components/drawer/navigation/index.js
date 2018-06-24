@@ -9,7 +9,7 @@ import './style.css'
 class Navigation extends Component {
 
   render() {
-    const { drawerOpen, toggleDrawer } = this.props
+    const { toggleDrawer } = this.props
 
     const items = [
       { url: '/', name: 'home', description: 'Casa dolce casa' },
@@ -43,12 +43,6 @@ class Navigation extends Component {
   }
 }
 
-const mapStateToProps = ( { drawerOpen } ) => {
-  return {
-    drawerOpen
-  }
-}
-
 const mapDispatchToProps = ( dispatch ) => {
   return {
     toggleDrawer: open => dispatch(toggleDrawerAction(open))
@@ -56,6 +50,6 @@ const mapDispatchToProps = ( dispatch ) => {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Navigation)
