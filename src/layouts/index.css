@@ -13,6 +13,7 @@ body {
 strong {
   font-family: 'titilliumbold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
+  color: #161616;
 }
 
 a {
@@ -45,7 +46,7 @@ a:hover {
   content: "";
   display: block;
   background: rgba(0,0,0,.6);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
+import { toggleDrawer as toggleDrawerAction } from '../store/actions'
+
 import Header from '../components/header'
 import Drawer from '../components/drawer'
 
@@ -12,7 +14,7 @@ import './globalStyles.js'
 
 class Index extends Component {
   render() {
-    const { drawerOpen } = this.props
+    const { drawerOpen, toggleDrawer } = this.props
 
     const changeClass = cssClass => {
       if (drawerOpen === true) {
@@ -34,7 +36,12 @@ class Index extends Component {
         <Header title={this.props.data.site.siteMetadata.title} />
         <Drawer />
         <div className="wrapper flex justify-center">
-          <div className="main-overlay" />
+          <div
+            className="main-overlay"
+            onClick={() => {
+              toggleDrawer(false)
+            }}
+          />
           <div className="main w-3/4 text-grey bg-grey-lightest font-sans text-antialiased">
             {this.props.children()}
           </div>
@@ -54,9 +61,15 @@ const mapStateToProps = ({ drawerOpen }) => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    toggleDrawer: open => dispatch(toggleDrawerAction(open)),
+  }
+}
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Index)
 
 export const query = graphql`
