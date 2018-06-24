@@ -33,9 +33,11 @@ class Index extends Component {
         />
         <Header title={this.props.data.site.siteMetadata.title} />
         <Drawer />
-        <div className="main ml-auto text-grey bg-grey-lightest font-sans text-antialiased">
+        <div className="wrapper flex justify-center">
           <div className="main-overlay" />
-          {this.props.children()}
+          <div className="main w-3/4 text-grey bg-grey-lightest font-sans text-antialiased">
+            {this.props.children()}
+          </div>
         </div>
       </div>
     )

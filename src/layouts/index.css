@@ -46,6 +46,10 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 900;
+  z-index: 10;
   opacity: 1;
+}
+
+.main {
+  padding: 120px 0 30px;
 }
