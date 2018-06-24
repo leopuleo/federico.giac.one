@@ -8,31 +8,30 @@ import 'hamburgers/dist/hamburgers.css'
 import './style.css'
 
 class HamburgerButton extends Component {
-
   render() {
     const { drawerOpen, toggleDrawer } = this.props
 
-    return(
+    return (
       <div className="drawer-toogle rounded-full bg-white d-block">
         <Hamburger
-          active={ drawerOpen }
+          active={drawerOpen}
           type="stand"
-          onClick={ () => toggleDrawer( !drawerOpen ) }
+          onClick={() => toggleDrawer(!drawerOpen)}
         />
       </div>
     )
   }
 }
 
-const mapStateToProps = ( { drawerOpen } ) => {
+const mapStateToProps = ({ drawerOpen }) => {
   return {
-    drawerOpen
+    drawerOpen,
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => {
+const mapDispatchToProps = dispatch => {
   return {
-  	toggleDrawer: open => dispatch(toggleDrawerAction(open))
+    toggleDrawer: open => dispatch(toggleDrawerAction(open)),
   }
 }
 

@@ -2,3 +2,7 @@
   font-size: 1.313em;
   line-height: 1.381em;
 }
+
+.entry-content p {
+  margin-bottom: 2rem;
+}

@@ -10,25 +10,25 @@ class Header extends Component {
   render() {
     const { title, toggleDrawer } = this.props
 
-    return(
+    return (
       <div className="header bg-white font-sans">
         <Link
           className="brand text-grey-darkest bg-white text-antialiased"
           to="/"
           onClick={() => {
-            toggleDrawer(false);
+            toggleDrawer(false)
           }}
         >
-          { title }
+          {title}
         </Link>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = ( dispatch ) => {
+const mapDispatchToProps = dispatch => {
   return {
-    toggleDrawer: open => dispatch(toggleDrawerAction(open))
+    toggleDrawer: open => dispatch(toggleDrawerAction(open)),
   }
 }
 
