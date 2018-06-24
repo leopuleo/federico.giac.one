@@ -15,3 +15,6 @@ exports.replaceRouterComponent = ({ history }) => {
 
     return ConnectedRouterWrapper
 }
+
+exports.onClientEntry = () => {
+}

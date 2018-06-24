@@ -7,6 +7,7 @@ import { toggleDrawer as toggleDrawerAction } from '../store/actions'
 
 import Header from '../components/header'
 import Drawer from '../components/drawer'
+import PhotoSwipeDom from '../components/gallery/photoswipe.js'
 
 import './index.css'
 import './tailwind.css'
@@ -21,6 +22,12 @@ class Index extends Component {
         return `${cssClass} drawer_open`
       } else {
         return `${cssClass} drawer_closed`
+      }
+    }
+
+    const checkPageResource = page => {
+      if (this.props.location.pathname.indexOf(page)) {
+        return true
       }
     }
 
@@ -46,6 +53,7 @@ class Index extends Component {
             {this.props.children()}
           </div>
         </div>
+        {checkPageResource('portfolio') && <PhotoSwipeDom />}
       </div>
     )
   }

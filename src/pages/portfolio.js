@@ -16,12 +16,12 @@ class PortfolioArchive extends Component {
       if ((i % 5 === 0 && i !== 0 && i % 10 !== 0) || (i - 1) % 10 === 0) {
         return {
           image: image.horizontal,
-          cssClass: 'project-card portfolio-card__horizontal w-2/3 p-5',
+          cssClass: 'project-card portfolio-card__horizontal w-2/3 px-5 my-5',
         }
       } else {
         return {
           image: image.vertical,
-          cssClass: 'project-card portfolio-card__vertical w-1/3 p-5',
+          cssClass: 'project-card portfolio-card__vertical w-1/3 px-5 my-5',
         }
       }
     }
@@ -30,7 +30,7 @@ class PortfolioArchive extends Component {
       <div className="portfolio-archive">
         <Title title="Portfolio" />
         <Content content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis, non molestie mi sagittis. Curabitur condimentum dolor orci, vitae sagittis metus consequat nec." />
-        <div className="portfolio-grid flex flex-wrap -mx-5 -mx-5">
+        <div className="portfolio-grid flex flex-wrap -mx-5">
           {projects.edges.map((project, i) => {
             const card = getCardFormat(
               project.node.data.featured_image.localFile.childImageSharp,

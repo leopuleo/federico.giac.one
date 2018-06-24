@@ -4,6 +4,7 @@ import ProjectSingle from '../components/projectSingle'
 
 export default function SinglePortfolio({
   data: { prismicPortfolio: projectNode },
+  postBodyComponents,
 }) {
   const { data } = projectNode
 
@@ -40,6 +41,15 @@ export const pageQuery = graphql`
                   cropFocus: CENTER
                 ) {
                   ...GatsbyImageSharpSizes
+                }
+                original: resize(
+                  width: 1800
+                  jpegProgressive: true
+                  quality: 80
+                ) {
+                  src
+                  width
+                  height
                 }
               }
             }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
+import Link from 'gatsby-link'
 
 class Gallery extends Component {
   render() {
@@ -11,14 +12,14 @@ class Gallery extends Component {
         return {
           image: image.horizontal,
           outerWrapperClassName:
-            'image-wrapper image-wrapper__horizontal w-2/3 p-5',
+            'image-wrapper image-wrapper__horizontal w-2/3 px-5 my-5',
           className: 'image image__horizontal',
         }
       } else {
         return {
           image: image.vertical,
           outerWrapperClassName:
-            'image-wrapper image-image__vertical w-1/3 p-5',
+            'image-wrapper image-image__vertical w-1/3 px-5 my-5',
           className: 'image image__vertical',
         }
       }
@@ -26,21 +27,43 @@ class Gallery extends Component {
 
     return (
       <div className="gallery">
-        <div className="gallery-grid flex flex-wrap -mx-5 -mx-5">
+        <div
+          className="gallery-grid flex flex-wrap -mx-5"
+          itemScope
+          itemType="http://schema.org/ImageGallery"
+        >
           {gallery.map((image, i) => {
             const card = getCardFormat(
               image.gallery_image.localFile.childImageSharp,
               i
             )
             return (
-              <Img
+              <figure
+                itemProp="associatedMedia"
+                itemScope
+                itemType="http://schema.org/ImageObject"
+                className={card.outerWrapperClassName}
                 key={`image-${i}`}
-                sizes={card.image}
-                fadeIn={true}
-                className={card.className}
-                outerWrapperClassName={card.outerWrapperClassName}
-                alt={`${title.text} - ${i}`}
-              />
+              >
+                <a
+                  href={
+                    image.gallery_image.localFile.childImageSharp.original.src
+                  }
+                  data-size={`${
+                    image.gallery_image.localFile.childImageSharp.original.width
+                  }x${
+                    image.gallery_image.localFile.childImageSharp.original
+                      .height
+                  }`}
+                >
+                  <Img
+                    sizes={card.image}
+                    fadeIn={true}
+                    className={card.className}
+                    alt={`${title.text} - ${i}`}
+                  />
+                </a>
+              </figure>
             )
           })}
         </div>

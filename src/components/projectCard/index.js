@@ -10,7 +10,7 @@ class ProjectCard extends Component {
     return (
       <div className={cssClass}>
         <Link to={link}>
-          <div className="project-card-wrapper ">
+          <div className="project-card-wrapper">
             <Img
               sizes={featuredImage}
               fadeIn={true}

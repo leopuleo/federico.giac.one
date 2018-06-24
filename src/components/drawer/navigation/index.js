@@ -29,10 +29,9 @@ class Navigation extends Component {
       <nav className="navigation text-right text-antialiased">
         <ul className="menu">
           {items.map(item => (
-            <li className="menu-item">
+            <li className="menu-item" key={item.url}>
               <Link
                 className="menu-link"
-                key={item.url}
                 to={item.url}
                 onClick={() => {
                   toggleDrawer(false)
