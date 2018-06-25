@@ -11,6 +11,17 @@ function drawerOpen(state = false, action) {
   }
 }
 
+function activeTag(state = '', action) {
+  const { type, tag } = action
+  switch (type) {
+    case actions.FILTER_TAG:
+      return tag
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   drawerOpen,
+  activeTag,
 })
