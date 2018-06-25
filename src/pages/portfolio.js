@@ -4,9 +4,21 @@ import Img from 'gatsby-image'
 
 import Title from '../components/title'
 import Content from '../components/content'
+import TagList from '../components/tagList'
 import ProjectCard from '../components/projectCard'
 
 class PortfolioArchive extends Component {
+  flatten(arr) {
+    return arr.reduce(
+      (a, b) => a.concat(Array.isArray(b) ? this.flatten(b) : b),
+      []
+    )
+  }
+
+  unique(arr) {
+    return arr.filter((value, index, self) => self.indexOf(value) === index)
+  }
+
   render() {
     const {
       data: { projects },
@@ -26,10 +38,18 @@ class PortfolioArchive extends Component {
       }
     }
 
+    const getTagList = list => {
+      let tagList = list.map(el => el.node.tags).filter(el => el.length !== 0)
+      return this.unique(this.flatten(tagList))
+    }
+
     return (
       <div className="portfolio-archive">
         <Title title="Portfolio" />
         <Content content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis, non molestie mi sagittis. Curabitur condimentum dolor orci, vitae sagittis metus consequat nec." />
+
+        <TagList tags={getTagList(projects.edges)} />
+
         <div className="portfolio-grid flex flex-wrap -mx-5">
           {projects.edges.map((project, i) => {
             const card = getCardFormat(
@@ -45,6 +65,7 @@ class PortfolioArchive extends Component {
                 featuredImage={card.image}
                 cssClass={card.cssClass}
                 excerpt={project.node.data.excerpt.html}
+                tags={project.node.tags}
               />
             )
           })}
@@ -59,11 +80,12 @@ export default PortfolioArchive
 export const pageQuery = graphql`
   query IndexQuery {
     projects: allPrismicPortfolio(
-      sort: { fields: [last_publication_date], order: ASC }
+      sort: { fields: [first_publication_date], order: DESC }
     ) {
       edges {
         node {
           uid
+          tags
           data {
             title {
               text
