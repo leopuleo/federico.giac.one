@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
@@ -6,9 +8,29 @@ import './style.css'
 
 class ProjectCard extends Component {
   render() {
-    const { link, title, featuredImage, excerpt, cssClass } = this.props
+    const {
+      link,
+      title,
+      featuredImage,
+      excerpt,
+      cssClass,
+      activeTag,
+      tags,
+    } = this.props
+
+    const hideProject = () => {
+      if (activeTag !== '' && !tags.includes(activeTag)) {
+        return {
+          display: 'none',
+        }
+      } else {
+        return {
+          display: 'block',
+        }
+      }
+    }
     return (
-      <div className={cssClass}>
+      <div style={hideProject()} className={cssClass}>
         <Link to={link}>
           <div className="project-card-wrapper">
             <Img
@@ -34,4 +56,13 @@ class ProjectCard extends Component {
   }
 }
 
-export default ProjectCard
+const mapStateToProps = ({ activeTag }) => {
+  return {
+    activeTag,
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(ProjectCard)
