@@ -38,23 +38,21 @@ a:hover {
   transition: opacity .3s ease-in-out 166.66667ms;
 }
 
+.main {
+  padding: 100px 0 30px;
+}
+
+/* Drawer open */
 .drawer_open .main {
   transform: translateX(510px);
 }
-
-.drawer_open .main-overlay{
-  content: "";
-  display: block;
-  background: rgba(0,0,0,.6);
+.drawer_open .main-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
-  z-index: 10;
+  right: 0;
   opacity: 1;
-}
-
-.main {
-  padding: 100px 0 30px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10;
 }
