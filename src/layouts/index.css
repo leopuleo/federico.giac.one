@@ -34,7 +34,14 @@ a:hover {
 }
 
 .main-overlay {
+  text-indent: -99999px;
   opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -10;
   transition: opacity .3s ease-in-out 166.66667ms;
 }
 
@@ -43,16 +50,14 @@ a:hover {
 }
 
 /* Drawer open */
+/* purgecss start ignore */
 .drawer_open .main {
   transform: translateX(510px);
 }
 .drawer_open .main-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   opacity: 1;
   background: rgba(0, 0, 0, 0.45);
   z-index: 10;
 }
+/* purgecss end ignore */
+
