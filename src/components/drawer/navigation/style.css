@@ -5,19 +5,11 @@
 
 .menu-item {
   opacity: 0;
-          -moz-transform: scale(1.15) translateX(-21px);
-        -o-transform: scale(1.15) translateX(-21px);
-      -ms-transform: scale(1.15) translateX(-21px);
-    -webkit-transform: scale(1.15) translateX(-21px);
   transform: scale(1.15) translateX(-21px);
   transition: all .3s ease-in-out;
 }
 
 .drawer_open .menu-item {
-            -moz-transform: scale(1) translateX(0px);
-        -o-transform: scale(1) translateX(0px);
-      -ms-transform: scale(1) translateX(0px);
-    -webkit-transform: scale(1) translateX(0px);
   transform: scale(1) translateX(0px);
   opacity: 1;
 }
