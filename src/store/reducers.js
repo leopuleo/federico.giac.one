@@ -14,8 +14,18 @@ function drawerOpen(state = false, action) {
 function activeTag(state = '', action) {
   const { type, tag } = action
   switch (type) {
-    case actions.FILTER_TAG:
+    case actions.SELECTED_TAG:
       return tag
+    default:
+      return state
+  }
+}
+
+function filteringStatus(state = false, action) {
+  const { type, status } = action
+  switch (type) {
+    case actions.FILTERING_TAG:
+      return status
     default:
       return state
   }
@@ -24,4 +34,5 @@ function activeTag(state = '', action) {
 export default combineReducers({
   drawerOpen,
   activeTag,
+  filteringStatus
 })
