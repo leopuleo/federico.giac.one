@@ -93,11 +93,6 @@ export const pageQuery = graphql`
             excerpt {
               html
             }
-            category {
-              document {
-                uid
-              }
-            }
             featured_image {
               localFile {
                 childImageSharp {
