@@ -22,8 +22,7 @@ const Footer = ({}) => (
         telefono: <a href="tel:+393295356947">+39 329 53 56 947</a>
       </p>
       <p>
-        partita iva: IT0123456789 –{' '}
-        <Link to="/cookie-policy/">Cookie policy</Link>
+        partita iva: IT0123456789 – <Link to="/cookie-policy/">cookie policy</Link>
       </p>
     </div>
   </div>
