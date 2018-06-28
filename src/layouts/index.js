@@ -48,7 +48,7 @@ class Index extends Component {
             onClick={() => {
               toggleDrawer(false)
             }}
-          ></div>
+          />
           <div className="main w-3/4 text-grey bg-grey-lightest font-sans text-antialiased">
             {this.props.children()}
           </div>

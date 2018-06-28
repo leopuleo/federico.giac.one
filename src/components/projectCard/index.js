@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
@@ -14,23 +13,12 @@ class ProjectCard extends Component {
       featuredImage,
       excerpt,
       cssClass,
-      activeTag,
+      filteringStatus,
       tags,
     } = this.props
 
-    const hideProject = () => {
-      if (activeTag !== '' && !tags.includes(activeTag)) {
-        return {
-          display: 'none',
-        }
-      } else {
-        return {
-          display: 'block',
-        }
-      }
-    }
     return (
-      <div style={hideProject()} className={cssClass}>
+      <div className={cssClass} data-groups={JSON.stringify(tags)}>
         <Link to={link}>
           <div className="project-card-wrapper">
             <Img
@@ -56,13 +44,4 @@ class ProjectCard extends Component {
   }
 }
 
-const mapStateToProps = ({ activeTag }) => {
-  return {
-    activeTag,
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  null
-)(ProjectCard)
+export default ProjectCard

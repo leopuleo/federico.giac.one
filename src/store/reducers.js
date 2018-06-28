@@ -21,18 +21,7 @@ function activeTag(state = '', action) {
   }
 }
 
-function filteringStatus(state = false, action) {
-  const { type, status } = action
-  switch (type) {
-    case actions.FILTERING_TAG:
-      return status
-    default:
-      return state
-  }
-}
-
 export default combineReducers({
   drawerOpen,
   activeTag,
-  filteringStatus
 })

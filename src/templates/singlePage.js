@@ -11,11 +11,10 @@ export default function SinglePage({
 
   return (
     <div className="page-single">
-      <Title title={ data.title.text } />
-      <Content content={ data.content.html } />
+      <Title title={data.title.text} />
+      <Content content={data.content.html} />
     </div>
   )
-
 }
 
 export const pageQuery = graphql`

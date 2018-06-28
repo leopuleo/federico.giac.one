@@ -10,7 +10,7 @@ class TagList extends Component {
     return (
       <div className="tag-list">
         <button
-          className="bg-grey hover:bg-grey text-white py-2 px-4 mr-3 rounded"
+          className="bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3"
           onClick={() => filterByTag('')}
         >
           Tutti i progetti
@@ -19,7 +19,7 @@ class TagList extends Component {
           return (
             <button
               key={tag}
-              className="bg-grey hover:bg-grey text-white py-2 px-4 mr-3 rounded"
+              className="bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3"
               onClick={() => filterByTag(tag)}
             >
               {tag}

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
+import { connect } from 'react-redux'
 import Img from 'gatsby-image'
+import Shuffle from 'shufflejs'
 
 import Title from '../components/title'
 import Content from '../components/content'
@@ -8,6 +10,33 @@ import TagList from '../components/tagList'
 import ProjectCard from '../components/projectCard'
 
 class PortfolioArchive extends Component {
+
+  componentDidMount() {
+    // The elements are in the DOM, initialize a shuffle instance.
+    this.shuffle = new Shuffle(this.element, {
+      itemSelector: '.project-card',
+      sizer: this.sizer,
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+
+    const { activeTag } = this.props
+
+    // Notify shuffle to dump the elements it's currently holding and consider
+    // all elements matching the `itemSelector` as new.
+    if (activeTag !== prevProps.activeTag) {
+      this.shuffle.filter(activeTag);
+    }
+    this.shuffle.resetItems();
+  }
+
+  componentWillUnmount() {
+    // Dispose of shuffle when it will be removed from the DOM.
+    this.shuffle.destroy();
+    this.shuffle = null;
+  }
+
   flatten(arr) {
     return arr.reduce(
       (a, b) => a.concat(Array.isArray(b) ? this.flatten(b) : b),
@@ -50,7 +79,7 @@ class PortfolioArchive extends Component {
 
         <TagList tags={getTagList(projects.edges)} />
 
-        <div className="portfolio-grid flex flex-wrap -mx-5">
+        <div ref={element => this.element = element} className="portfolio-grid flex flex-wrap -mx-5">
           {projects.edges.map((project, i) => {
             const card = getCardFormat(
               project.node.data.featured_image.localFile.childImageSharp,
@@ -75,7 +104,16 @@ class PortfolioArchive extends Component {
   }
 }
 
-export default PortfolioArchive
+const mapStateToProps = ({ activeTag }) => {
+  return {
+    activeTag
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(PortfolioArchive)
 
 export const pageQuery = graphql`
   query IndexQuery {
