@@ -26,7 +26,12 @@ class PortfolioArchive extends Component {
     // Notify shuffle to dump the elements it's currently holding and consider
     // all elements matching the `itemSelector` as new.
     if (activeTag !== prevProps.activeTag) {
-      this.shuffle.filter(activeTag);
+      if(activeTag === '') {
+        this.shuffle.filter();
+      } else {
+        this.shuffle.filter(activeTag);
+      }
+
     }
     this.shuffle.resetItems();
   }
