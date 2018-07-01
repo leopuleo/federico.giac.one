@@ -10,36 +10,36 @@ import TagList from '../components/tagList'
 import ProjectCard from '../components/projectCard'
 
 class PortfolioArchive extends Component {
-
   componentDidMount() {
     // The elements are in the DOM, initialize a shuffle instance.
     this.shuffle = new Shuffle(this.element, {
       itemSelector: '.project-card',
       sizer: this.sizer,
-    });
+    })
   }
 
   componentDidUpdate(prevProps) {
-
     const { activeTag } = this.props
 
     // Notify shuffle to dump the elements it's currently holding and consider
     // all elements matching the `itemSelector` as new.
-    if (activeTag !== prevProps.activeTag) {
-      if(activeTag === '') {
-        this.shuffle.filter();
-      } else {
-        this.shuffle.filter(activeTag);
-      }
-
+    if (!activeTag) {
+      this.shuffle.resetItems()
     }
-    this.shuffle.resetItems();
+
+    if (activeTag !== prevProps.activeTag) {
+      if (activeTag === '') {
+        this.shuffle.filter()
+      } else {
+        this.shuffle.filter(activeTag)
+      }
+    }
   }
 
   componentWillUnmount() {
     // Dispose of shuffle when it will be removed from the DOM.
-    this.shuffle.destroy();
-    this.shuffle = null;
+    this.shuffle.destroy()
+    this.shuffle = null
   }
 
   flatten(arr) {
@@ -84,7 +84,10 @@ class PortfolioArchive extends Component {
 
         <TagList tags={getTagList(projects.edges)} />
 
-        <div ref={element => this.element = element} className="portfolio-grid flex flex-wrap -mx-5">
+        <div
+          ref={element => (this.element = element)}
+          className="portfolio-grid flex flex-wrap -mx-5"
+        >
           {projects.edges.map((project, i) => {
             const card = getCardFormat(
               project.node.data.featured_image.localFile.childImageSharp,
@@ -111,7 +114,7 @@ class PortfolioArchive extends Component {
 
 const mapStateToProps = ({ activeTag }) => {
   return {
-    activeTag
+    activeTag,
   }
 }
 
