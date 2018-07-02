@@ -12,7 +12,7 @@ class Gallery extends Component {
         return {
           image: image.horizontal,
           outerWrapperClassName:
-            'image-wrapper image-wrapper__horizontal w-2/3 px-5 my-5',
+            'image-wrapper image-wrapper__horizontal w-2/3 px-5 my-5 ',
           className: 'image image__horizontal',
         }
       } else {
@@ -57,9 +57,17 @@ class Gallery extends Component {
                   }`}
                 >
                   <Img
+                    sizes={image.gallery_image.localFile.childImageSharp.square}
+                    fadeIn={true}
+                    className={card.className}
+                    outerWrapperClassName="image-wrapper image-wrapper--mobile block lg:hidden xl:hidden xxl:hidden"
+                    alt={`${title.text} - ${i}`}
+                  />
+                  <Img
                     sizes={card.image}
                     fadeIn={true}
                     className={card.className}
+                    outerWrapperClassName="image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block"
                     alt={`${title.text} - ${i}`}
                   />
                 </a>

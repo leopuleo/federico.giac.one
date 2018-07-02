@@ -100,6 +100,7 @@ class PortfolioArchive extends Component {
                 link={project.node.uid}
                 title={project.node.data.title.text}
                 featuredImage={card.image}
+                featuredImageMobile={project.node.data.featured_image.localFile.childImageSharp.square}
                 cssClass={card.cssClass}
                 excerpt={project.node.data.excerpt.html}
                 tags={project.node.tags}
@@ -154,6 +155,14 @@ export const pageQuery = graphql`
                     maxWidth: 565
                     maxHeight: 770
                     quality: 80
+                    cropFocus: CENTER
+                  ) {
+                    ...GatsbyImageSharpSizes
+                  }
+                  square: sizes(
+                    maxWidth: 576
+                    maxHeight: 576
+                    quality: 60
                     cropFocus: CENTER
                   ) {
                     ...GatsbyImageSharpSizes

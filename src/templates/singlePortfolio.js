@@ -42,6 +42,14 @@ export const pageQuery = graphql`
                 ) {
                   ...GatsbyImageSharpSizes
                 }
+                square: sizes(
+                  maxWidth: 576
+                  maxHeight: 576
+                  quality: 60
+                  cropFocus: CENTER
+                ) {
+                  ...GatsbyImageSharpSizes
+                }
                 original: resize(
                   width: 1800
                   jpegProgressive: true
