@@ -26,21 +26,21 @@ class Navigation extends Component {
     ]
 
     return (
-      <nav className="navigation text-right text-antialiased">
-        <ul className="menu">
+      <nav className="navigation lg:text-right mt-15 lg:mt-12 text-antialiased">
+        <ul className="menu list-reset">
           {items.map(item => (
-            <li className="menu-item" key={item.url}>
+            <li className="menu-item block mb-4" key={item.url}>
               <Link
-                className="menu-link"
+                className="menu-link no-underline hover:no-underline"
                 to={item.url}
                 onClick={() => {
                   toggleDrawer(false)
                 }}
               >
-                <span className="big-link font-accent-bold text-grey-darkest">
+                <span className="big-link block text-4xl leading-none font-accent-bold text-grey-darkest">
                   {item.name}
                 </span>
-                <span className="small-link font-sans text-grey">
+                <span className="small-link text-base hidden lg:inline-block font-sans text-grey">
                   {item.description}
                 </span>
               </Link>

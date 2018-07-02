@@ -1,8 +1,7 @@
 .footer {
-  position: fixed;
   bottom: 0;
+  left: 0;
   right: 0;
-  padding: 50px 90px;
   font-size: 0.938em;
   line-height: 1.5em;
 
@@ -24,6 +23,9 @@
   transform: scale(1) translateX(0px);
   transition-delay: 1.02s;
 }
+.footer p {
+  display: inline;
+}
 
 .footer a {
   text-decoration: none;
@@ -31,11 +33,34 @@
 }
 
 .footer-presentation {
-  padding-bottom: 30px;
+  position: relative;
+}
+
+.footer-presentation::after {
+  content: '';
+  display: block;
+  width: 15%;
+  height: 1px;
+  background: #dfdcdc;
+  position: absolute;
+  bottom: 16px;
+  right: 0;
 }
 
 .footer-presentation strong {
   display: block;
   font-size: 1.200em;
   margin-bottom: 10px;
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .footer {
+    bottom: 0;
+    right: 0;
+    left: auto;
+  }
+  .footer p {
+    display: block;
+  }
 }

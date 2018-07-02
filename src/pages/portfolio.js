@@ -62,12 +62,14 @@ class PortfolioArchive extends Component {
       if ((i % 5 === 0 && i !== 0 && i % 10 !== 0) || (i - 1) % 10 === 0) {
         return {
           image: image.horizontal,
-          cssClass: 'project-card portfolio-card__horizontal w-2/3 px-5 my-5',
+          cssClass:
+            'project-card portfolio-card__horizontal w-full md:w-1/2 xl:w-2/3 xl:px-5 my-5',
         }
       } else {
         return {
           image: image.vertical,
-          cssClass: 'project-card portfolio-card__vertical w-1/3 px-5 my-5',
+          cssClass:
+            'project-card portfolio-card__vertical w-full md:w-1/2 xl:w-1/3 xl:px-5 my-5',
         }
       }
     }
@@ -100,7 +102,10 @@ class PortfolioArchive extends Component {
                 link={project.node.uid}
                 title={project.node.data.title.text}
                 featuredImage={card.image}
-                featuredImageMobile={project.node.data.featured_image.localFile.childImageSharp.square}
+                featuredImageMobile={
+                  project.node.data.featured_image.localFile.childImageSharp
+                    .square
+                }
                 cssClass={card.cssClass}
                 excerpt={project.node.data.excerpt.html}
                 tags={project.node.tags}

@@ -51,13 +51,28 @@ a:hover {
 
 /* Drawer open */
 /* purgecss start ignore */
-.drawer_open .main {
-  transform: translateX(510px);
+@media screen and (max-width: 991px) {
+  .drawer_open {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 }
-.drawer_open .main-overlay {
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 10;
+
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .drawer_open .main {
+    transform: translateX(510px);
+  }
+  .drawer_open .main-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10;
+  }
 }
 /* purgecss end ignore */
 

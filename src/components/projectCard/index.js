@@ -7,7 +7,15 @@ import './style.css'
 
 class ProjectCard extends Component {
   render() {
-    const { link, title, featuredImage, featuredImageMobile, excerpt, cssClass, tags } = this.props
+    const {
+      link,
+      title,
+      featuredImage,
+      featuredImageMobile,
+      excerpt,
+      cssClass,
+      tags,
+    } = this.props
 
     return (
       <div className={cssClass} data-groups={JSON.stringify(tags)}>

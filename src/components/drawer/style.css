@@ -1,14 +1,26 @@
 .drawer {
-	position: fixed;
-  height: 100vh;
-  width: 600px;
-  background: #fff;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-510px);
+  top: 0;
+  bottom: 0;
   z-index: 100;
-  padding: 50px 90px;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100vw);
 }
 
 .drawer_open .drawer {
-	transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Desktop */
+@media screen and (min-width: 992px) {
+  .drawer {
+    width: 600px!important;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-510px);
+    z-index: 100;
+  }
+  .drawer-toggle {
+    top: 40px;
+    right: -33px;
+    z-index: 120;
+  }
 }

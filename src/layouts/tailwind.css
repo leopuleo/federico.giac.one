@@ -1611,6 +1611,14 @@ button,
   margin: 5rem;
 }
 
+.m-15 {
+  margin: 6rem;
+}
+
+.m-16 {
+  margin: 7rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -1757,6 +1765,26 @@ button,
 .mx-14 {
   margin-left: 5rem;
   margin-right: 5rem;
+}
+
+.my-15 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.mx-15 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.my-16 {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
+.mx-16 {
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
 
 .my-auto {
@@ -2001,6 +2029,38 @@ button,
 
 .ml-14 {
   margin-left: 5rem;
+}
+
+.mt-15 {
+  margin-top: 6rem;
+}
+
+.mr-15 {
+  margin-right: 6rem;
+}
+
+.mb-15 {
+  margin-bottom: 6rem;
+}
+
+.ml-15 {
+  margin-left: 6rem;
+}
+
+.mt-16 {
+  margin-top: 7rem;
+}
+
+.mr-16 {
+  margin-right: 7rem;
+}
+
+.mb-16 {
+  margin-bottom: 7rem;
+}
+
+.ml-16 {
+  margin-left: 7rem;
 }
 
 .mt-auto {
@@ -2469,6 +2529,26 @@ button,
   padding: 2.5rem;
 }
 
+.p-10 {
+  padding: 3rem;
+}
+
+.p-11 {
+  padding: 4rem;
+}
+
+.p-12 {
+  padding: 5rem;
+}
+
+.p-14 {
+  padding: 6rem;
+}
+
+.p-16 {
+  padding: 8rem;
+}
+
 .p-px {
   padding: 1px;
 }
@@ -2561,6 +2641,56 @@ button,
 .px-9 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.py-10 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.px-10 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-11 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.px-11 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-12 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.px-12 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-14 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.px-14 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.py-16 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.px-16 {
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 .py-px {
@@ -2715,6 +2845,86 @@ button,
 
 .pl-9 {
   padding-left: 2.5rem;
+}
+
+.pt-10 {
+  padding-top: 3rem;
+}
+
+.pr-10 {
+  padding-right: 3rem;
+}
+
+.pb-10 {
+  padding-bottom: 3rem;
+}
+
+.pl-10 {
+  padding-left: 3rem;
+}
+
+.pt-11 {
+  padding-top: 4rem;
+}
+
+.pr-11 {
+  padding-right: 4rem;
+}
+
+.pb-11 {
+  padding-bottom: 4rem;
+}
+
+.pl-11 {
+  padding-left: 4rem;
+}
+
+.pt-12 {
+  padding-top: 5rem;
+}
+
+.pr-12 {
+  padding-right: 5rem;
+}
+
+.pb-12 {
+  padding-bottom: 5rem;
+}
+
+.pl-12 {
+  padding-left: 5rem;
+}
+
+.pt-14 {
+  padding-top: 6rem;
+}
+
+.pr-14 {
+  padding-right: 6rem;
+}
+
+.pb-14 {
+  padding-bottom: 6rem;
+}
+
+.pl-14 {
+  padding-left: 6rem;
+}
+
+.pt-16 {
+  padding-top: 8rem;
+}
+
+.pr-16 {
+  padding-right: 8rem;
+}
+
+.pb-16 {
+  padding-bottom: 8rem;
+}
+
+.pl-16 {
+  padding-left: 8rem;
 }
 
 .pt-px {
@@ -2946,7 +3156,7 @@ button,
 }
 
 .text-4xl {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 .text-5xl {
@@ -4247,6 +4457,14 @@ button,
     margin: 5rem;
   }
 
+  .sm\:m-15 {
+    margin: 6rem;
+  }
+
+  .sm\:m-16 {
+    margin: 7rem;
+  }
+
   .sm\:m-auto {
     margin: auto;
   }
@@ -4393,6 +4611,26 @@ button,
   .sm\:mx-14 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .sm\:my-15 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .sm\:mx-15 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .sm\:my-16 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .sm\:mx-16 {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   .sm\:my-auto {
@@ -4637,6 +4875,38 @@ button,
 
   .sm\:ml-14 {
     margin-left: 5rem;
+  }
+
+  .sm\:mt-15 {
+    margin-top: 6rem;
+  }
+
+  .sm\:mr-15 {
+    margin-right: 6rem;
+  }
+
+  .sm\:mb-15 {
+    margin-bottom: 6rem;
+  }
+
+  .sm\:ml-15 {
+    margin-left: 6rem;
+  }
+
+  .sm\:mt-16 {
+    margin-top: 7rem;
+  }
+
+  .sm\:mr-16 {
+    margin-right: 7rem;
+  }
+
+  .sm\:mb-16 {
+    margin-bottom: 7rem;
+  }
+
+  .sm\:ml-16 {
+    margin-left: 7rem;
   }
 
   .sm\:mt-auto {
@@ -5105,6 +5375,26 @@ button,
     padding: 2.5rem;
   }
 
+  .sm\:p-10 {
+    padding: 3rem;
+  }
+
+  .sm\:p-11 {
+    padding: 4rem;
+  }
+
+  .sm\:p-12 {
+    padding: 5rem;
+  }
+
+  .sm\:p-14 {
+    padding: 6rem;
+  }
+
+  .sm\:p-16 {
+    padding: 8rem;
+  }
+
   .sm\:p-px {
     padding: 1px;
   }
@@ -5197,6 +5487,56 @@ button,
   .sm\:px-9 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .sm\:px-10 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .sm\:py-11 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .sm\:px-11 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .sm\:py-12 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .sm\:px-12 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .sm\:py-14 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .sm\:px-14 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .sm\:py-16 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .sm\:px-16 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .sm\:py-px {
@@ -5351,6 +5691,86 @@ button,
 
   .sm\:pl-9 {
     padding-left: 2.5rem;
+  }
+
+  .sm\:pt-10 {
+    padding-top: 3rem;
+  }
+
+  .sm\:pr-10 {
+    padding-right: 3rem;
+  }
+
+  .sm\:pb-10 {
+    padding-bottom: 3rem;
+  }
+
+  .sm\:pl-10 {
+    padding-left: 3rem;
+  }
+
+  .sm\:pt-11 {
+    padding-top: 4rem;
+  }
+
+  .sm\:pr-11 {
+    padding-right: 4rem;
+  }
+
+  .sm\:pb-11 {
+    padding-bottom: 4rem;
+  }
+
+  .sm\:pl-11 {
+    padding-left: 4rem;
+  }
+
+  .sm\:pt-12 {
+    padding-top: 5rem;
+  }
+
+  .sm\:pr-12 {
+    padding-right: 5rem;
+  }
+
+  .sm\:pb-12 {
+    padding-bottom: 5rem;
+  }
+
+  .sm\:pl-12 {
+    padding-left: 5rem;
+  }
+
+  .sm\:pt-14 {
+    padding-top: 6rem;
+  }
+
+  .sm\:pr-14 {
+    padding-right: 6rem;
+  }
+
+  .sm\:pb-14 {
+    padding-bottom: 6rem;
+  }
+
+  .sm\:pl-14 {
+    padding-left: 6rem;
+  }
+
+  .sm\:pt-16 {
+    padding-top: 8rem;
+  }
+
+  .sm\:pr-16 {
+    padding-right: 8rem;
+  }
+
+  .sm\:pb-16 {
+    padding-bottom: 8rem;
+  }
+
+  .sm\:pl-16 {
+    padding-left: 8rem;
   }
 
   .sm\:pt-px {
@@ -5574,7 +5994,7 @@ button,
   }
 
   .sm\:text-4xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .sm\:text-5xl {
@@ -6876,6 +7296,14 @@ button,
     margin: 5rem;
   }
 
+  .md\:m-15 {
+    margin: 6rem;
+  }
+
+  .md\:m-16 {
+    margin: 7rem;
+  }
+
   .md\:m-auto {
     margin: auto;
   }
@@ -7022,6 +7450,26 @@ button,
   .md\:mx-14 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .md\:my-15 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .md\:mx-15 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .md\:my-16 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .md\:mx-16 {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   .md\:my-auto {
@@ -7266,6 +7714,38 @@ button,
 
   .md\:ml-14 {
     margin-left: 5rem;
+  }
+
+  .md\:mt-15 {
+    margin-top: 6rem;
+  }
+
+  .md\:mr-15 {
+    margin-right: 6rem;
+  }
+
+  .md\:mb-15 {
+    margin-bottom: 6rem;
+  }
+
+  .md\:ml-15 {
+    margin-left: 6rem;
+  }
+
+  .md\:mt-16 {
+    margin-top: 7rem;
+  }
+
+  .md\:mr-16 {
+    margin-right: 7rem;
+  }
+
+  .md\:mb-16 {
+    margin-bottom: 7rem;
+  }
+
+  .md\:ml-16 {
+    margin-left: 7rem;
   }
 
   .md\:mt-auto {
@@ -7734,6 +8214,26 @@ button,
     padding: 2.5rem;
   }
 
+  .md\:p-10 {
+    padding: 3rem;
+  }
+
+  .md\:p-11 {
+    padding: 4rem;
+  }
+
+  .md\:p-12 {
+    padding: 5rem;
+  }
+
+  .md\:p-14 {
+    padding: 6rem;
+  }
+
+  .md\:p-16 {
+    padding: 8rem;
+  }
+
   .md\:p-px {
     padding: 1px;
   }
@@ -7826,6 +8326,56 @@ button,
   .md\:px-9 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .md\:py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .md\:px-10 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .md\:py-11 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .md\:px-11 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .md\:px-12 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .md\:py-14 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .md\:px-14 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .md\:py-16 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .md\:py-px {
@@ -7980,6 +8530,86 @@ button,
 
   .md\:pl-9 {
     padding-left: 2.5rem;
+  }
+
+  .md\:pt-10 {
+    padding-top: 3rem;
+  }
+
+  .md\:pr-10 {
+    padding-right: 3rem;
+  }
+
+  .md\:pb-10 {
+    padding-bottom: 3rem;
+  }
+
+  .md\:pl-10 {
+    padding-left: 3rem;
+  }
+
+  .md\:pt-11 {
+    padding-top: 4rem;
+  }
+
+  .md\:pr-11 {
+    padding-right: 4rem;
+  }
+
+  .md\:pb-11 {
+    padding-bottom: 4rem;
+  }
+
+  .md\:pl-11 {
+    padding-left: 4rem;
+  }
+
+  .md\:pt-12 {
+    padding-top: 5rem;
+  }
+
+  .md\:pr-12 {
+    padding-right: 5rem;
+  }
+
+  .md\:pb-12 {
+    padding-bottom: 5rem;
+  }
+
+  .md\:pl-12 {
+    padding-left: 5rem;
+  }
+
+  .md\:pt-14 {
+    padding-top: 6rem;
+  }
+
+  .md\:pr-14 {
+    padding-right: 6rem;
+  }
+
+  .md\:pb-14 {
+    padding-bottom: 6rem;
+  }
+
+  .md\:pl-14 {
+    padding-left: 6rem;
+  }
+
+  .md\:pt-16 {
+    padding-top: 8rem;
+  }
+
+  .md\:pr-16 {
+    padding-right: 8rem;
+  }
+
+  .md\:pb-16 {
+    padding-bottom: 8rem;
+  }
+
+  .md\:pl-16 {
+    padding-left: 8rem;
   }
 
   .md\:pt-px {
@@ -8203,7 +8833,7 @@ button,
   }
 
   .md\:text-4xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .md\:text-5xl {
@@ -9505,6 +10135,14 @@ button,
     margin: 5rem;
   }
 
+  .lg\:m-15 {
+    margin: 6rem;
+  }
+
+  .lg\:m-16 {
+    margin: 7rem;
+  }
+
   .lg\:m-auto {
     margin: auto;
   }
@@ -9651,6 +10289,26 @@ button,
   .lg\:mx-14 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .lg\:my-15 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .lg\:mx-15 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .lg\:my-16 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .lg\:mx-16 {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   .lg\:my-auto {
@@ -9895,6 +10553,38 @@ button,
 
   .lg\:ml-14 {
     margin-left: 5rem;
+  }
+
+  .lg\:mt-15 {
+    margin-top: 6rem;
+  }
+
+  .lg\:mr-15 {
+    margin-right: 6rem;
+  }
+
+  .lg\:mb-15 {
+    margin-bottom: 6rem;
+  }
+
+  .lg\:ml-15 {
+    margin-left: 6rem;
+  }
+
+  .lg\:mt-16 {
+    margin-top: 7rem;
+  }
+
+  .lg\:mr-16 {
+    margin-right: 7rem;
+  }
+
+  .lg\:mb-16 {
+    margin-bottom: 7rem;
+  }
+
+  .lg\:ml-16 {
+    margin-left: 7rem;
   }
 
   .lg\:mt-auto {
@@ -10363,6 +11053,26 @@ button,
     padding: 2.5rem;
   }
 
+  .lg\:p-10 {
+    padding: 3rem;
+  }
+
+  .lg\:p-11 {
+    padding: 4rem;
+  }
+
+  .lg\:p-12 {
+    padding: 5rem;
+  }
+
+  .lg\:p-14 {
+    padding: 6rem;
+  }
+
+  .lg\:p-16 {
+    padding: 8rem;
+  }
+
   .lg\:p-px {
     padding: 1px;
   }
@@ -10455,6 +11165,56 @@ button,
   .lg\:px-9 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .lg\:py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .lg\:px-10 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .lg\:py-11 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .lg\:px-11 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .lg\:py-12 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .lg\:px-12 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .lg\:py-14 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .lg\:px-14 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .lg\:py-16 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .lg\:px-16 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .lg\:py-px {
@@ -10609,6 +11369,86 @@ button,
 
   .lg\:pl-9 {
     padding-left: 2.5rem;
+  }
+
+  .lg\:pt-10 {
+    padding-top: 3rem;
+  }
+
+  .lg\:pr-10 {
+    padding-right: 3rem;
+  }
+
+  .lg\:pb-10 {
+    padding-bottom: 3rem;
+  }
+
+  .lg\:pl-10 {
+    padding-left: 3rem;
+  }
+
+  .lg\:pt-11 {
+    padding-top: 4rem;
+  }
+
+  .lg\:pr-11 {
+    padding-right: 4rem;
+  }
+
+  .lg\:pb-11 {
+    padding-bottom: 4rem;
+  }
+
+  .lg\:pl-11 {
+    padding-left: 4rem;
+  }
+
+  .lg\:pt-12 {
+    padding-top: 5rem;
+  }
+
+  .lg\:pr-12 {
+    padding-right: 5rem;
+  }
+
+  .lg\:pb-12 {
+    padding-bottom: 5rem;
+  }
+
+  .lg\:pl-12 {
+    padding-left: 5rem;
+  }
+
+  .lg\:pt-14 {
+    padding-top: 6rem;
+  }
+
+  .lg\:pr-14 {
+    padding-right: 6rem;
+  }
+
+  .lg\:pb-14 {
+    padding-bottom: 6rem;
+  }
+
+  .lg\:pl-14 {
+    padding-left: 6rem;
+  }
+
+  .lg\:pt-16 {
+    padding-top: 8rem;
+  }
+
+  .lg\:pr-16 {
+    padding-right: 8rem;
+  }
+
+  .lg\:pb-16 {
+    padding-bottom: 8rem;
+  }
+
+  .lg\:pl-16 {
+    padding-left: 8rem;
   }
 
   .lg\:pt-px {
@@ -10832,7 +11672,7 @@ button,
   }
 
   .lg\:text-4xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .lg\:text-5xl {
@@ -12134,6 +12974,14 @@ button,
     margin: 5rem;
   }
 
+  .xl\:m-15 {
+    margin: 6rem;
+  }
+
+  .xl\:m-16 {
+    margin: 7rem;
+  }
+
   .xl\:m-auto {
     margin: auto;
   }
@@ -12280,6 +13128,26 @@ button,
   .xl\:mx-14 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .xl\:my-15 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .xl\:mx-15 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .xl\:my-16 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .xl\:mx-16 {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   .xl\:my-auto {
@@ -12524,6 +13392,38 @@ button,
 
   .xl\:ml-14 {
     margin-left: 5rem;
+  }
+
+  .xl\:mt-15 {
+    margin-top: 6rem;
+  }
+
+  .xl\:mr-15 {
+    margin-right: 6rem;
+  }
+
+  .xl\:mb-15 {
+    margin-bottom: 6rem;
+  }
+
+  .xl\:ml-15 {
+    margin-left: 6rem;
+  }
+
+  .xl\:mt-16 {
+    margin-top: 7rem;
+  }
+
+  .xl\:mr-16 {
+    margin-right: 7rem;
+  }
+
+  .xl\:mb-16 {
+    margin-bottom: 7rem;
+  }
+
+  .xl\:ml-16 {
+    margin-left: 7rem;
   }
 
   .xl\:mt-auto {
@@ -12992,6 +13892,26 @@ button,
     padding: 2.5rem;
   }
 
+  .xl\:p-10 {
+    padding: 3rem;
+  }
+
+  .xl\:p-11 {
+    padding: 4rem;
+  }
+
+  .xl\:p-12 {
+    padding: 5rem;
+  }
+
+  .xl\:p-14 {
+    padding: 6rem;
+  }
+
+  .xl\:p-16 {
+    padding: 8rem;
+  }
+
   .xl\:p-px {
     padding: 1px;
   }
@@ -13084,6 +14004,56 @@ button,
   .xl\:px-9 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .xl\:py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .xl\:px-10 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .xl\:py-11 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .xl\:px-11 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .xl\:py-12 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .xl\:px-12 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xl\:py-14 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .xl\:px-14 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .xl\:py-16 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .xl\:px-16 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .xl\:py-px {
@@ -13238,6 +14208,86 @@ button,
 
   .xl\:pl-9 {
     padding-left: 2.5rem;
+  }
+
+  .xl\:pt-10 {
+    padding-top: 3rem;
+  }
+
+  .xl\:pr-10 {
+    padding-right: 3rem;
+  }
+
+  .xl\:pb-10 {
+    padding-bottom: 3rem;
+  }
+
+  .xl\:pl-10 {
+    padding-left: 3rem;
+  }
+
+  .xl\:pt-11 {
+    padding-top: 4rem;
+  }
+
+  .xl\:pr-11 {
+    padding-right: 4rem;
+  }
+
+  .xl\:pb-11 {
+    padding-bottom: 4rem;
+  }
+
+  .xl\:pl-11 {
+    padding-left: 4rem;
+  }
+
+  .xl\:pt-12 {
+    padding-top: 5rem;
+  }
+
+  .xl\:pr-12 {
+    padding-right: 5rem;
+  }
+
+  .xl\:pb-12 {
+    padding-bottom: 5rem;
+  }
+
+  .xl\:pl-12 {
+    padding-left: 5rem;
+  }
+
+  .xl\:pt-14 {
+    padding-top: 6rem;
+  }
+
+  .xl\:pr-14 {
+    padding-right: 6rem;
+  }
+
+  .xl\:pb-14 {
+    padding-bottom: 6rem;
+  }
+
+  .xl\:pl-14 {
+    padding-left: 6rem;
+  }
+
+  .xl\:pt-16 {
+    padding-top: 8rem;
+  }
+
+  .xl\:pr-16 {
+    padding-right: 8rem;
+  }
+
+  .xl\:pb-16 {
+    padding-bottom: 8rem;
+  }
+
+  .xl\:pl-16 {
+    padding-left: 8rem;
   }
 
   .xl\:pt-px {
@@ -13461,7 +14511,7 @@ button,
   }
 
   .xl\:text-4xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .xl\:text-5xl {
@@ -14763,6 +15813,14 @@ button,
     margin: 5rem;
   }
 
+  .xxl\:m-15 {
+    margin: 6rem;
+  }
+
+  .xxl\:m-16 {
+    margin: 7rem;
+  }
+
   .xxl\:m-auto {
     margin: auto;
   }
@@ -14909,6 +15967,26 @@ button,
   .xxl\:mx-14 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .xxl\:my-15 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .xxl\:mx-15 {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .xxl\:my-16 {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .xxl\:mx-16 {
+    margin-left: 7rem;
+    margin-right: 7rem;
   }
 
   .xxl\:my-auto {
@@ -15153,6 +16231,38 @@ button,
 
   .xxl\:ml-14 {
     margin-left: 5rem;
+  }
+
+  .xxl\:mt-15 {
+    margin-top: 6rem;
+  }
+
+  .xxl\:mr-15 {
+    margin-right: 6rem;
+  }
+
+  .xxl\:mb-15 {
+    margin-bottom: 6rem;
+  }
+
+  .xxl\:ml-15 {
+    margin-left: 6rem;
+  }
+
+  .xxl\:mt-16 {
+    margin-top: 7rem;
+  }
+
+  .xxl\:mr-16 {
+    margin-right: 7rem;
+  }
+
+  .xxl\:mb-16 {
+    margin-bottom: 7rem;
+  }
+
+  .xxl\:ml-16 {
+    margin-left: 7rem;
   }
 
   .xxl\:mt-auto {
@@ -15621,6 +16731,26 @@ button,
     padding: 2.5rem;
   }
 
+  .xxl\:p-10 {
+    padding: 3rem;
+  }
+
+  .xxl\:p-11 {
+    padding: 4rem;
+  }
+
+  .xxl\:p-12 {
+    padding: 5rem;
+  }
+
+  .xxl\:p-14 {
+    padding: 6rem;
+  }
+
+  .xxl\:p-16 {
+    padding: 8rem;
+  }
+
   .xxl\:p-px {
     padding: 1px;
   }
@@ -15713,6 +16843,56 @@ button,
   .xxl\:px-9 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .xxl\:py-10 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .xxl\:px-10 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .xxl\:py-11 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .xxl\:px-11 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .xxl\:py-12 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .xxl\:px-12 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xxl\:py-14 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .xxl\:px-14 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .xxl\:py-16 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .xxl\:px-16 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 
   .xxl\:py-px {
@@ -15867,6 +17047,86 @@ button,
 
   .xxl\:pl-9 {
     padding-left: 2.5rem;
+  }
+
+  .xxl\:pt-10 {
+    padding-top: 3rem;
+  }
+
+  .xxl\:pr-10 {
+    padding-right: 3rem;
+  }
+
+  .xxl\:pb-10 {
+    padding-bottom: 3rem;
+  }
+
+  .xxl\:pl-10 {
+    padding-left: 3rem;
+  }
+
+  .xxl\:pt-11 {
+    padding-top: 4rem;
+  }
+
+  .xxl\:pr-11 {
+    padding-right: 4rem;
+  }
+
+  .xxl\:pb-11 {
+    padding-bottom: 4rem;
+  }
+
+  .xxl\:pl-11 {
+    padding-left: 4rem;
+  }
+
+  .xxl\:pt-12 {
+    padding-top: 5rem;
+  }
+
+  .xxl\:pr-12 {
+    padding-right: 5rem;
+  }
+
+  .xxl\:pb-12 {
+    padding-bottom: 5rem;
+  }
+
+  .xxl\:pl-12 {
+    padding-left: 5rem;
+  }
+
+  .xxl\:pt-14 {
+    padding-top: 6rem;
+  }
+
+  .xxl\:pr-14 {
+    padding-right: 6rem;
+  }
+
+  .xxl\:pb-14 {
+    padding-bottom: 6rem;
+  }
+
+  .xxl\:pl-14 {
+    padding-left: 6rem;
+  }
+
+  .xxl\:pt-16 {
+    padding-top: 8rem;
+  }
+
+  .xxl\:pr-16 {
+    padding-right: 8rem;
+  }
+
+  .xxl\:pb-16 {
+    padding-bottom: 8rem;
+  }
+
+  .xxl\:pl-16 {
+    padding-left: 8rem;
   }
 
   .xxl\:pt-px {
@@ -16090,7 +17350,7 @@ button,
   }
 
   .xxl\:text-4xl {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 
   .xxl\:text-5xl {

@@ -12,7 +12,7 @@ class HamburgerButton extends Component {
     const { drawerOpen, toggleDrawer } = this.props
 
     return (
-      <div className="drawer-toogle rounded-full bg-white d-block">
+      <div className="hamburger-outer rounded-full bg-white d-block">
         <Hamburger
           active={drawerOpen}
           type="stand"
