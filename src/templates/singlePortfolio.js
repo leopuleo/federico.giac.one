@@ -29,7 +29,7 @@ export const pageQuery = graphql`
                 horizontal: sizes(
                   maxWidth: 1200
                   maxHeight: 770
-                  quality: 80
+                  quality: 70
                   cropFocus: CENTER
                 ) {
                   ...GatsbyImageSharpSizes
@@ -37,15 +37,15 @@ export const pageQuery = graphql`
                 vertical: sizes(
                   maxWidth: 565
                   maxHeight: 770
-                  quality: 80
+                  quality: 70
                   cropFocus: CENTER
                 ) {
                   ...GatsbyImageSharpSizes
                 }
                 square: sizes(
-                  maxWidth: 576
-                  maxHeight: 576
-                  quality: 60
+                  maxWidth: 420
+                  maxHeight: 420
+                  quality: 30
                   cropFocus: CENTER
                 ) {
                   ...GatsbyImageSharpSizes
