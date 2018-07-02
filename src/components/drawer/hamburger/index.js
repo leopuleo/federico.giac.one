@@ -4,7 +4,6 @@ import Hamburger from 'react-hamburgers'
 
 import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
 
-import 'hamburgers/dist/hamburgers.css'
 import './style.css'
 
 class HamburgerButton extends Component {
