@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  build-job:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.1
@@ -34,24 +34,23 @@ jobs:
       # run Gatsby
       - run: yarn build
 
-  deploy:
-    machine:
-      enabled: true
-    steps:
-      - checkout
-      - run:
-          name: Deploy Master to Firebase
-          command: |
-            firebase deploy --token=$FIREBASE_TOKEN  --project=$PROJECT_NAME --non-interactive
+  deploy-job:
+    docker:
+      - image: my-image-version-tag
+    working_directory: /tmp/my-project
+      steps:
+        - run:
+            name: Deploy Master to Firebase
+            command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
-      - deploy:
+      - build-job
+      - deploy-job:
           requires:
-            - build
+            - build-job
           filters:
             branches:
               only: master
