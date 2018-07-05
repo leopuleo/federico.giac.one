@@ -40,9 +40,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Deploy Master to Heroku
-        command: |
-          firebase deploy --token=$FIREBASE_TOKEN  --project=$PROJECT_NAME --non-interactive
+          name: Deploy Master to Firebase
+          command: |
+            firebase deploy --token=$FIREBASE_TOKEN  --project=$PROJECT_NAME --non-interactive
 
 workflows:
   version: 2
