@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Link from 'gatsby-link'
 import { connect } from 'react-redux'
-import Img from 'gatsby-image'
+import PropTypes from 'prop-types'
 import Shuffle from 'shufflejs'
 
 import Title from '../components/title'
@@ -10,7 +9,15 @@ import TagList from '../components/tagList'
 import ProjectCard from '../components/projectCard'
 
 class PortfolioArchive extends Component {
-  componentDidMount() {
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    activeTag: PropTypes.string,
+    data: PropTypes.object
+  }
+
+  componentDidMount () {
     // The elements are in the DOM, initialize a shuffle instance.
     this.shuffle = new Shuffle(this.element, {
       itemSelector: '.project-card',
@@ -18,7 +25,7 @@ class PortfolioArchive extends Component {
     })
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate (prevProps) {
     const { activeTag } = this.props
 
     // Notify shuffle to dump the elements it's currently holding and consider
@@ -36,24 +43,24 @@ class PortfolioArchive extends Component {
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // Dispose of shuffle when it will be removed from the DOM.
     this.shuffle.destroy()
     this.shuffle = null
   }
 
-  flatten(arr) {
+  flatten (arr) {
     return arr.reduce(
       (a, b) => a.concat(Array.isArray(b) ? this.flatten(b) : b),
       []
     )
   }
 
-  unique(arr) {
+  unique (arr) {
     return arr.filter((value, index, self) => self.indexOf(value) === index)
   }
 
-  render() {
+  render () {
     const {
       data: { projects },
     } = this.props
@@ -80,15 +87,15 @@ class PortfolioArchive extends Component {
     }
 
     return (
-      <div className="portfolio-archive">
-        <Title title="Portfolio" />
-        <Content content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis, non molestie mi sagittis. Curabitur condimentum dolor orci, vitae sagittis metus consequat nec." />
+      <div className='portfolio-archive'>
+        <Title title='Portfolio' />
+        <Content content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis.' />
 
         <TagList tags={getTagList(projects.edges)} />
 
         <div
           ref={element => (this.element = element)}
-          className="portfolio-grid flex flex-wrap -mx-5"
+          className='portfolio-grid flex flex-wrap -mx-5'
         >
           {projects.edges.map((project, i) => {
             const card = getCardFormat(
