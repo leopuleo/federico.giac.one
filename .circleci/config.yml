@@ -30,3 +30,6 @@ jobs:
 
       # run tests!
       - run: yarn lint
+
+      # run Gatsby
+      - run: yarn build
