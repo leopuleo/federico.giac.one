@@ -1,7 +1,7 @@
 import * as actions from './actions'
 import { combineReducers } from 'redux'
 
-function drawerOpen(state = false, action) {
+function drawerOpen (state = false, action) {
   const { type, open } = action
   switch (type) {
     case actions.DRAWER_OPEN:
@@ -11,7 +11,7 @@ function drawerOpen(state = false, action) {
   }
 }
 
-function activeTag(state = '', action) {
+function activeTag (state = '', action) {
   const { type, tag } = action
   switch (type) {
     case actions.SELECTED_TAG:
