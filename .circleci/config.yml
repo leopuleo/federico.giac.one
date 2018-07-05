@@ -33,3 +33,9 @@ jobs:
 
       # run Gatsby
       - run: yarn build
+
+  deployment:
+    production:
+      branch: master
+      commands:
+        - firebase deploy --token=$FIREBASE_TOKEN  --project=$PROJECT_NAME --non-interactive
