@@ -14,7 +14,7 @@ module.exports = {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'federicogiaconeportfolio',
-        accessToken: `${process.env.API_KEY}`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
         linkResolver: ({ node, key, value }) => doc => {
           let rootLang = '/'
           if (doc.lang === 'en-gb') {
