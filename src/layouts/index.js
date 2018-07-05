@@ -14,7 +14,17 @@ import './tailwind.css'
 import './globalStyles.js'
 
 class Index extends Component {
-  render() {
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    children: PropTypes.element.isRequired,
+    drawerOpen: PropTypes.bool,
+    toggleDrawer: PropTypes.func,
+    data: PropTypes.object.isRequired
+  }
+
+  render () {
     const { drawerOpen, toggleDrawer } = this.props
 
     const changeClass = cssClass => {
@@ -22,12 +32,6 @@ class Index extends Component {
         return `${cssClass} drawer_open`
       } else {
         return `${cssClass} drawer_closed`
-      }
-    }
-
-    const checkPageResource = page => {
-      if (this.props.location.pathname.indexOf(page)) {
-        return true
       }
     }
 
@@ -42,25 +46,21 @@ class Index extends Component {
         />
         <Header title={this.props.data.site.siteMetadata.title} />
         <Drawer />
-        <div className="wrapper flex justify-center">
+        <div className='wrapper flex justify-center'>
           <div
-            className="main-overlay"
+            className='main-overlay'
             onClick={() => {
               toggleDrawer(false)
             }}
           />
-          <div className="main w-full lg:w-3/4 lg:pl-9 xl:px-0 xl:w-3/4 text-grey bg-grey-lightest font-sans text-antialiased">
+          <div className='main w-full lg:w-3/4 lg:pl-9 xl:px-0 xl:w-3/4 text-grey bg-grey-lightest font-sans text-antialiased'>
             {this.props.children()}
           </div>
         </div>
-        {checkPageResource('portfolio') && <PhotoSwipeDom />}
+        <PhotoSwipeDom />
       </div>
     )
   }
-}
-
-Index.propTypes = {
-  children: PropTypes.func,
 }
 
 const mapStateToProps = ({ drawerOpen }) => {
