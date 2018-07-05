@@ -1,15 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import ProjectSingle from '../components/projectSingle'
 
-export default function SinglePortfolio({
-  data: { prismicPortfolio: projectNode },
-  postBodyComponents,
-}) {
-  const { data } = projectNode
+const SinglePortfolio = ({ data }) => {
+  const { prismicPortfolio: project } = data
 
-  return <ProjectSingle data={data} />
+  return <ProjectSingle data={project.data} />
 }
+
+SinglePortfolio.propTypes = {
+  data: PropTypes.object,
+}
+export default SinglePortfolio
 
 export const pageQuery = graphql`
   query PortfolioBySlug($uid: String!) {

@@ -1,21 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import Title from '../components/title'
 import Content from '../components/content'
 
-export default function SinglePage({
-  data: { prismicPage: pageNode },
-  postBodyComponents,
-}) {
-  const { data } = pageNode
+const SinglePage = ({ data }) => {
+  const { prismicPage: page } = data
 
   return (
-    <div className="page-single">
-      <Title title={data.title.text} />
-      <Content content={data.content.html} />
+    <div className='page-single'>
+      <Title title={page.data.title.text} />
+      <Content content={page.data.content.html} />
     </div>
   )
 }
+
+SinglePage.propTypes = {
+  data: PropTypes.object,
+}
+
+export default SinglePage
 
 export const pageQuery = graphql`
   query PageBySlug($uid: String!) {
