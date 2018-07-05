@@ -1,16 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 
 import { filterByTag as filterByTagAction } from '../../store/actions'
 
 class TagList extends Component {
-  render() {
-    const { tags, activeTag, filterByTag } = this.props
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    tags: PropTypes.array.isRequired,
+    filterByTag: PropTypes.func.isRequired
+  }
+
+  render () {
+    const { tags, filterByTag } = this.props
 
     return (
-      <div className="tag-list">
+      <div className='tag-list'>
         <button
-          className="bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3"
+          className='bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3'
           onClick={() => filterByTag('')}
         >
           Tutti i progetti
@@ -19,7 +28,7 @@ class TagList extends Component {
           return (
             <button
               key={tag}
-              className="bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3"
+              className='bg-grey hover:bg-grey text-white uppercase py-2 px-4 mr-3'
               onClick={() => filterByTag(tag)}
             >
               {tag}
@@ -31,12 +40,6 @@ class TagList extends Component {
   }
 }
 
-const mapStateToProps = ({ activeTag, filterByTag }) => {
-  return {
-    activeTag,
-  }
-}
-
 const mapDispatchToProps = dispatch => {
   return {
     filterByTag: tag => dispatch(filterByTagAction(tag)),
@@ -44,6 +47,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(TagList)

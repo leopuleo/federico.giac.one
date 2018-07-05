@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import Hamburger from 'react-hamburgers'
 
 import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
@@ -7,14 +8,22 @@ import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
 import './style.css'
 
 class HamburgerButton extends Component {
-  render() {
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    drawerOpen: PropTypes.bool,
+    toggleDrawer: PropTypes.func
+  }
+
+  render () {
     const { drawerOpen, toggleDrawer } = this.props
 
     return (
-      <div className="hamburger-outer rounded-full bg-white d-block">
+      <div className='hamburger-outer rounded-full bg-white d-block'>
         <Hamburger
           active={drawerOpen}
-          type="stand"
+          type='stand'
           onClick={() => toggleDrawer(!drawerOpen)}
         />
       </div>

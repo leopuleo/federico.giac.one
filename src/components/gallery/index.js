@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import Link from 'gatsby-link'
 
 class Gallery extends Component {
-  render() {
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    gallery: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired
+  }
+
+  render () {
     const { gallery, title } = this.props
 
     // Immagini 1, 5, 11, 15, 21, 25 etc...
@@ -26,11 +34,11 @@ class Gallery extends Component {
     }
 
     return (
-      <div className="gallery">
+      <div className='gallery'>
         <div
-          className="gallery-grid flex flex-wrap -mx-5"
+          className='gallery-grid flex flex-wrap -mx-5'
           itemScope
-          itemType="http://schema.org/ImageGallery"
+          itemType='http://schema.org/ImageGallery'
         >
           {gallery.map((image, i) => {
             const card = getCardFormat(
@@ -39,9 +47,9 @@ class Gallery extends Component {
             )
             return (
               <figure
-                itemProp="associatedMedia"
+                itemProp='associatedMedia'
                 itemScope
-                itemType="http://schema.org/ImageObject"
+                itemType='http://schema.org/ImageObject'
                 className={card.outerWrapperClassName}
                 key={`image-${i}`}
               >
@@ -58,16 +66,16 @@ class Gallery extends Component {
                 >
                   <Img
                     sizes={image.gallery_image.localFile.childImageSharp.square}
-                    fadeIn={true}
+                    fadeIn
                     className={card.className}
-                    outerWrapperClassName="image-wrapper image-wrapper--mobile block lg:hidden xl:hidden xxl:hidden"
+                    outerWrapperClassName='image-wrapper image-wrapper--mobile block lg:hidden xl:hidden xxl:hidden'
                     alt={`${title.text} - ${i}`}
                   />
                   <Img
                     sizes={card.image}
-                    fadeIn={true}
+                    fadeIn
                     className={card.className}
-                    outerWrapperClassName="image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block"
+                    outerWrapperClassName='image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block'
                     alt={`${title.text} - ${i}`}
                   />
                 </a>

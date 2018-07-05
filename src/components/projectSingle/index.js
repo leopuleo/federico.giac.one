@@ -1,18 +1,20 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 
 import Title from '../title'
 import Content from '../content'
 import Gallery from '../gallery'
 
-export default function ProjectSingle({ data }) {
-  const { title, content, gallery } = data
+const ProjectSingle = ({ data }) => (
+  <div className='project-single'>
+    <Title title={data.title.text} />
+    <Content content={data.content.html} />
+    <Gallery gallery={data.gallery} title={data.title} />
+  </div>
+)
 
-  return (
-    <div className="project-single">
-      <Title title={title.text} />
-      <Content content={content.html} />
-      <Gallery gallery={gallery} title={title} />
-    </div>
-  )
+ProjectSingle.propTypes = {
+  data: PropTypes.object.isRequired
 }
+
+export default ProjectSingle

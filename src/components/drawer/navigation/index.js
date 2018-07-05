@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
 import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
@@ -7,7 +8,14 @@ import { toggleDrawer as toggleDrawerAction } from '../../../store/actions'
 import './style.css'
 
 class Navigation extends Component {
-  render() {
+  /*
+   * Defining the props for this component
+   */
+  static propTypes = {
+    toggleDrawer: PropTypes.func
+  }
+
+  render () {
     const { toggleDrawer } = this.props
 
     const items = [
@@ -26,21 +34,21 @@ class Navigation extends Component {
     ]
 
     return (
-      <nav className="navigation lg:text-right mt-15 lg:mt-12 text-antialiased">
-        <ul className="menu list-reset">
+      <nav className='navigation lg:text-right mt-15 lg:mt-12 text-antialiased'>
+        <ul className='menu list-reset'>
           {items.map(item => (
-            <li className="menu-item block mb-4" key={item.url}>
+            <li className='menu-item block mb-4' key={item.url}>
               <Link
-                className="menu-link no-underline hover:no-underline"
+                className='menu-link no-underline hover:no-underline'
                 to={item.url}
                 onClick={() => {
                   toggleDrawer(false)
                 }}
               >
-                <span className="big-link block text-4xl leading-none font-accent-bold text-grey-darkest">
+                <span className='big-link block text-4xl leading-none font-accent-bold text-grey-darkest'>
                   {item.name}
                 </span>
-                <span className="small-link text-base hidden lg:inline-block font-sans text-grey">
+                <span className='small-link text-base hidden lg:inline-block font-sans text-grey'>
                   {item.description}
                 </span>
               </Link>

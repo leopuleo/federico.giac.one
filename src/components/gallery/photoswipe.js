@@ -4,25 +4,26 @@ import 'photoswipe/dist/photoswipe.css'
 import 'photoswipe/dist/default-skin/default-skin.css'
 
 import PhotoSwipe from 'photoswipe'
-import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default'
 
 class PhotoSwipeDom extends Component {
-  handleVoteComment(id, vote) {
-    const { updateCurrentCommentVote } = this.props
-    updateCurrentCommentVote(id, vote)
-  }
-
-  initPhotoSwipeFromDOM(gallerySelector) {
+  initPhotoSwipeFromDOM (gallerySelector) {
     // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
-    var parseThumbnailElements = function(el) {
-      var thumbElements = el.childNodes,
-        numNodes = thumbElements.length,
-        items = [],
-        figureEl,
-        linkEl,
-        size,
-        item
+    var parseThumbnailElements = function (el) {
+      var thumbElements = el.childNodes
+
+      var numNodes = thumbElements.length
+
+      var items = []
+
+      var figureEl
+
+      var linkEl
+
+      var size
+
+      var item
 
       for (var i = 0; i < numNodes; i++) {
         figureEl = thumbElements[i] // <figure> element
@@ -61,19 +62,19 @@ class PhotoSwipeDom extends Component {
     }
 
     // find nearest parent element
-    var closest = function closest(el, fn) {
+    var closest = function closest (el, fn) {
       return el && (fn(el) ? el : closest(el.parentNode, fn))
     }
 
     // triggers when user clicks on thumbnail
-    var onThumbnailsClick = function(e) {
+    var onThumbnailsClick = function (e) {
       e = e || window.event
       e.preventDefault ? e.preventDefault() : (e.returnValue = false)
 
       var eTarget = e.target || e.srcElement
 
       // find root element of slide
-      var clickedListItem = closest(eTarget, function(el) {
+      var clickedListItem = closest(eTarget, function (el) {
         return el.tagName && el.tagName.toUpperCase() === 'FIGURE'
       })
 
@@ -83,11 +84,15 @@ class PhotoSwipeDom extends Component {
 
       // find index of clicked item by looping through all child nodes
       // alternatively, you may define index via data- attribute
-      var clickedGallery = clickedListItem.parentNode,
-        childNodes = clickedListItem.parentNode.childNodes,
-        numChildNodes = childNodes.length,
-        nodeIndex = 0,
-        index
+      var clickedGallery = clickedListItem.parentNode
+
+      var childNodes = clickedListItem.parentNode.childNodes
+
+      var numChildNodes = childNodes.length
+
+      var nodeIndex = 0
+
+      var index
 
       for (var i = 0; i < numChildNodes; i++) {
         if (childNodes[i].nodeType !== 1) {
@@ -109,9 +114,10 @@ class PhotoSwipeDom extends Component {
     }
 
     // parse picture index and gallery index from URL (#&pid=1&gid=2)
-    var photoswipeParseHash = function() {
-      var hash = window.location.hash.substring(1),
-        params = {}
+    var photoswipeParseHash = function () {
+      var hash = window.location.hash.substring(1)
+
+      var params = {}
 
       if (hash.length < 5) {
         return params
@@ -136,16 +142,19 @@ class PhotoSwipeDom extends Component {
       return params
     }
 
-    var openPhotoSwipe = function(
+    var openPhotoSwipe = function (
       index,
       galleryElement,
       disableAnimation,
       fromURL
     ) {
-      var pswpElement = document.querySelectorAll('.pswp')[0],
-        gallery,
-        options,
-        items
+      var pswpElement = document.querySelectorAll('.pswp')[0]
+
+      var gallery
+
+      var options
+
+      var items
 
       items = parseThumbnailElements(galleryElement)
 
@@ -154,12 +163,15 @@ class PhotoSwipeDom extends Component {
         // define gallery index (for URL)
         galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-        getThumbBoundsFn: function(index) {
+        getThumbBoundsFn: function (index) {
           // See Options -> getThumbBoundsFn section of documentation for more info
-          var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-            pageYScroll =
-              window.pageYOffset || document.documentElement.scrollTop,
-            rect = thumbnail.getBoundingClientRect()
+          var thumbnail = items[index].el.getElementsByTagName('img')[0]
+          // find thumbnail
+
+          var pageYScroll =
+              window.pageYOffset || document.documentElement.scrollTop
+
+          var rect = thumbnail.getBoundingClientRect()
 
           return { x: rect.left, y: rect.top + pageYScroll, w: rect.width }
         },
@@ -171,7 +183,7 @@ class PhotoSwipeDom extends Component {
           // parse real index when custom PIDs are used
           // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
           for (var j = 0; j < items.length; j++) {
-            if (items[j].pid == index) {
+            if (items[j].pid === index) {
               options.index = j
               break
             }
@@ -196,7 +208,7 @@ class PhotoSwipeDom extends Component {
       // Pass data to PhotoSwipe and initialize it
       gallery = new PhotoSwipe(
         pswpElement,
-        PhotoSwipeUI_Default,
+        PhotoSwipeUIDefault,
         items,
         options
       )
@@ -223,77 +235,77 @@ class PhotoSwipeDom extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // execute PhotoSwipe Function
     this.initPhotoSwipeFromDOM('.gallery-grid')
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     // execute PhotoSwipe Function
     this.initPhotoSwipeFromDOM('.gallery-grid')
   }
 
-  render() {
+  render () {
     return (
-      <div className="pswp" tabIndex="-1" role="dialog" aria-hidden="true">
-        <div className="pswp__bg" />
+      <div className='pswp' tabIndex='-1' role='dialog' aria-hidden='true'>
+        <div className='pswp__bg' />
 
-        <div className="pswp__scroll-wrap">
-          <div className="pswp__container">
-            <div className="pswp__item" />
-            <div className="pswp__item" />
-            <div className="pswp__item" />
+        <div className='pswp__scroll-wrap'>
+          <div className='pswp__container'>
+            <div className='pswp__item' />
+            <div className='pswp__item' />
+            <div className='pswp__item' />
           </div>
 
-          <div className="pswp__ui pswp__ui--hidden">
-            <div className="pswp__top-bar">
-              <div className="pswp__counter" />
+          <div className='pswp__ui pswp__ui--hidden'>
+            <div className='pswp__top-bar'>
+              <div className='pswp__counter' />
 
               <button
-                className="pswp__button pswp__button--close"
-                title="Close (Esc)"
+                className='pswp__button pswp__button--close'
+                title='Close (Esc)'
               />
 
               <button
-                className="pswp__button pswp__button--share"
-                title="Share"
+                className='pswp__button pswp__button--share'
+                title='Share'
               />
 
               <button
-                className="pswp__button pswp__button--fs"
-                title="Toggle fullscreen"
+                className='pswp__button pswp__button--fs'
+                title='Toggle fullscreen'
               />
 
               <button
-                className="pswp__button pswp__button--zoom"
-                title="Zoom in/out"
+                className='pswp__button pswp__button--zoom'
+                title='Zoom in/out'
               />
 
-              <div className="pswp__preloader">
-                <div className="pswp__preloader__icn">
-                  <div className="pswp__preloader__cut">
-                    <div className="pswp__preloader__donut" />
+              <div className='pswp__preloader'>
+                <div className='pswp__preloader__icn'>
+                  <div className='pswp__preloader__cut'>
+                    <div className='pswp__preloader__donut' />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-              <div className="pswp__share-tooltip" />
+            <div className='pswp__share-modal pswp__share-modal--hidden pswp__single-tap'>
+              <div className='pswp__share-tooltip' />
             </div>
 
             <button
-              className="pswp__button pswp__button--arrow--left"
-              title="Previous (arrow left)"
+              className='pswp__button pswp__button--arrow--left'
+              title='Previous (arrow left)'
             />
 
             <button
-              className="pswp__button pswp__button--arrow--right"
-              title="Next (arrow right)"
+              className='pswp__button pswp__button--arrow--right'
+              title='Next (arrow right)'
             />
 
-            <div className="pswp__caption">
-              <div className="pswp__caption__center" />
+            <div className='pswp__caption'>
+              <div className='pswp__caption__center' />
             </div>
           </div>
         </div>
