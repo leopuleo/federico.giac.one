@@ -1,31 +1,29 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 module.exports = {
   siteMetadata: {
     title: 'Federico Giacone',
   },
   plugins: [
-  	'gatsby-plugin-react-helmet',
-  	'gatsby-plugin-catch-links',
-  	'gatsby-transformer-sharp',
-  	'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'federicogiaconeportfolio',
         accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => doc =>  {
-
+        linkResolver: ({ node, key, value }) => doc => {
           let rootLang = '/'
-          if(doc.lang === 'en-gb') {
+          if (doc.lang === 'en-gb') {
             rootLang = '/en/'
           }
-          
-          switch(doc.type) {
+
+          switch (doc.type) {
             case 'portfolio':
               return `${rootLang}portfolio/${doc.uid}/`
-              break;
             default:
               return `${rootLang}${doc.uid}/`
           }

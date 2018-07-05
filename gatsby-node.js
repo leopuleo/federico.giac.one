@@ -1,7 +1,7 @@
-const path = require('path');
+const path = require('path')
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage } = boundActionCreators
 
   const portfolio = await graphql(`
     {
@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         }
       }
     }
-  `);
+  `)
 
   const pages = await graphql(`
     {
@@ -29,15 +29,14 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         }
       }
     }
-  `);
+  `)
 
-  const portfolioTemplate = path.resolve('src/templates/singlePortfolio.js');
-  const pageTemplate = path.resolve('src/templates/singlePage.js');
+  const portfolioTemplate = path.resolve('src/templates/singlePortfolio.js')
+  const pageTemplate = path.resolve('src/templates/singlePage.js')
 
   portfolio.data.allPrismicPortfolio.edges.forEach(edge => {
-
     let rootLang = '/'
-    if(edge.node.lang === 'en-gb') {
+    if (edge.node.lang === 'en-gb') {
       rootLang = '/en/'
     }
 
@@ -47,13 +46,12 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       context: {
         uid: edge.node.uid,
       },
-    });
-  });
+    })
+  })
 
   pages.data.allPrismicPage.edges.forEach(edge => {
-
     let rootLang = '/'
-    if(edge.node.lang === 'en-gb') {
+    if (edge.node.lang === 'en-gb') {
       rootLang = '/en/'
     }
 
@@ -63,15 +61,15 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       context: {
         uid: edge.node.uid,
       },
-    });
-  });
-};
+    })
+  })
+}
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === "build-html") {
-    config.loader("null", {
+  if (stage === 'build-html') {
+    config.loader('null', {
       test: /shufflejs/,
-      loader: "null-loader",
-    });
+      loader: 'null-loader',
+    })
   }
-};
+}
