@@ -44,10 +44,12 @@ jobs:
       - checkout
 
       - run: npm install firebase-tools
-
+      
+      - run: firebase use default
+    
       - run:
           name: Deploy Master to Firebase
-          command: ln -s ./node_modules/.bin/firebase . && \ ./firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME
+          command: firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME --non-interactive
 
 workflows:
   version: 2
