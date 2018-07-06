@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build:
+  test:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.1
@@ -31,9 +31,6 @@ jobs:
       # run tests!
       - run: yarn lint
 
-      # run Gatsby
-      - run: yarn build
-
   deploy:
     docker:
       - image: circleci/node:8.11.1
@@ -43,22 +40,40 @@ jobs:
     steps:
       - checkout
 
-      - run: npm install firebase-tools
-      
-      - run: firebase use default
-    
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "yarn.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      # run Yarn
+      - run: yarn --offline
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
       - run:
-          name: Deploy Master to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME --non-interactive
+          name: Build app in production mode
+          command: |
+            yarn build
+
+      - run:
+          name: Deploy app to firebase
+          command: |
+            ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
+
 
 workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
-            - build
+            - test
           filters:
             branches:
               only: master
