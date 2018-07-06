@@ -48,7 +48,7 @@ jobs:
           - v1-dependencies-
 
       # run Yarn
-      - run: yarn --offline
+      - run: yarn
 
       - save_cache:
           paths:
