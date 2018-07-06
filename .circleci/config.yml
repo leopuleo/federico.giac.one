@@ -63,7 +63,7 @@ jobs:
       - run:
           name: Deploy app to firebase
           command: |
-            ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
+            ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME
 
 
 workflows:
