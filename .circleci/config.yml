@@ -47,7 +47,7 @@ jobs:
 
       - run:
           name: Deploy Master to Firebase
-          command: firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME
+          command: ln -s ./node_modules/.bin/firebase . && \ ./firebase deploy --token=$FIREBASE_TOKEN --project=$PROJECT_NAME
 
 workflows:
   version: 2
