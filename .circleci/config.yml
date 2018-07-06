@@ -42,7 +42,7 @@ jobs:
 
     steps:
 
-      - run: npm install -g firebase-tools
+      - run: npm install firebase-tools
 
       - run:
           name: Deploy Master to Firebase
