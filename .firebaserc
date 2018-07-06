@@ -1,5 +1,6 @@
 {
   "projects": {
-    "production": "federico-giacone-portfolio"
+    "production": "federico-giacone-portfolio",
+    "default": "federico-giacone-portfolio"
   }
 }
