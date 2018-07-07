@@ -9,7 +9,7 @@ const SinglePage = ({ data }) => {
 
   return (
     <div className='page-single'>
-      <Title title={page.data.title.text} />
+      <Title title={page.data.title.text} cssClasses='lg:text-7xl' />
       <Content content={page.data.content.html} />
     </div>
   )

@@ -5,7 +5,7 @@ import './style.css'
 
 const Content = ({ content }) => (
   <div
-    className='entry-content mb-10 text-xl leading-normal lg:w-2/3 lg:mb-13'
+    className='entry-content mb-6 text-base leading-normal lg:w-2/3 lg:mb-13 lg:text-xl'
     dangerouslySetInnerHTML={{ __html: content }}
   />
 )

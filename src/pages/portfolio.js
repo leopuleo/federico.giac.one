@@ -88,7 +88,7 @@ class PortfolioArchive extends Component {
 
     return (
       <div className='portfolio-archive'>
-        <Title title='Portfolio' />
+        <Title title='Portfolio' cssClasses='lg:text-7xl' />
         <Content content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis.' />
 
         <TagList tags={getTagList(projects.edges)} />
