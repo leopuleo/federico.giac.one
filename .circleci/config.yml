@@ -31,7 +31,7 @@ jobs:
       # run tests!
       - run: yarn lint
 
-  deploy:
+  build:
     docker:
       - image: circleci/node:8.11.1
 
@@ -68,10 +68,10 @@ jobs:
 
 workflows:
   version: 2
-  build-and-deploy:
+  test-and-build:
     jobs:
       - test
-      - deploy:
+      - build:
           requires:
             - test
           filters:
