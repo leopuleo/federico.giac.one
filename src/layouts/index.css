@@ -45,10 +45,6 @@ a:hover {
   transition: opacity .3s ease-in-out 166.66667ms;
 }
 
-.main {
-  padding: 100px 0 30px;
-}
-
 /* Drawer open */
 /* purgecss start ignore */
 @media screen and (max-width: 991px) {
