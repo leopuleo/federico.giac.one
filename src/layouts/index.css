@@ -28,11 +28,6 @@ a:hover {
   overflow-x: hidden;
 }
 
-.main {
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(0);
-}
-
 .main-overlay {
   text-indent: -99999px;
   opacity: 0;
@@ -61,6 +56,12 @@ a:hover {
 
 /* Desktop */
 @media screen and (min-width: 992px) {
+
+  .main {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+  }
+
   .drawer_open .main {
     transform: translateX(510px);
   }
