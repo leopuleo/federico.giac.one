@@ -17,7 +17,7 @@ class ProjectCard extends Component {
     featuredImageMobile: PropTypes.object.isRequired,
     excerpt: PropTypes.string,
     cssClass: PropTypes.string.isRequired,
-    tags: PropTypes.array
+    tags: PropTypes.array,
   }
 
   render () {
@@ -39,14 +39,14 @@ class ProjectCard extends Component {
               sizes={featuredImageMobile}
               fadeIn
               className='image--mobile'
-              outerWrapperClassName='image-wrapper image-wrapper--mobile block lg:hidden xl:hidden xxl:hidden'
+              outerWrapperClassName='image-wrapper image-wrapper--mobile block xl:hidden xxl:hidden'
               alt={title}
             />
             <Img
               sizes={featuredImage}
               fadeIn
               className='image--desktop'
-              outerWrapperClassName='image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block'
+              outerWrapperClassName='image-wrapper image-wrapper--desktop hidden xl:block xxl:block'
               alt={title}
             />
             <div className='project-card-content flex flex-col items-start justify-end p-4 md:p-6 lg:p-8'>

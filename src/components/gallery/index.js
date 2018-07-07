@@ -8,7 +8,7 @@ class Gallery extends Component {
    */
   static propTypes = {
     gallery: PropTypes.array.isRequired,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
   }
 
   render () {

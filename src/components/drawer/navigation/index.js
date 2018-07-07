@@ -12,7 +12,7 @@ class Navigation extends Component {
    * Defining the props for this component
    */
   static propTypes = {
-    toggleDrawer: PropTypes.func
+    toggleDrawer: PropTypes.func,
   }
 
   render () {

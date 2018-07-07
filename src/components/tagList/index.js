@@ -12,7 +12,7 @@ class TagList extends Component {
    */
   static propTypes = {
     tags: PropTypes.array.isRequired,
-    filterByTag: PropTypes.func.isRequired
+    filterByTag: PropTypes.func.isRequired,
   }
 
   render () {
@@ -20,7 +20,7 @@ class TagList extends Component {
 
     return (
       <div className='tag-list fixed w-screen bg-white overflow-x-scroll md:relative md:w-full md:bg-transparent md:mb-6 md:overflow-x-auto'>
-        <div className="tag-list-inside whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0">
+        <div className='tag-list-inside whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0'>
           <button
             className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:text-base'
             onClick={() => filterByTag('')}

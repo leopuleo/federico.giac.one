@@ -14,7 +14,7 @@ const ProjectSingle = ({ data }) => (
 )
 
 ProjectSingle.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 }
 
 export default ProjectSingle

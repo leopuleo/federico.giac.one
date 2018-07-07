@@ -21,7 +21,7 @@ class Index extends Component {
     children: PropTypes.element.isRequired,
     drawerOpen: PropTypes.bool,
     toggleDrawer: PropTypes.func,
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
   }
 
   render () {

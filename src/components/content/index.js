@@ -11,7 +11,7 @@ const Content = ({ content }) => (
 )
 
 Content.propTypes = {
-  content: PropTypes.string
+  content: PropTypes.string,
 }
 
 export default Content

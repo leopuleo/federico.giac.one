@@ -169,7 +169,7 @@ class PhotoSwipeDom extends Component {
           // find thumbnail
 
           var pageYScroll =
-              window.pageYOffset || document.documentElement.scrollTop
+            window.pageYOffset || document.documentElement.scrollTop
 
           var rect = thumbnail.getBoundingClientRect()
 
@@ -206,12 +206,7 @@ class PhotoSwipeDom extends Component {
       }
 
       // Pass data to PhotoSwipe and initialize it
-      gallery = new PhotoSwipe(
-        pswpElement,
-        PhotoSwipeUIDefault,
-        items,
-        options
-      )
+      gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, options)
       gallery.init()
     }
 

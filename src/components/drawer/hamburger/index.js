@@ -13,7 +13,7 @@ class HamburgerButton extends Component {
    */
   static propTypes = {
     drawerOpen: PropTypes.bool,
-    toggleDrawer: PropTypes.func
+    toggleDrawer: PropTypes.func,
   }
 
   render () {

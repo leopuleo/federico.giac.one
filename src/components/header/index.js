@@ -15,7 +15,7 @@ class Header extends Component {
    */
   static propTypes = {
     toggleDrawer: PropTypes.func,
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
   }
 
   render () {
