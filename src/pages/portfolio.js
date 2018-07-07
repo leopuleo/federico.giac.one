@@ -70,13 +70,13 @@ class PortfolioArchive extends Component {
         return {
           image: image.horizontal,
           cssClass:
-            'project-card portfolio-card__horizontal w-full md:w-1/2 xl:w-2/3 xl:px-5 my-5',
+            'project-card portfolio-card__horizontal w-full mb-5 md:w-1/2 xl:w-2/3 md:px-2 md:mb-4 lg:px-5 xl:my-5',
         }
       } else {
         return {
           image: image.vertical,
           cssClass:
-            'project-card portfolio-card__vertical w-full md:w-1/2 xl:w-1/3 xl:px-5 my-5',
+            'project-card portfolio-card__vertical w-full mb-5 md:w-1/2 xl:w-1/3 md:px-2 md:mb-4 lg:px-5 xl:my-5',
         }
       }
     }
@@ -88,14 +88,14 @@ class PortfolioArchive extends Component {
 
     return (
       <div className='portfolio-archive'>
-        <Title title='Portfolio' cssClasses='lg:text-7xl' />
+        <Title title='Portfolio' cssClasses='md:text-6xl lg:text-7xl' />
         <Content content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis.' />
 
         <TagList tags={getTagList(projects.edges)} />
 
         <div
           ref={element => (this.element = element)}
-          className='portfolio-grid flex flex-wrap -mx-5'
+          className='portfolio-grid flex flex-wrap md:-mx-2 lg:-mx-5'
         >
           {projects.edges.map((project, i) => {
             const card = getCardFormat(

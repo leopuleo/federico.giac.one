@@ -19,10 +19,10 @@ class TagList extends Component {
     const { tags, filterByTag } = this.props
 
     return (
-      <div className='tag-list fixed w-screen bg-white overflow-x-scroll lg:relative lg:w-full lg:bg-transparent lg:mb-6 lg:overflow-x-auto'>
-        <div className="tag-list-inside whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal lg:px-0 lg:py-0">
+      <div className='tag-list fixed w-screen bg-white overflow-x-scroll md:relative md:w-full md:bg-transparent md:mb-6 md:overflow-x-auto'>
+        <div className="tag-list-inside whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0">
           <button
-            className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white lg:py-3 lg:px-6 lg:text-base'
+            className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:text-base'
             onClick={() => filterByTag('')}
           >
             Tutti i progetti
@@ -31,7 +31,7 @@ class TagList extends Component {
             return (
               <button
                 key={tag}
-                className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 ml-2 hover:bg-grey-darkest hover:text-white lg:py-3 lg:px-6 lg:ml-3 lg:text-base'
+                className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 ml-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:ml-3 md:text-base'
                 onClick={() => filterByTag(tag)}
               >
                 {tag}

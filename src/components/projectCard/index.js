@@ -49,7 +49,7 @@ class ProjectCard extends Component {
               outerWrapperClassName='image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block'
               alt={title}
             />
-            <div className='project-card-content flex flex-col items-start justify-end p-8'>
+            <div className='project-card-content flex flex-col items-start justify-end p-4 md:p-6 lg:p-8'>
               <h2 className='title font-accent-bold text-white text-lowercase'>
                 {title}
               </h2>
