@@ -70,13 +70,13 @@ class PortfolioArchive extends Component {
         return {
           image: image.horizontal,
           cssClass:
-            'project-card portfolio-card__horizontal w-full mb-5 sm:w-1/2 xl:w-2/3 sm:px-2 sm:mb-4 lg:px-5 xl:my-5',
+            'project-card portfolio-card__horizontal w-full mb-5 sm:w-1/2 xl:w-2/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
         }
       } else {
         return {
           image: image.vertical,
           cssClass:
-            'project-card portfolio-card__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:mb-4 lg:px-5 xl:my-5',
+            'project-card portfolio-card__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
         }
       }
     }
