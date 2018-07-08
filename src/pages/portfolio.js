@@ -62,7 +62,7 @@ class PortfolioArchive extends Component {
 
   render () {
     const {
-      data: { projects },
+      data: { projects, page },
     } = this.props
 
     const getCardFormat = (image, i) => {
@@ -88,8 +88,8 @@ class PortfolioArchive extends Component {
 
     return (
       <div className='portfolio-archive'>
-        <Title title='Portfolio' cssClasses='md:text-6xl lg:text-7xl' />
-        <Content content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed rhoncus lacus. Aenean laoreet ligula nec justo venenatis.' />
+        <Title title={page.data.title.text} cssClasses='md:text-6xl lg:text-7xl' />
+        <Content content={page.data.content.html} />
 
         <TagList tags={getTagList(projects.edges)} />
 
@@ -137,7 +137,18 @@ export default connect(
 )(PortfolioArchive)
 
 export const pageQuery = graphql`
+
   query IndexQuery {
+    page: prismicPortfolioArchive{
+      data {
+        title {
+          text
+        }
+        content {
+          html
+        }
+      }
+    }
     projects: allPrismicPortfolio(
       sort: { fields: [first_publication_date], order: DESC }
     ) {
