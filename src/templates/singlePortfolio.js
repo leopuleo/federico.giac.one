@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 
 import ProjectSingle from '../components/projectSingle'
 
-const SinglePortfolio = ({ data }) => {
+const SinglePortfolio = ({ data, pathContext }) => {
   const { prismicPortfolio: project } = data
-
-  return <ProjectSingle data={project.data} />
+  console.log(pathContext)
+  return <ProjectSingle data={project.data} next={pathContext.next} prev={pathContext.prev} />
 }
 
 SinglePortfolio.propTypes = {
   data: PropTypes.object,
+  pathContext: PropTypes.object
 }
 export default SinglePortfolio
 

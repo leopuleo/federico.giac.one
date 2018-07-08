@@ -5,12 +5,19 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   const portfolio = await graphql(`
     {
-      allPrismicPortfolio {
+      allPrismicPortfolio(
+      sort: { fields: [first_publication_date], order: DESC }
+    ) {
         edges {
           node {
             id
             uid
             lang
+            data {
+              title {
+                text
+              }
+            }
           }
         }
       }
@@ -34,21 +41,29 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   const portfolioTemplate = path.resolve('src/templates/singlePortfolio.js')
   const pageTemplate = path.resolve('src/templates/singlePage.js')
 
-  portfolio.data.allPrismicPortfolio.edges.forEach(edge => {
+  // Portfolio
+  const projects = portfolio.data.allPrismicPortfolio.edges
+  projects.forEach(({ node }, index) => {
     let rootLang = '/'
-    if (edge.node.lang === 'en-gb') {
+    if (node.lang === 'en-gb') {
       rootLang = '/en/'
     }
 
+    const prev = index === 0 ? false : projects[index - 1].node
+    const next = index === projects.length - 1 ? false : projects[index + 1].node
+
     createPage({
-      path: `${rootLang}portfolio/${edge.node.uid}`,
+      path: `${rootLang}portfolio/${node.uid}`,
       component: portfolioTemplate,
       context: {
-        uid: edge.node.uid,
+        uid: node.uid,
+        prev,
+        next
       },
     })
   })
 
+  // Pagine default
   pages.data.allPrismicPage.edges.forEach(edge => {
     let rootLang = '/'
     if (edge.node.lang === 'en-gb') {
