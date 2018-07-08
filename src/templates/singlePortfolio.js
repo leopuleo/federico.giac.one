@@ -5,7 +5,6 @@ import ProjectSingle from '../components/projectSingle'
 
 const SinglePortfolio = ({ data, pathContext }) => {
   const { prismicPortfolio: project } = data
-  console.log(pathContext)
   return <ProjectSingle data={project.data} next={pathContext.next} prev={pathContext.prev} />
 }
 
