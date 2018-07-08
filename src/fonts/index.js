@@ -8,11 +8,6 @@ import TitilliumRegularItalicWoff2 from './titillium/titillium-regularitalic-web
 import TitilliumSemiBoldWoff from './titillium/titillium-semibold-webfont.woff'
 import TitilliumSemiBoldWoff2 from './titillium/titillium-semibold-webfont.woff2'
 
-import FeddyIconWoff from './feddy-icon/feddy-icon.woff'
-import FeddyIconEot from './feddy-icon/feddy-icon.eot'
-import FeddyIconSvg from './feddy-icon/feddy-icon.svg'
-import FeddyIconTtf from './feddy-icon/feddy-icon.ttf'
-
 export default {
   GilroyExtraBoldWoff,
   GilroyExtraBoldWoff2,
@@ -22,10 +17,5 @@ export default {
   TitilliumRegularItalicWoff,
   TitilliumRegularItalicWoff2,
   TitilliumSemiBoldWoff,
-  TitilliumSemiBoldWoff2,
-
-  FeddyIconWoff,
-  FeddyIconEot,
-  FeddyIconSvg,
-  FeddyIconTtf
+  TitilliumSemiBoldWoff2
 }
