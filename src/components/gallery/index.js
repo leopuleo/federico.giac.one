@@ -20,14 +20,14 @@ class Gallery extends Component {
         return {
           image: image.horizontal,
           outerWrapperClassName:
-            'image-wrapper image-wrapper__horizontal w-2/3 px-5 my-5 ',
+            'image-wrapper image-wrapper__horizontal w-full mb-5 sm:w-1/2 xl:w-2/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
           className: 'image image__horizontal',
         }
       } else {
         return {
           image: image.vertical,
           outerWrapperClassName:
-            'image-wrapper image-image__vertical w-1/3 px-5 my-5',
+            'image-wrapper image-image__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
           className: 'image image__vertical',
         }
       }
@@ -36,7 +36,7 @@ class Gallery extends Component {
     return (
       <div className='gallery'>
         <div
-          className='gallery-grid flex flex-wrap -mx-5'
+          className='gallery-grid flex flex-wrap sm:-mx-2 lg:-mx-5'
           itemScope
           itemType='http://schema.org/ImageGallery'
         >
@@ -68,14 +68,14 @@ class Gallery extends Component {
                     sizes={image.gallery_image.localFile.childImageSharp.square}
                     fadeIn
                     className={card.className}
-                    outerWrapperClassName='image-wrapper image-wrapper--mobile block lg:hidden xl:hidden xxl:hidden'
+                    outerWrapperClassName='image-wrapper image-wrapper--mobile block xl:hidden xxl:hidden'
                     alt={`${title.text} - ${i}`}
                   />
                   <Img
                     sizes={card.image}
                     fadeIn
                     className={card.className}
-                    outerWrapperClassName='image-wrapper image-wrapper--desktop hidden lg:block xl:block xxl:block'
+                    outerWrapperClassName='image-wrapper image-wrapper--desktop hidden xl:block xxl:block'
                     alt={`${title.text} - ${i}`}
                   />
                 </a>
