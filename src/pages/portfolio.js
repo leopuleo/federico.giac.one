@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Shuffle from 'shufflejs'
 
+import { flatten, unique } from '../utils'
+
 import Title from '../components/title'
 import Content from '../components/content'
 import TagList from '../components/tagList'
@@ -49,17 +51,6 @@ class PortfolioArchive extends Component {
     this.shuffle = null
   }
 
-  flatten (arr) {
-    return arr.reduce(
-      (a, b) => a.concat(Array.isArray(b) ? this.flatten(b) : b),
-      []
-    )
-  }
-
-  unique (arr) {
-    return arr.filter((value, index, self) => self.indexOf(value) === index)
-  }
-
   render () {
     const {
       data: { projects, page },
@@ -83,12 +74,15 @@ class PortfolioArchive extends Component {
 
     const getTagList = list => {
       let tagList = list.map(el => el.node.tags).filter(el => el.length !== 0)
-      return this.unique(this.flatten(tagList))
+      return unique(flatten(tagList))
     }
 
     return (
       <div className='portfolio-archive'>
-        <Title title={page.data.title.text} cssClasses='md:text-6xl lg:text-7xl' />
+        <Title
+          title={page.data.title.text}
+          cssClasses='md:text-6xl lg:text-7xl'
+        />
         <Content content={page.data.content.html} />
 
         <TagList tags={getTagList(projects.edges)} />
@@ -137,9 +131,8 @@ export default connect(
 )(PortfolioArchive)
 
 export const pageQuery = graphql`
-
   query IndexQuery {
-    page: prismicPortfolioArchive{
+    page: prismicPortfolioArchive {
       data {
         title {
           text
