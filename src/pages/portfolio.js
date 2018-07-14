@@ -143,7 +143,7 @@ export const pageQuery = graphql`
       }
     }
     projects: allPrismicPortfolio(
-      sort: { fields: [first_publication_date], order: DESC }
+      sort: { fields: [data___order], order: ASC }
     ) {
       edges {
         node {
