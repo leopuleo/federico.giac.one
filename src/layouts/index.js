@@ -53,7 +53,7 @@ class Index extends Component {
               toggleDrawer(false)
             }}
           />
-          <div className='main w-full px-5 pt-10 pb-8 lg:w-3/4 lg:pl-9 lg:pt-16 lg:pb-12 xl:px-0 xl:w-3/4 text-grey bg-grey-lightest font-sans text-antialiased'>
+          <div className='main w-full px-5 pt-10 pb-10 lg:w-3/4 lg:pl-9 lg:pt-16 lg:pb-12 xl:px-0 xl:w-3/4 text-grey bg-grey-lightest font-sans text-antialiased'>
             {this.props.children()}
           </div>
         </div>

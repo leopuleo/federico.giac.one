@@ -3047,6 +3047,10 @@ button,
   box-shadow: none;
 }
 
+.shadow-opposite {
+  box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -5893,6 +5897,10 @@ button,
     box-shadow: none;
   }
 
+  .sm\:shadow-opposite {
+    box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
+  }
+
   .sm\:text-left {
     text-align: left;
   }
@@ -8730,6 +8738,10 @@ button,
 
   .md\:shadow-none {
     box-shadow: none;
+  }
+
+  .md\:shadow-opposite {
+    box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
   }
 
   .md\:text-left {
@@ -11571,6 +11583,10 @@ button,
     box-shadow: none;
   }
 
+  .lg\:shadow-opposite {
+    box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
+  }
+
   .lg\:text-left {
     text-align: left;
   }
@@ -14410,6 +14426,10 @@ button,
     box-shadow: none;
   }
 
+  .xl\:shadow-opposite {
+    box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
+  }
+
   .xl\:text-left {
     text-align: left;
   }
@@ -17247,6 +17267,10 @@ button,
 
   .xxl\:shadow-none {
     box-shadow: none;
+  }
+
+  .xxl\:shadow-opposite {
+    box-shadow: 0 -1px 15px 1px rgba(0, 0, 0, .08);
   }
 
   .xxl\:text-left {
