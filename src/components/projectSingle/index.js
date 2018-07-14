@@ -17,14 +17,8 @@ const ProjectSingle = ({ data, next, prev }) => (
 
 ProjectSingle.propTypes = {
   data: PropTypes.object.isRequired,
-  next: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool
-  ]).isRequired,
-  prev: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.bool
-  ]).isRequired
+  next: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
+  prev: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
 }
 
 export default ProjectSingle

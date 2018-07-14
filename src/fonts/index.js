@@ -17,5 +17,5 @@ export default {
   TitilliumRegularItalicWoff,
   TitilliumRegularItalicWoff2,
   TitilliumSemiBoldWoff,
-  TitilliumSemiBoldWoff2
+  TitilliumSemiBoldWoff2,
 }

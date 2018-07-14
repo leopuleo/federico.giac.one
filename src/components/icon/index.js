@@ -10,7 +10,7 @@ const Icon = ({ icon, cssClasses }) => (
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  cssClasses: PropTypes.string
+  cssClasses: PropTypes.string,
 }
 
 export default Icon

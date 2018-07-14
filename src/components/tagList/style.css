@@ -1,27 +1,3 @@
 .tag-list {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 90;
-}
-.tag-list-inside {
   position: relative;
-}
-.tag-list:after {
-  content: '';
-  display: block;
-  width: 12%;
-  height: 100%;
-  background: linear-gradient(to left, white , transparent);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-}
-
-@media screen and (min-width: 768px) {
-  .tag-list:after {
-    display: none;
-  }
 }
