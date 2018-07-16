@@ -5,7 +5,8 @@
     z-index: 90;
 }
 
-.bottom-bar:after {
+/* Tag List Bottom Bar */
+.tag-list-bottom-bar:after {
     content: '';
     display: block;
     width: 12%;
@@ -19,7 +20,7 @@
   }
   
   @media screen and (min-width: 768px) {
-    .bottom-bar:after {
+    .tag-list-bottom-bar:after {
       display: none;
     }
   }

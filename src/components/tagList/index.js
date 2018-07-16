@@ -21,7 +21,7 @@ class TagList extends Component {
     const { tags, filterByTag } = this.props
 
     return (
-      <BottomBar>
+      <BottomBar cssClasses='tag-list-bottom-bar'>
         <div className='tag-list whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0'>
           <button
             className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:text-base'
@@ -33,7 +33,7 @@ class TagList extends Component {
             return (
               <button
                 key={tag}
-                className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 ml-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:ml-3 md:text-base'
+                className='bg-white font-sans-bold text-grey-darkest uppercase text-sm py-1 px-2 ml-1 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:ml-3 md:text-base'
                 onClick={() => filterByTag(tag)}
               >
                 {tag}
