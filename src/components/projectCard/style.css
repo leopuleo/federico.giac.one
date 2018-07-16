@@ -22,7 +22,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .portfolio-card__horizontal .project-card-content {
+  .portfolio-card__horizontal .project-card-content {
       -ms-flex-pack: start;
     justify-content: flex-start;
   }
