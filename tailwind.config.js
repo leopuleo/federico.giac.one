@@ -825,6 +825,7 @@ module.exports = {
     negativeMargin: ['responsive'],
     opacity: ['responsive'],
     overflow: ['responsive'],
+    outline: false,
     padding: ['responsive'],
     pointerEvents: ['responsive'],
     position: ['responsive'],

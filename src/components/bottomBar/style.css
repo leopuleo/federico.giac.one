@@ -11,12 +11,15 @@
     display: block;
     width: 12%;
     height: 100%;
-    background: linear-gradient(to left, white , transparent);
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     pointer-events: none;
+    background: -moz-linear-gradient(right, rgba(255, 255, 255), rgba(255,255,255, 0));
+    background: -webkit-linear-gradient(right, rgb(255, 255, 255), rgba(255,255,255, 0));
+    background: linear-gradient(to left, rgba(255, 255, 255), rgba(255,255,255, 0));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='transparent',GradientType=1 );
   }
   
   @media screen and (min-width: 768px) {

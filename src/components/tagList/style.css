@@ -1,3 +1,6 @@
 .tag-list {
   position: relative;
 }
+.tag-list button {
+  outline: none!important;
+}
