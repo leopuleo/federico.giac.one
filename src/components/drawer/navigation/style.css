@@ -4,6 +4,10 @@
   transition: all .3s ease-in-out;
 }
 
+.menu-item .big-link {
+  text-transform: lowercase;
+}
+
 .drawer_open .menu-item {
   transform: scale(1) translateX(0px);
   opacity: 1;

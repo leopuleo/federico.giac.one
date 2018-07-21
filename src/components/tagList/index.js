@@ -15,20 +15,24 @@ class TagList extends Component {
   static propTypes = {
     tags: PropTypes.array.isRequired,
     filterByTag: PropTypes.func.isRequired,
-    activeTag: PropTypes.string
+    activeTag: PropTypes.string,
   }
 
   render () {
     const { tags, filterByTag, activeTag } = this.props
-    const activeClass = (tag) => {
-      return (tag === activeTag ? 'active bg-grey-darkest text-white' : 'bg-white text-grey-darkest')
+    const activeClass = tag => {
+      return tag === activeTag
+        ? 'active bg-grey-darkest text-white'
+        : 'bg-white text-grey-darkest'
     }
 
     return (
       <BottomBar cssClasses='tag-list-bottom-bar'>
         <div className='tag-list whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0'>
           <button
-            className={`${activeClass('')} font-sans-bold uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:text-base`}
+            className={`${activeClass(
+              ''
+            )} font-sans-bold uppercase text-sm py-1 px-2 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:text-base`}
             onClick={() => filterByTag('')}
           >
             Tutti i progetti
@@ -37,7 +41,9 @@ class TagList extends Component {
             return (
               <button
                 key={tag}
-                className={`${activeClass(tag)} font-sans-bold uppercase text-sm py-1 px-2 ml-1 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:ml-3 md:text-base`}
+                className={`${activeClass(
+                  tag
+                )} font-sans-bold uppercase text-sm py-1 px-2 ml-1 hover:bg-grey-darkest hover:text-white md:py-3 md:px-6 md:ml-3 md:text-base`}
                 onClick={() => filterByTag(tag)}
               >
                 {tag}

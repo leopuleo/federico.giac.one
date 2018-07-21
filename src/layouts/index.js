@@ -38,14 +38,17 @@ class Index extends Component {
     return (
       <div className={changeClass('root')}>
         <Helmet
-          title={this.props.data.site.siteMetadata.title}
+          title={this.props.data.siteMeta.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-        <Header title={this.props.data.site.siteMetadata.title} />
-        <Drawer />
+        <Header title={this.props.data.siteMeta.siteMetadata.title} />
+        <Drawer
+          navigation={this.props.data.navigation}
+          footer={this.props.data.footer}
+        />
         <div className='wrapper flex justify-center'>
           <div
             className='main-overlay'
@@ -81,11 +84,14 @@ export default connect(
 )(Index)
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
+  query MainSiteQuery {
+    siteMeta: site {
       siteMetadata {
         title
       }
+    }
+    footer: prismicDrawer {
+      ...footer
     }
   }
 `

@@ -14,14 +14,19 @@ const ProjectNavigation = ({ next, prev }) => (
             to={prev.uid}
             className='text-grey-darkest no-underline hover:no-underline text-xl inline-flex items-center'
           >
-            <Icon icon='arrow-slim-left' cssClasses='mr-1 md:text-4xl md:mr-3' />
+            <Icon
+              icon='arrow-slim-left'
+              cssClasses='mr-1 md:text-4xl md:mr-3'
+            />
             <span className='font-sans-bold text-lowercase hidden md:block'>
               <small className='font-sans text-grey text-xs block'>
                 Progetto precedente:{' '}
               </small>
               {prev.data.title.text}
             </span>
-            <span className='font-sans-regular text-lowercase text-sm md:hidden'>Prec.</span>
+            <span className='font-sans-regular text-lowercase text-sm md:hidden'>
+              Prec.
+            </span>
           </Link>
         )}
       </div>
@@ -45,8 +50,13 @@ const ProjectNavigation = ({ next, prev }) => (
               </small>
               {next.data.title.text}
             </span>
-            <span className='font-sans-regular text-lowercase text-sm md:hidden'>Succ.</span>
-            <Icon icon='arrow-slim-right' cssClasses='ml-1 md:text-4xl md:ml-3' />
+            <span className='font-sans-regular text-lowercase text-sm md:hidden'>
+              Succ.
+            </span>
+            <Icon
+              icon='arrow-slim-right'
+              cssClasses='ml-1 md:text-4xl md:ml-3'
+            />
           </Link>
         )}
       </div>
