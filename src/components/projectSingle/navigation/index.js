@@ -8,7 +8,7 @@ import BottomBar from '../../bottomBar'
 const ProjectNavigation = ({ next, prev }) => (
   <BottomBar cssClasses='project-bottom-bar'>
     <div className='project-navigation flex whitespace-no-wrap overflow-x-auto px-4 py-2 lg:whitespace-normal md:px-0 md:py-0 md:mt-10'>
-      <div className='project-prev w-1/3 flex flex-wrap justify-start md:w-1/2'>
+      <div className='project-prev w-1/3 flex flex-wrap justify-start text-left md:w-1/2'>
         {prev && (
           <Link
             to={prev.uid}
@@ -38,7 +38,7 @@ const ProjectNavigation = ({ next, prev }) => (
           <Icon icon='grid-nav' cssClasses='text-3xl' />
         </Link>
       </div>
-      <div className='project-next w-1/3 flex flex-wrap justify-end md:w-1/2'>
+      <div className='project-next w-1/3 flex flex-wrap justify-end text-right md:w-1/2'>
         {next && (
           <Link
             to={next.uid}
