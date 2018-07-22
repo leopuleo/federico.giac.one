@@ -5,6 +5,7 @@ import Shuffle from 'shufflejs'
 
 import { flatten, unique } from '../utils'
 
+import Main from '../components/main'
 import Title from '../components/title'
 import Content from '../components/content'
 import TagList from '../components/tagList'
@@ -78,43 +79,45 @@ class PortfolioArchive extends Component {
     }
 
     return (
-      <div className='portfolio-archive'>
-        <Title
-          title={page.data.title.text}
-          cssClasses='md:text-6xl lg:text-7xl'
-        />
-        <Content content={page.data.content.html} />
+      <Main>
+        <div className='portfolio-archive'>
+          <Title
+            title={page.data.title.text}
+            cssClasses='md:text-6xl lg:text-7xl'
+          />
+          <Content content={page.data.content.html} />
 
-        <TagList tags={getTagList(projects.edges)} />
+          <TagList tags={getTagList(projects.edges)} />
 
-        <div
-          ref={element => (this.element = element)}
-          className='portfolio-grid flex flex-wrap sm:-mx-2 lg:-mx-5'
-        >
-          {projects.edges.map((project, i) => {
-            const card = getCardFormat(
-              project.node.data.featured_image.localFile.childImageSharp,
-              i
-            )
+          <div
+            ref={element => (this.element = element)}
+            className='portfolio-grid flex flex-wrap sm:-mx-2 lg:-mx-5'
+          >
+            {projects.edges.map((project, i) => {
+              const card = getCardFormat(
+                project.node.data.featured_image.localFile.childImageSharp,
+                i
+              )
 
-            return (
-              <ProjectCard
-                key={project.node.uid}
-                link={project.node.uid}
-                title={project.node.data.title.text}
-                featuredImage={card.image}
-                featuredImageMobile={
-                  project.node.data.featured_image.localFile.childImageSharp
-                    .square
-                }
-                cssClass={card.cssClass}
-                excerpt={project.node.data.excerpt.html}
-                tags={project.node.tags}
-              />
-            )
-          })}
+              return (
+                <ProjectCard
+                  key={project.node.uid}
+                  link={project.node.uid}
+                  title={project.node.data.title.text}
+                  featuredImage={card.image}
+                  featuredImageMobile={
+                    project.node.data.featured_image.localFile.childImageSharp
+                      .square
+                  }
+                  cssClass={card.cssClass}
+                  excerpt={project.node.data.excerpt.html}
+                  tags={project.node.tags}
+                />
+              )
+            })}
+          </div>
         </div>
-      </div>
+      </Main>
     )
   }
 }

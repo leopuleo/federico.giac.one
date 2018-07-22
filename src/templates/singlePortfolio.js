@@ -1,16 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Main from '../components/main'
 import ProjectSingle from '../components/projectSingle'
 
 const SinglePortfolio = ({ data, pathContext }) => {
   const { prismicPortfolio: project } = data
   return (
-    <ProjectSingle
-      data={project.data}
-      next={pathContext.next}
-      prev={pathContext.prev}
-    />
+    <Main>
+      <ProjectSingle
+        data={project.data}
+        next={pathContext.next}
+        prev={pathContext.prev}
+      />
+    </Main>
   )
 }
 

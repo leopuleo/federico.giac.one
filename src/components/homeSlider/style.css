@@ -1,0 +1,62 @@
+/* Desktop */
+@media screen and (min-width: 992px) {
+    .home-slider {
+        margin-left: 90px;
+    }
+}
+
+.slick-arrow {
+    z-index: 9999;
+}
+
+.slick-prev {
+    top: 50%;
+    left: 36px;
+    margin-top: -24px;
+}
+
+.slick-next {
+    top: 50%;
+    right: 36px;
+    margin-top: -24px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.slick-dots li  {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.slick-dots button {
+    text-indent: -99999px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.slick-dots button:focus::before,
+.slick-dots button:active::before,
+.slick-dots button:hover::before,
+.slick-dots .slick-active button::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
