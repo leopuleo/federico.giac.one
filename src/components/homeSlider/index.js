@@ -30,7 +30,7 @@ const HomeSlider = ({ slides }) => {
   const settings = {
     dots: true,
     infinite: true,
-    lazyLoad: true,
+    lazyLoad: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
