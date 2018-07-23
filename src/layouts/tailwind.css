@@ -3207,6 +3207,10 @@ button,
   font-size: 5rem;
 }
 
+.text-8xl {
+  font-size: 6rem;
+}
+
 .italic {
   font-style: italic;
 }
@@ -6079,6 +6083,10 @@ button,
 
   .sm\:text-7xl {
     font-size: 5rem;
+  }
+
+  .sm\:text-8xl {
+    font-size: 6rem;
   }
 
   .sm\:italic {
@@ -8956,6 +8964,10 @@ button,
     font-size: 5rem;
   }
 
+  .md\:text-8xl {
+    font-size: 6rem;
+  }
+
   .md\:italic {
     font-style: italic;
   }
@@ -11829,6 +11841,10 @@ button,
 
   .lg\:text-7xl {
     font-size: 5rem;
+  }
+
+  .lg\:text-8xl {
+    font-size: 6rem;
   }
 
   .lg\:italic {
@@ -14706,6 +14722,10 @@ button,
     font-size: 5rem;
   }
 
+  .xl\:text-8xl {
+    font-size: 6rem;
+  }
+
   .xl\:italic {
     font-style: italic;
   }
@@ -17579,6 +17599,10 @@ button,
 
   .xxl\:text-7xl {
     font-size: 5rem;
+  }
+
+  .xxl\:text-8xl {
+    font-size: 6rem;
   }
 
   .xxl\:italic {

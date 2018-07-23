@@ -227,6 +227,7 @@ module.exports = {
     '5xl': '3rem', // 48px
     '6xl': '4rem', // 65px
     '7xl': '5rem', // 80px
+    '8xl': '6rem', // 80px
   },
 
   /*

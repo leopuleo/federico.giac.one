@@ -13,7 +13,7 @@ const PrevArrow = props => {
   const { className, onClick } = props
   return (
     <div className={`${className} absolute p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-left' cssClasses='text-3xl text-grey-lightest' />
+      <Icon icon='arrow-slim-left' cssClasses='text-4xl text-white' />
     </div>
   )
 }
@@ -22,7 +22,7 @@ const NextArrow = props => {
   const { className, onClick } = props
   return (
     <div className={`${className} absolute p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-right' cssClasses='text-3xl text-grey-lightest' />
+      <Icon icon='arrow-slim-right' cssClasses='text-4xl text-white' />
     </div>
   )
 }
@@ -40,14 +40,17 @@ const HomeSlider = ({ slides }) => {
     fade: true,
     swipeToSlide: true,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
   }
   return (
     <Slider className='home-slider relative' {...settings}>
       {slides.map(slide => {
         return (
           <div
-            key={slide.slider_image.localFile.childImageSharp.horizontal.originalName}
+            key={
+              slide.slider_image.localFile.childImageSharp.horizontal
+                .originalName
+            }
             className='slide relative'
           >
             <Link to={slide.slider_link.url} className='no-underline'>
@@ -57,11 +60,22 @@ const HomeSlider = ({ slides }) => {
                 className='slide-image w-screen h-screen'
                 outerWrapperClassName='slide-image-wrapper'
               />
-              <div className='slide-content absolute px-8 pr-4 py-4 text-lowercase font-sans text-white text-xl leading-none'>
-                <h2 className='slide-title'>
-                  {slide.slider_title}
-                  <Icon icon='arrow-slim-right' cssClasses='text-xl pl-2' />
-                </h2>
+              <div className='slide-content absolute px-6 py-8 md:px-10 md:py-10 text-white md:leading-none'>
+                <div className='slide-content-inside pt-14 md:pt-16 md:px-10 xl:pt-16 xl:pl-16 xl:w-4/5 xxl:w-2/3 xxl:pt-16 xxl:pl-16'>
+                  {slide.slider_excerpt && (
+                    <h2 className='slide-title text-lowercase font-accent-bold mb-4 md:mb-6 text-4xl md:text-6xl xl:text-7xl xxl:text-8xl'>
+                      {slide.slider_title}
+                    </h2>
+                  )}
+                  {slide.slider_excerpt && (
+                    <p className='slide-excerpt leading-normal mb:leading-tight mb-6 md:mb-8 text-xl xxl:mb-10 xxl:text-2xl'>
+                      {slide.slider_excerpt}
+                    </p>
+                  )}
+                  <button className='font-sans-bold uppercase text-sm py-1 px-2 bg-transparent border-2 border-white text-white py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
+                    Leggi di più
+                  </button>
+                </div>
               </div>
             </Link>
           </div>

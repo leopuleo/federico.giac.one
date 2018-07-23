@@ -22,6 +22,7 @@ export const pageQuery = graphql`
       data {
         slider {
           slider_title
+          slider_excerpt
           slider_link {
             url
           }
