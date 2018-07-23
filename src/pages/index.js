@@ -21,6 +21,10 @@ export const pageQuery = graphql`
     home: prismicHome {
       data {
         slider {
+          slider_title
+          slider_link {
+            url
+          }
           slider_image {
             localFile {
               childImageSharp {

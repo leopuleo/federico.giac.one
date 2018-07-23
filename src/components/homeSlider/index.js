@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import Img from 'gatsby-image'
+import Link from 'gatsby-link'
 
 import Icon from '../icon'
 
@@ -11,8 +12,8 @@ import 'slick-carousel/slick/slick.css'
 const PrevArrow = props => {
   const { className, onClick } = props
   return (
-    <div className={`${className} absolute`} onClick={onClick}>
-      <Icon icon='arrow-slim-left' cssClasses='text-5xl text-grey-lightest' />
+    <div className={`${className} absolute p-2`} onClick={onClick}>
+      <Icon icon='arrow-slim-left' cssClasses='text-3xl text-grey-lightest' />
     </div>
   )
 }
@@ -20,8 +21,8 @@ const PrevArrow = props => {
 const NextArrow = props => {
   const { className, onClick } = props
   return (
-    <div className={`${className} absolute`} onClick={onClick}>
-      <Icon icon='arrow-slim-right' cssClasses='text-5xl text-grey-lightest' />
+    <div className={`${className} absolute p-2`} onClick={onClick}>
+      <Icon icon='arrow-slim-right' cssClasses='text-3xl text-grey-lightest' />
     </div>
   )
 }
@@ -42,16 +43,28 @@ const HomeSlider = ({ slides }) => {
     prevArrow: <PrevArrow />
   }
   return (
-    <Slider className='home-slider' {...settings}>
+    <Slider className='home-slider relative' {...settings}>
       {slides.map(slide => {
         return (
-          <Img
+          <div
             key={slide.slider_image.localFile.childImageSharp.horizontal.originalName}
-            sizes={slide.slider_image.localFile.childImageSharp.horizontal}
-            fadeIn
-            className='slide w-screen h-screen'
-            outerWrapperClassName='slide-wrapper'
-          />
+            className='slide relative'
+          >
+            <Link to={slide.slider_link.url} className='no-underline'>
+              <Img
+                sizes={slide.slider_image.localFile.childImageSharp.horizontal}
+                fadeIn
+                className='slide-image w-screen h-screen'
+                outerWrapperClassName='slide-image-wrapper'
+              />
+              <div className='slide-content absolute px-8 pr-4 py-4 text-lowercase font-sans text-white text-xl leading-none'>
+                <h2 className='slide-title'>
+                  {slide.slider_title}
+                  <Icon icon='arrow-slim-right' cssClasses='text-xl pl-2' />
+                </h2>
+              </div>
+            </Link>
+          </div>
         )
       })}
     </Slider>

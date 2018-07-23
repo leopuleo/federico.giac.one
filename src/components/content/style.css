@@ -2,6 +2,32 @@
   margin-bottom: 1rem;
 }
 
+.entry-content strong, .entry-content b {
+  font-family: 'titilliumbold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  color: #161616;
+}
+
+.entry-content a {
+  text-decoration: none;
+}
+
+.entry-content a:hover {
+  text-decoration: underline;
+}
+
+.entry-content h1, 
+.entry-content h2, 
+.entry-content h3, 
+.entry-content h4, 
+.entry-content h5, 
+.entry-content h6 {
+  font-weight: normal;
+  font-style: normal;
+}
+
 [data-oembed-type="video"] {
   position: relative;
   display: block;

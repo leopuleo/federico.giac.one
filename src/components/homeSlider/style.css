@@ -5,19 +5,40 @@
     }
 }
 
-.slick-arrow {
-    z-index: 9999;
+/* Slick Slider */
+.slick-active {
+    z-index: 1;
 }
 
+.slide-content {
+    bottom: 4em;
+    right: 3em;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    z-index: auto;
+}
+
+.slide-title {
+    font-weight: normal;
+    font-style: normal;
+}
+
+.slick-arrow {
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+}
+
+/* Slick Slider - Controllers */
 .slick-prev {
     top: 50%;
-    left: 36px;
+    left: 3em;
     margin-top: -24px;
 }
 
 .slick-next {
     top: 50%;
-    right: 36px;
+    right: 3em;
     margin-top: -24px;
 }
 
