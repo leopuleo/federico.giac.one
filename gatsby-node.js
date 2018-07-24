@@ -49,11 +49,11 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       rootLang = '/en/'
     }
 
-    const prev = index === 0 ? false : projects[index - 1].node
-    const next = index === projects.length - 1 ? false : projects[index + 1].node
+    const prev = index === 0 ? null : projects[index - 1].node
+    const next = index === projects.length - 1 ? null : projects[index + 1].node
 
     createPage({
-      path: `${rootLang}portfolio/${node.uid}`,
+      path: `${rootLang}portfolio/${node.uid}/`,
       component: portfolioTemplate,
       context: {
         uid: node.uid,
@@ -71,7 +71,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     }
 
     createPage({
-      path: `${rootLang}${edge.node.uid}`,
+      path: `${rootLang}${edge.node.uid}/`,
       component: pageTemplate,
       context: {
         uid: edge.node.uid,
