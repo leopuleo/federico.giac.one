@@ -7,17 +7,18 @@ import Footer from './footer'
 
 import './style.css'
 
-const Drawer = ({ footer }) => (
+const Drawer = ({ navigation, footer }) => (
   <div className='drawer h-screen w-screen fixed px-5 lg:px-11 lg:py-11 lg:pl-14 bg-white font-sans'>
     <div className='drawer-toggle fixed hidden lg:inline-block'>
       <Hamburger />
     </div>
-    <Navigation />
+    <Navigation navigation={navigation} />
     <Footer footer={footer} />
   </div>
 )
 
 Drawer.propTypes = {
+  navigation: PropTypes.object,
   footer: PropTypes.object,
 }
 

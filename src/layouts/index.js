@@ -91,5 +91,8 @@ export const query = graphql`
     footer: prismicDrawer {
       ...footer
     }
+    navigation: prismicDrawer {
+      ...navigation
+    }
   }
 `
