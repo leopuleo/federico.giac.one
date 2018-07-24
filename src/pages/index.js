@@ -25,6 +25,9 @@ export const pageQuery = graphql`
           slider_excerpt
           slider_link {
             url
+            raw {
+              link_type
+            }
           }
           slider_image {
             localFile {
