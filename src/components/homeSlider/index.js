@@ -42,6 +42,23 @@ const HomeSlider = ({ slides }) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   }
+
+  const SliderLink = ({ children, link }) => {
+    if (link) {
+      return (
+        <Link to={link.url} className='no-underline'>
+          {children}
+        </Link>
+      )
+    } else {
+      return (
+        <div className='no-link'>
+          {children}
+        </div>
+      )
+    }
+  }
+
   return (
     <Slider className='home-slider relative' {...settings}>
       {slides.map(slide => {
@@ -53,7 +70,7 @@ const HomeSlider = ({ slides }) => {
             }
             className='slide relative'
           >
-            <Link to={slide.slider_link.url} className='no-underline'>
+            <SliderLink link={slide.slider_link}>
               <Img
                 sizes={slide.slider_image.localFile.childImageSharp.horizontal}
                 fadeIn
@@ -72,12 +89,14 @@ const HomeSlider = ({ slides }) => {
                       {slide.slider_excerpt}
                     </p>
                   )}
-                  <button className='font-sans-bold uppercase text-sm py-1 px-2 bg-transparent border-2 border-white text-white py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
-                    Leggi di più
-                  </button>
+                  {slide.slider_link &&
+                    <button className='font-sans-bold uppercase text-sm py-1 px-2 bg-transparent border-2 border-white text-white py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
+                      Leggi di più
+                    </button>
+                  }
                 </div>
               </div>
-            </Link>
+            </SliderLink>
           </div>
         )
       })}
