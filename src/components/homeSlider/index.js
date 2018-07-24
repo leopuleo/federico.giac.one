@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import Img from 'gatsby-image'
-import Link from 'gatsby-link'
 
+import Link from '../link'
 import Icon from '../icon'
 
 import './style.css'
@@ -45,17 +45,21 @@ const HomeSlider = ({ slides }) => {
 
   const SliderLink = ({ children, link }) => {
     if (link) {
-      return (
-        <Link to={link.url} className='no-underline'>
-          {children}
-        </Link>
-      )
+      if (link.raw.link_type === 'Document') {
+        return (
+          <Link to={link.url} className='no-underline'>
+            {children}
+          </Link>
+        )
+      } else {
+        return (
+          <Link href={link.url} className='no-underline'>
+            {children}
+          </Link>
+        )
+      }
     } else {
-      return (
-        <div className='no-link'>
-          {children}
-        </div>
-      )
+      return <div className='no-link'>{children}</div>
     }
   }
 
@@ -89,11 +93,11 @@ const HomeSlider = ({ slides }) => {
                       {slide.slider_excerpt}
                     </p>
                   )}
-                  {slide.slider_link &&
+                  {slide.slider_link && (
                     <button className='font-sans-bold uppercase text-sm py-1 px-2 bg-transparent border-2 border-white text-white py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
                       Leggi di più
                     </button>
-                  }
+                  )}
                 </div>
               </div>
             </SliderLink>
