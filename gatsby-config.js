@@ -21,6 +21,8 @@ module.exports = {
           }
 
           switch (doc.type) {
+            case 'home':
+              return `${rootLang}`
             case 'portfolio':
               return `${rootLang}portfolio/${doc.uid}/`
             default:
