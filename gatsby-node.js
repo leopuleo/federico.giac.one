@@ -3,6 +3,38 @@ const path = require('path')
 exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
+  // Pagine default
+  const pages = await graphql(`
+    {
+      allPrismicPage {
+        edges {
+          node {
+            id
+            uid
+            lang
+          }
+        }
+      }
+    }
+  `)
+
+  const pageTemplate = path.resolve('src/templates/singlePage.js')
+  pages.data.allPrismicPage.edges.forEach(edge => {
+    let rootLang = '/'
+    if (edge.node.lang === 'en-gb') {
+      rootLang = '/en/'
+    }
+
+    createPage({
+      path: `${rootLang}${edge.node.uid}/`,
+      component: pageTemplate,
+      context: {
+        uid: edge.node.uid,
+      },
+    })
+  })
+
+  // Portfolio
   const portfolio = await graphql(`
     {
       allPrismicPortfolio(
@@ -24,25 +56,9 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     }
   `)
 
-  const pages = await graphql(`
-    {
-      allPrismicPage {
-        edges {
-          node {
-            id
-            uid
-            lang
-          }
-        }
-      }
-    }
-  `)
-
-  const portfolioTemplate = path.resolve('src/templates/singlePortfolio.js')
-  const pageTemplate = path.resolve('src/templates/singlePage.js')
-
-  // Portfolio
   const projects = portfolio.data.allPrismicPortfolio.edges
+  const portfolioTemplate = path.resolve('src/templates/singlePortfolio.js')
+
   projects.forEach(({ node }, index) => {
     let rootLang = '/'
     if (node.lang === 'en-gb') {
@@ -63,20 +79,15 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     })
   })
 
-  // Pagine default
-  pages.data.allPrismicPage.edges.forEach(edge => {
-    let rootLang = '/'
-    if (edge.node.lang === 'en-gb') {
-      rootLang = '/en/'
-    }
-
-    createPage({
-      path: `${rootLang}${edge.node.uid}/`,
-      component: pageTemplate,
-      context: {
-        uid: edge.node.uid,
-      },
-    })
+  // About
+  createPage({
+    path: '/chi-sono/',
+    component: path.resolve(`./src/templates/about.js`),
+    // The context is passed as props to the component as well
+    // as into the component's GraphQL query.
+    context: {
+      uid: 'chi-sono',
+    },
   })
 }
 
