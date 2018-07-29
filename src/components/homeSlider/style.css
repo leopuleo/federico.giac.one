@@ -1,5 +1,5 @@
 .home-slider {
-    margin-top: -46px;
+    margin-top: -59px;
 }
 
 /* Slick Slider */
@@ -27,18 +27,18 @@
 
 /* Slick Slider - Controllers */
 .slick-prev {
-    bottom: 25px;
+    bottom: 30px;
     left: 1em;
 }
 
 .slick-next {
-    bottom: 25px;
+    bottom: 30px;
     right: 1em;
 }
 
 .slick-dots {
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
     left: 0;
     right: 0;
     list-style: none;

@@ -12,8 +12,8 @@ import 'slick-carousel/slick/slick.css'
 const PrevArrow = props => {
   const { className, onClick } = props
   return (
-    <div className={`${className} absolute p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-left' cssClasses='text-4xl text-white' />
+    <div className={`${className} absolute md:p-2`} onClick={onClick}>
+      <Icon icon='arrow-slim-left' cssClasses='text-2xl text-white md:text-4xl' />
     </div>
   )
 }
@@ -21,8 +21,8 @@ const PrevArrow = props => {
 const NextArrow = props => {
   const { className, onClick } = props
   return (
-    <div className={`${className} absolute p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-right' cssClasses='text-4xl text-white' />
+    <div className={`${className} absolute md:p-2`} onClick={onClick}>
+      <Icon icon='arrow-slim-right' cssClasses='text-2xl text-white md:text-4xl' />
     </div>
   )
 }
@@ -83,8 +83,8 @@ const HomeSlider = ({ slides }) => {
               />
               <div className='slide-content absolute px-6 py-8 md:px-10 md:py-10 text-white md:leading-none'>
                 <div className='slide-content-inside pt-14 md:pt-16 md:px-10 xl:pt-16 xl:pl-16 xl:w-4/5 xxl:w-2/3 xxl:pt-16 xxl:pl-16'>
-                  {slide.slider_excerpt && (
-                    <h2 className='slide-title text-lowercase font-accent-bold mb-4 md:mb-6 text-4xl md:text-6xl xl:text-7xl xxl:text-8xl'>
+                  {slide.slider_title && (
+                    <h2 className='slide-title text-lowercase font-accent-bold leading-none mb-4 md:mb-6 text-4xl md:text-6xl xl:text-7xl xxl:text-8xl'>
                       {slide.slider_title}
                     </h2>
                   )}
