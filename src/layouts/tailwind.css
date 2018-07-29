@@ -682,7 +682,7 @@ button,
 }
 
 .bg-grey-lighter {
-  background-color: #f1f5f8;
+  background-color: #d2d2d2;
 }
 
 .bg-grey-lightest {
@@ -710,7 +710,7 @@ button,
 }
 
 .hover\:bg-grey-lighter:hover {
-  background-color: #f1f5f8;
+  background-color: #d2d2d2;
 }
 
 .hover\:bg-grey-lightest:hover {
@@ -802,7 +802,7 @@ button,
 }
 
 .border-grey-lighter {
-  border-color: #f1f5f8;
+  border-color: #d2d2d2;
 }
 
 .border-grey-lightest {
@@ -830,7 +830,7 @@ button,
 }
 
 .hover\:border-grey-lighter:hover {
-  border-color: #f1f5f8;
+  border-color: #d2d2d2;
 }
 
 .hover\:border-grey-lightest:hover {
@@ -3124,7 +3124,7 @@ button,
 }
 
 .text-grey-lighter {
-  color: #f1f5f8;
+  color: #d2d2d2;
 }
 
 .text-grey-lightest {
@@ -3152,7 +3152,7 @@ button,
 }
 
 .hover\:text-grey-lighter:hover {
-  color: #f1f5f8;
+  color: #d2d2d2;
 }
 
 .hover\:text-grey-lightest:hover {
@@ -3568,7 +3568,7 @@ button,
   }
 
   .sm\:bg-grey-lighter {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .sm\:bg-grey-lightest {
@@ -3596,7 +3596,7 @@ button,
   }
 
   .sm\:hover\:bg-grey-lighter:hover {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .sm\:hover\:bg-grey-lightest:hover {
@@ -3688,7 +3688,7 @@ button,
   }
 
   .sm\:border-grey-lighter {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .sm\:border-grey-lightest {
@@ -3716,7 +3716,7 @@ button,
   }
 
   .sm\:hover\:border-grey-lighter:hover {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .sm\:hover\:border-grey-lightest:hover {
@@ -6002,7 +6002,7 @@ button,
   }
 
   .sm\:text-grey-lighter {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .sm\:text-grey-lightest {
@@ -6030,7 +6030,7 @@ button,
   }
 
   .sm\:hover\:text-grey-lighter:hover {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .sm\:hover\:text-grey-lightest:hover {
@@ -6447,7 +6447,7 @@ button,
   }
 
   .md\:bg-grey-lighter {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .md\:bg-grey-lightest {
@@ -6475,7 +6475,7 @@ button,
   }
 
   .md\:hover\:bg-grey-lighter:hover {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .md\:hover\:bg-grey-lightest:hover {
@@ -6567,7 +6567,7 @@ button,
   }
 
   .md\:border-grey-lighter {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .md\:border-grey-lightest {
@@ -6595,7 +6595,7 @@ button,
   }
 
   .md\:hover\:border-grey-lighter:hover {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .md\:hover\:border-grey-lightest:hover {
@@ -8881,7 +8881,7 @@ button,
   }
 
   .md\:text-grey-lighter {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .md\:text-grey-lightest {
@@ -8909,7 +8909,7 @@ button,
   }
 
   .md\:hover\:text-grey-lighter:hover {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .md\:hover\:text-grey-lightest:hover {
@@ -9326,7 +9326,7 @@ button,
   }
 
   .lg\:bg-grey-lighter {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .lg\:bg-grey-lightest {
@@ -9354,7 +9354,7 @@ button,
   }
 
   .lg\:hover\:bg-grey-lighter:hover {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .lg\:hover\:bg-grey-lightest:hover {
@@ -9446,7 +9446,7 @@ button,
   }
 
   .lg\:border-grey-lighter {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .lg\:border-grey-lightest {
@@ -9474,7 +9474,7 @@ button,
   }
 
   .lg\:hover\:border-grey-lighter:hover {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .lg\:hover\:border-grey-lightest:hover {
@@ -11760,7 +11760,7 @@ button,
   }
 
   .lg\:text-grey-lighter {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .lg\:text-grey-lightest {
@@ -11788,7 +11788,7 @@ button,
   }
 
   .lg\:hover\:text-grey-lighter:hover {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .lg\:hover\:text-grey-lightest:hover {
@@ -12205,7 +12205,7 @@ button,
   }
 
   .xl\:bg-grey-lighter {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .xl\:bg-grey-lightest {
@@ -12233,7 +12233,7 @@ button,
   }
 
   .xl\:hover\:bg-grey-lighter:hover {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .xl\:hover\:bg-grey-lightest:hover {
@@ -12325,7 +12325,7 @@ button,
   }
 
   .xl\:border-grey-lighter {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .xl\:border-grey-lightest {
@@ -12353,7 +12353,7 @@ button,
   }
 
   .xl\:hover\:border-grey-lighter:hover {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .xl\:hover\:border-grey-lightest:hover {
@@ -14639,7 +14639,7 @@ button,
   }
 
   .xl\:text-grey-lighter {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .xl\:text-grey-lightest {
@@ -14667,7 +14667,7 @@ button,
   }
 
   .xl\:hover\:text-grey-lighter:hover {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .xl\:hover\:text-grey-lightest:hover {
@@ -15084,7 +15084,7 @@ button,
   }
 
   .xxl\:bg-grey-lighter {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .xxl\:bg-grey-lightest {
@@ -15112,7 +15112,7 @@ button,
   }
 
   .xxl\:hover\:bg-grey-lighter:hover {
-    background-color: #f1f5f8;
+    background-color: #d2d2d2;
   }
 
   .xxl\:hover\:bg-grey-lightest:hover {
@@ -15204,7 +15204,7 @@ button,
   }
 
   .xxl\:border-grey-lighter {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .xxl\:border-grey-lightest {
@@ -15232,7 +15232,7 @@ button,
   }
 
   .xxl\:hover\:border-grey-lighter:hover {
-    border-color: #f1f5f8;
+    border-color: #d2d2d2;
   }
 
   .xxl\:hover\:border-grey-lightest:hover {
@@ -17518,7 +17518,7 @@ button,
   }
 
   .xxl\:text-grey-lighter {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .xxl\:text-grey-lightest {
@@ -17546,7 +17546,7 @@ button,
   }
 
   .xxl\:hover\:text-grey-lighter:hover {
-    color: #f1f5f8;
+    color: #d2d2d2;
   }
 
   .xxl\:hover\:text-grey-lightest:hover {

@@ -25,7 +25,7 @@ const About = ({ data, pathContext }) => {
                     sizes={slice.primary.image.localFile.childImageSharp.sizes}
                     fadeIn
                     className='image'
-                    outerWrapperClassName='image-wrapper'
+                    outerWrapperClassName='image-wrapper xl:w-2/3'
                     alt={slice.primary.image.alt}
                   />
                 )
