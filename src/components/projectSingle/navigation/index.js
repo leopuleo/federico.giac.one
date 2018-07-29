@@ -11,7 +11,7 @@ const ProjectNavigation = ({ next, prev }) => (
       <div className='project-prev w-1/3 flex flex-wrap justify-start text-left md:w-1/2'>
         {prev && (
           <Link
-            to={prev.uid}
+            to={prev.fields.slug}
             className='text-grey-darkest no-underline hover:no-underline text-xl inline-flex items-center'
           >
             <Icon
@@ -41,7 +41,7 @@ const ProjectNavigation = ({ next, prev }) => (
       <div className='project-next w-1/3 flex flex-wrap justify-end text-right md:w-1/2'>
         {next && (
           <Link
-            to={next.uid}
+            to={next.fields.slug}
             className='text-grey-darkest no-underline hover:no-underline text-xl inline-flex items-center'
           >
             <span className='font-sans-bold text-lowercase hidden md:block'>
@@ -65,8 +65,8 @@ const ProjectNavigation = ({ next, prev }) => (
 )
 
 ProjectNavigation.propTypes = {
-  next: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
-  prev: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]).isRequired,
+  next: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+  prev: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
 }
 
 export default ProjectNavigation

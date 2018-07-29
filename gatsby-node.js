@@ -45,6 +45,9 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             id
             uid
             lang
+            fields {
+              slug
+            }
             data {
               title {
                 text
@@ -89,6 +92,25 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       uid: 'chi-sono',
     },
   })
+}
+
+// Aggiunto slug per con trailslash per navigazione tra i progetti
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+
+  let rootLang = '/'
+  if (node.lang === 'en-gb') {
+    rootLang = '/en/'
+  }
+
+  if (node.internal.type === `PrismicPortfolio`) {
+    const slug = `${rootLang}portfolio/${node.uid}/`
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {

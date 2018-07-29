@@ -102,7 +102,7 @@ class PortfolioArchive extends Component {
               return (
                 <ProjectCard
                   key={project.node.uid}
-                  link={project.node.uid}
+                  link={project.node.fields.slug}
                   title={project.node.data.title.text}
                   featuredImage={card.image}
                   featuredImageMobile={
@@ -150,6 +150,9 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          fields {
+            slug
+          }
           uid
           tags
           data {
