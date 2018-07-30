@@ -35,6 +35,9 @@ jobs:
     docker:
       - image: circleci/node:8.11.1
 
+    environment:
+      SITE_DOMAIN: "https://federico.giac.one"
+
     working_directory: ~/repo
 
     steps:
