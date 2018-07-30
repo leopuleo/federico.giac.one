@@ -35,6 +35,9 @@ export const pageQuery = graphql`
           html
           text
         }
+        featured_image {
+          url
+        }
         gallery {
           gallery_image {
             localFile {
