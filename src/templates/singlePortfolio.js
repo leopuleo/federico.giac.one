@@ -36,7 +36,21 @@ export const pageQuery = graphql`
           text
         }
         featured_image {
-          url
+          localFile {
+            childImageSharp {
+              resize(
+                width: 1200
+                height: 630
+                quality: 70
+                cropFocus: CENTER
+                jpegProgressive: true
+              ) {
+                width
+                height
+                src
+              }
+            }
+          }
         }
         gallery {
           gallery_image {

@@ -18,7 +18,9 @@ const Seo = ({ title, description, image }) => {
       <meta property='og:description' content={seoDesc} />
       <meta property='og:type' content='article' />
       <meta property='og:site_name' content={siteName} />
-      <meta property='og:image' content={image} />
+      <meta property='og:image' content={image.src} />
+      <meta property='og:image:width' content={image.width} />
+      <meta property='og:image:height' content={image.height} />
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content={seoTitle} />
       <meta name='twitter:description' content={seoDesc} />
