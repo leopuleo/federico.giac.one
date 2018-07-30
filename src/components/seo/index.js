@@ -5,10 +5,22 @@ import PropTypes from 'prop-types'
 import { createExcerpt } from '../../utils'
 
 const Seo = ({ title, description, image }) => {
+  const siteName = 'Federico Giacone'
+  const separator = ' - '
+  const seoTitle = title + separator + siteName
+  const seoDesc = createExcerpt(description, 250)
+
   return (
     <Helmet>
-      <title>{title + ' - Federico Giacone'}</title>
-      <meta name='description' content={createExcerpt(description, 250)} />
+      <title>{seoTitle}</title>
+      <meta name='description' content={seoDesc} />
+      <meta property='og:title' content={seoTitle} />
+      <meta property='og:description' content={seoDesc} />
+      <meta property='og:type' content='article' />
+      <meta property='og:site_name' content={siteName} />
+      <meta name='twitter:card' content='summary_large_image' />
+      <meta name='twitter:title' content={seoTitle} />
+      <meta name='twitter:description' content={seoDesc} />
     </Helmet>
   )
 }

@@ -39,10 +39,6 @@ class Index extends Component {
       <div className={changeClass('root')}>
         <Helmet
           title={this.props.data.siteMeta.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
         />
         <Header title={this.props.data.siteMeta.siteMetadata.title} />
         <Drawer
