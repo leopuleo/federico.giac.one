@@ -18,7 +18,7 @@ const Seo = ({ title, description, image }) => {
       <meta property='og:description' content={seoDesc} />
       <meta property='og:type' content='article' />
       <meta property='og:site_name' content={siteName} />
-      <meta property='og:image' content={image.src} />
+      <meta property='og:image' content={`${process.env.SITE_DOMAIN}${image.src}`} />
       <meta property='og:image:width' content={image.width} />
       <meta property='og:image:height' content={image.height} />
       <meta name='twitter:card' content='summary_large_image' />
@@ -31,7 +31,7 @@ const Seo = ({ title, description, image }) => {
 Seo.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.object
 }
 
 export default Seo
