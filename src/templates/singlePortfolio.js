@@ -33,6 +33,7 @@ export const pageQuery = graphql`
         }
         content {
           html
+          text
         }
         gallery {
           gallery_image {
