@@ -3,11 +3,9 @@
 }
 
 .entry-content strong, .entry-content b {
-  font-family: 'titilliumbold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
   font-weight: normal;
-  color: #161616;
 }
 
 .entry-content a {

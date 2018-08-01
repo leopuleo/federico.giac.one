@@ -30,7 +30,18 @@ module.exports = {
           }
         },
         htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
-          // Your HTML serializer
+          switch (element.type) {
+            case 'strong':
+              return `<strong class='font-sans-bold text-grey-darkest'>${children.join('')}</strong>`
+
+            case 'em':
+              return `<em class='font-sans-italic'>${children.join('')}</em>`
+
+            case 'hyperlink':
+              const target = element.data.target ? `target="${element.data.target}" rel="noopener"` : ''
+              const linkUrl = element.data.url
+              return `<a class='text-grey-darkest underline' ${target} href="${linkUrl}">${children.join('')}</a>`
+          }
         },
       },
     },
