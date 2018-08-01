@@ -69,8 +69,7 @@ const HomeSlider = ({ slides }) => {
         return (
           <div
             key={
-              slide.slider_image.localFile.childImageSharp.horizontal
-                .originalName
+              slide.slider_image.localFile.childImageSharp.horizontal.originalName
             }
             className='slide relative'
           >
@@ -94,7 +93,7 @@ const HomeSlider = ({ slides }) => {
                     </p>
                   )}
                   {slide.slider_link && (
-                    <button className='font-sans-bold uppercase text-sm py-1 px-2 bg-transparent border-2 border-white text-white py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
+                    <button className='font-sans-bold uppercase text-sm bg-transparent border-2 border-white text-white rounded-full py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
                       Leggi di più
                     </button>
                   )}

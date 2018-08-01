@@ -12,11 +12,11 @@ const ProjectNavigation = ({ next, prev }) => (
         {prev && (
           <Link
             to={prev.fields.slug}
-            className='text-grey-darkest no-underline hover:no-underline text-xl inline-flex items-center'
+            className='text-grey-darkest bg-transparent no-underline text-xl inline-flex items-center md:pl-6 md:pr-8 md:py-3 md:border-2 md:border-grey-lighter md:rounded-full hover:no-underline'
           >
             <Icon
               icon='arrow-slim-left'
-              cssClasses='mr-1 md:text-4xl md:mr-3'
+              cssClasses='mr-1 md:text-xl md:mr-3'
             />
             <span className='font-sans-bold text-lowercase hidden md:block'>
               <small className='font-sans text-grey text-xs block'>
@@ -42,7 +42,7 @@ const ProjectNavigation = ({ next, prev }) => (
         {next && (
           <Link
             to={next.fields.slug}
-            className='text-grey-darkest no-underline hover:no-underline text-xl inline-flex items-center'
+            className='text-grey-darkest no-underline text-xl inline-flex items-center md:pr-6 md:pl-8 md:py-3 md:border-2 md:border-grey-lighter md:rounded-full hover:no-underline'
           >
             <span className='font-sans-bold text-lowercase hidden md:block'>
               <small className='font-sans text-grey text-xs block'>
@@ -55,7 +55,7 @@ const ProjectNavigation = ({ next, prev }) => (
             </span>
             <Icon
               icon='arrow-slim-right'
-              cssClasses='ml-1 md:text-4xl md:ml-3'
+              cssClasses='ml-1 md:text-xl md:ml-3'
             />
           </Link>
         )}
