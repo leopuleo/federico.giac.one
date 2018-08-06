@@ -6,6 +6,7 @@ import { createExcerpt } from '../../utils'
 
 const Seo = ({ title, description, image }) => {
   const siteName = 'Federico Giacone'
+  const siteDomain = 'https://federico.giac.one'
   const separator = ' - '
   const seoTitle = title + separator + siteName
   const seoDesc = createExcerpt(description, 250)
@@ -18,7 +19,7 @@ const Seo = ({ title, description, image }) => {
       <meta property='og:description' content={seoDesc} />
       <meta property='og:type' content='article' />
       <meta property='og:site_name' content={siteName} />
-      <meta property='og:image' content={`${process.env.SITE_DOMAIN}${image.src}`} />
+      <meta property='og:image' content={`${siteDomain}${image.src}`} />
       <meta property='og:image:width' content={image.width} />
       <meta property='og:image:height' content={image.height} />
       <meta name='twitter:card' content='summary_large_image' />
