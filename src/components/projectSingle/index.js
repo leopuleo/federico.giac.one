@@ -9,7 +9,11 @@ import ProjectNavigation from './navigation'
 
 const ProjectSingle = ({ data, next, prev }) => (
   <div className='project-single'>
-    <Seo title={data.title.text} description={data.content.text} image={data.featured_image.localFile.childImageSharp.resize} />
+    <Seo
+      title={data.seo_title ? data.seo_title : data.title.text}
+      description={data.seo_description ? data.seo_description : data.content.text}
+      image={data.featured_image.localFile.childImageSharp.resize}
+    />
     <Title title={data.title.text} cssClasses='md:text-6xl' />
     <Content content={data.content.html} />
     <Gallery gallery={data.gallery} title={data.title} />

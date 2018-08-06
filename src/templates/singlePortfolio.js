@@ -35,6 +35,8 @@ export const pageQuery = graphql`
           html
           text
         }
+        seo_title
+        seo_description
         featured_image {
           localFile {
             childImageSharp {
