@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Main from '../components/main'
 import Seo from '../components/seo'
+import ContactButton from '../components/contactButton'
 import Title from '../components/title'
 import Content from '../components/content'
 import Img from 'gatsby-image'
@@ -16,6 +17,7 @@ const About = ({ data, pathContext }) => {
         title={about.data.seo_title ? about.data.seo_title : about.data.title.text}
         description={about.data.seo_description ? about.data.seo_description : about.data.title.text}
       />
+      <ContactButton />
       <div className='about-content'>
         <Title title={about.data.title.text} cssClasses='lg:text-7xl' />
         {about.data.body &&

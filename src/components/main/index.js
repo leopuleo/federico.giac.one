@@ -6,7 +6,7 @@ const Main = ({ children, cssClasses }) => {
     if (cssClasses) {
       return cssClasses
     } else {
-      return 'w-full px-5 pt-10 pb-10 lg:w-3/4 lg:pl-9 lg:pt-16 lg:pb-12 xl:px-0 xl:w-3/4'
+      return 'w-full px-5 mt-10 mb-10 lg:w-3/4 lg:pl-9 lg:mt-16 lg:mb-12 xl:px-0 xl:w-3/4'
     }
   }
 

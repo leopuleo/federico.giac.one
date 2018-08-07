@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Seo from '../seo'
+import ContactButton from '../contactButton'
 import Title from '../title'
 import Content from '../content'
 import Gallery from '../gallery'
@@ -14,6 +15,7 @@ const ProjectSingle = ({ data, next, prev }) => (
       description={data.seo_description ? data.seo_description : data.content.text}
       image={data.featured_image.localFile.childImageSharp.resize}
     />
+    <ContactButton />
     <Title title={data.title.text} cssClasses='md:text-6xl' />
     <Content content={data.content.html} />
     <Gallery gallery={data.gallery} title={data.title} />

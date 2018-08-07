@@ -7,6 +7,7 @@ import { flatten, unique } from '../utils'
 
 import Main from '../components/main'
 import Seo from '../components/seo'
+import ContactButton from '../components/contactButton'
 import Title from '../components/title'
 import Content from '../components/content'
 import TagList from '../components/tagList'
@@ -85,6 +86,7 @@ class PortfolioArchive extends Component {
           title={page.data.seo_title ? page.data.seo_title : page.data.title.text}
           description={page.data.seo_description ? page.data.seo_description : page.data.title.text}
         />
+        <ContactButton />
         <div className='portfolio-archive'>
           <Title
             title={page.data.title.text}
