@@ -11,7 +11,7 @@ const Seo = ({ title, description, image }) => {
 
   const seoTitle = title ? title + separator + siteName : siteName
   const seoDesc = description ? createExcerpt(description, 250) : siteName
-  const seoImgSrc = image ? `${siteDomain}${image.src}` : `${siteDomain}/static/federico-giacone.jpg`
+  const seoImgSrc = image ? `${siteDomain}${image.src}` : `${siteDomain}/federico-giacone.jpg`
   const seoImgWidth = image ? image.width : '1600'
   const seoImgHeight = image ? image.height : '943'
 
