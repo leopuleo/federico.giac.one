@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 
-import Icon from '../../icon'
-import BottomBar from '../../bottomBar'
+import Icon from '../icon'
+import BottomBar from '../bottomBar'
 
 const ProjectNavigation = ({ next, prev }) => (
   <BottomBar cssClasses='project-bottom-bar'>

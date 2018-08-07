@@ -2,17 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Main from '../components/main'
-import ProjectSingle from '../components/projectSingle'
+import Seo from '../components/seo'
+import ContactButton from '../components/contactButton'
+import Title from '../components/title'
+import Content from '../components/content'
+import Gallery from '../components/gallery'
+import ProjectNavigation from '../components/projectNavigation'
 
 const SinglePortfolio = ({ data, pathContext }) => {
   const { prismicPortfolio: project } = data
   return (
     <Main>
-      <ProjectSingle
-        data={project.data}
-        next={pathContext.next}
-        prev={pathContext.prev}
-      />
+      <div className='project-single'>
+        <Seo
+          title={project.data.seo_title ? project.data.seo_title : project.data.title.text}
+          description={project.data.seo_description ? project.data.seo_description : project.data.content.text}
+          image={project.data.featured_image.localFile.childImageSharp.resize}
+        />
+        <ContactButton />
+        <Title title={project.data.title.text} cssClasses='md:text-6xl' />
+        <Content content={project.data.content.html} />
+        <Gallery gallery={project.data.gallery} title={project.data.title} />
+        <ProjectNavigation prev={pathContext.prev} next={pathContext.next} />
+      </div>
     </Main>
   )
 }
