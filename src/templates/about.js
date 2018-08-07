@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Main from '../components/main'
+import Seo from '../components/seo'
 import Title from '../components/title'
 import Content from '../components/content'
 import Img from 'gatsby-image'
@@ -11,6 +12,10 @@ const About = ({ data, pathContext }) => {
   const { prismicAbout: about } = data
   return (
     <Main>
+      <Seo
+        title={about.data.seo_title ? about.data.seo_title : about.data.title.text}
+        description={about.data.seo_description ? about.data.seo_description : about.data.title.text}
+      />
       <div className='about-content'>
         <Title title={about.data.title.text} cssClasses='lg:text-7xl' />
         {about.data.body &&
@@ -58,6 +63,8 @@ query AboutQuery {
       title {
         text
       }
+      seo_title
+      seo_description
       body {
         __typename
         ... on PrismicAboutBodyTesto {
@@ -92,7 +99,7 @@ query AboutQuery {
           slice_type
           prismicId
           primary {
-            title_experience 
+            title_experience
           }
           items {
             position_experience

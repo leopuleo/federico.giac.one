@@ -2,10 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Main from '../components/main'
+import Seo from '../components/seo'
 import HomeSlider from '../components/homeSlider'
 
 const IndexPage = ({ data }) => (
   <Main cssClasses='w-full h-full'>
+    <Seo
+      title={data.home.data.seo_title ? data.home.data.seo_title : ''}
+      description={data.home.data.seo_description ? data.home.data.seo_description : ''}
+    />
     <HomeSlider slides={data.home.data.slider} />
   </Main>
 )
@@ -20,6 +25,8 @@ export const pageQuery = graphql`
   query HomeQuery {
     home: prismicHome {
       data {
+        seo_title
+        seo_description
         slider {
           slider_title
           slider_excerpt

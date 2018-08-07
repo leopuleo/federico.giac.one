@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 
 import { toggleDrawer as toggleDrawerAction } from '../store/actions'
 
+import Seo from '../components/seo'
 import Header from '../components/header'
 import Drawer from '../components/drawer'
 import PhotoSwipeDom from '../components/gallery/photoswipe.js'
@@ -37,8 +37,9 @@ class Index extends Component {
 
     return (
       <div className={changeClass('root')}>
-        <Helmet
+        <Seo
           title={this.props.data.siteMeta.siteMetadata.title}
+          description={this.props.data.siteMeta.siteMetadata.title}
         />
         <Header title={this.props.data.siteMeta.siteMetadata.title} />
         <Drawer
