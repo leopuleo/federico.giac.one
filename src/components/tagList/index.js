@@ -18,6 +18,11 @@ class TagList extends Component {
     activeTag: PropTypes.string,
   }
 
+  componentWillUnmount () {
+    const { filterByTag } = this.props
+    filterByTag('')
+  }
+
   render () {
     const { tags, filterByTag, activeTag } = this.props
     const activeClass = tag => {
