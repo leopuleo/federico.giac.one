@@ -3,3 +3,7 @@
   top: -87px;
   right: 0;
 }
+
+.contact-button:hover * {
+  color: #fff!important;
+}

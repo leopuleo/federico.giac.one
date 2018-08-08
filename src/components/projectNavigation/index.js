@@ -5,6 +5,8 @@ import Link from 'gatsby-link'
 import Icon from '../icon'
 import BottomBar from '../bottomBar'
 
+import './style.css'
+
 const ProjectNavigation = ({ next, prev }) => (
   <BottomBar cssClasses='project-bottom-bar'>
     <div className='project-navigation flex whitespace-no-wrap overflow-x-auto px-4 py-2 lg:whitespace-normal md:px-0 md:py-0 md:mt-10'>
@@ -12,7 +14,7 @@ const ProjectNavigation = ({ next, prev }) => (
         {prev && (
           <Link
             to={prev.fields.slug}
-            className='text-grey-darkest bg-white no-underline text-xl inline-flex items-center md:pl-6 md:pr-8 md:py-3 md:rounded-full hover:no-underline md:hover:bg-grey-darkest md:hover:text-white'
+            className='project-navigation-button text-grey-darkest bg-white no-underline text-xl inline-flex items-center md:pl-6 md:pr-8 md:py-3 md:rounded-full hover:no-underline md:hover:bg-grey-darkest md:hover:text-white'
           >
             <Icon
               icon='arrow-slim-left'
@@ -38,7 +40,7 @@ const ProjectNavigation = ({ next, prev }) => (
           <Icon icon='grid-nav' cssClasses='text-3xl' />
         </Link>
       </div>
-      <div className='project-next w-1/3 flex flex-wrap justify-end text-right md:w-1/2'>
+      <div className='project-navigation-button project-next w-1/3 flex flex-wrap justify-end text-right md:w-1/2'>
         {next && (
           <Link
             to={next.fields.slug}
