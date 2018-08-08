@@ -1,7 +1,6 @@
 [class^="icn-"], [class*=" icn-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'feddy-icon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -13,18 +12,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icn-grid-nav:before {
-  content: "\e905";
-}
 .icn-arrow-slim-down:before {
-  content: "\e908";
+  content: "\e900";
 }
 .icn-arrow-slim-left:before {
-  content: "\e909";
+  content: "\e901";
 }
 .icn-arrow-slim-right:before {
-  content: "\e90a";
+  content: "\e902";
 }
 .icn-arrow-slim-up:before {
-  content: "\e90b";
+  content: "\e903";
+}
+.icn-arrow-sm-down:before {
+  content: "\e904";
+}
+.icn-arrow-sm-left:before {
+  content: "\e905";
+}
+.icn-arrow-sm-right:before {
+  content: "\e906";
+}
+.icn-arrow-sm-up:before {
+  content: "\e907";
+}
+.icn-phone-default:before {
+  content: "\e908";
+}
+.icn-send:before {
+  content: "\e909";
 }
