@@ -56,13 +56,13 @@ class Navigation extends Component {
       <nav className='navigation lg:text-right mt-15 lg:mt-12 text-antialiased'>
         <ul className='menu list-reset'>
           {navigation.data.main_navigation.map(item => (
-            <li className='menu-item block mb-4' key={item.menu_title}>
+            <li className='menu-item block mb-3 md:mb-4' key={item.menu_title}>
               <NavigationLink link={item.menu_link}>
                 <span className='menu-link-inside'>
-                  <span className='big-link block text-4xl leading-none font-accent-bold text-grey-darkest'>
+                  <span className='big-link block text-4xl leading-none font-accent-bold text-grey-darkest mb-1 md:mb-0'>
                     {item.menu_title}
                   </span>
-                  <span className='small-link text-base hidden lg:inline-block font-sans text-grey'>
+                  <span className='small-link text-base inline-block font-sans text-grey'>
                     {item.menu_excerpt}
                   </span>
                 </span>
