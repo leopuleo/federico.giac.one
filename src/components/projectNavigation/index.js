@@ -12,7 +12,7 @@ const ProjectNavigation = ({ next, prev }) => (
         {prev && (
           <Link
             to={prev.fields.slug}
-            className='text-grey-darkest bg-transparent no-underline text-xl inline-flex items-center md:pl-6 md:pr-8 md:py-3 md:border-2 md:border-grey-lighter md:rounded-full hover:no-underline'
+            className='text-grey-darkest bg-white no-underline text-xl inline-flex items-center md:pl-6 md:pr-8 md:py-3 md:rounded-full hover:no-underline md:hover:bg-grey-darkest md:hover:text-white'
           >
             <Icon
               icon='arrow-slim-left'
@@ -42,7 +42,7 @@ const ProjectNavigation = ({ next, prev }) => (
         {next && (
           <Link
             to={next.fields.slug}
-            className='text-grey-darkest no-underline text-xl inline-flex items-center md:pr-6 md:pl-8 md:py-3 md:border-2 md:border-grey-lighter md:rounded-full hover:no-underline'
+            className='text-grey-darkest bg-white no-underline text-xl inline-flex items-center md:pr-6 md:pl-8 md:py-3 md:rounded-full hover:no-underline md:hover:bg-grey-darkest md:hover:text-white'
           >
             <span className='font-sans-bold text-lowercase hidden md:block'>
               <small className='font-sans text-grey text-xs block'>
