@@ -7,8 +7,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-prismic',
       options: {
@@ -45,5 +43,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp'
   ],
 }
