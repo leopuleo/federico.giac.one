@@ -21,7 +21,7 @@
         ]
       },
       {
-        "source" : "**/*.@(jpg|jpeg|gif|png)",
+        "source" : "**/*.@(jpg|jpeg|gif|png|webp)",
         "headers" : [
           {
             "key" : "Cache-Control",
