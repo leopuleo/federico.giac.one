@@ -7,6 +7,7 @@ import { toggleDrawer as toggleDrawerAction } from '../store/actions'
 import Seo from '../components/seo'
 import Header from '../components/header'
 import Drawer from '../components/drawer'
+import CookieBar from '../components/cookieBar'
 import PhotoSwipeDom from '../components/gallery/photoswipe.js'
 
 import './index.css'
@@ -55,6 +56,7 @@ class Index extends Component {
           />
           {this.props.children()}
         </div>
+        <CookieBar />
         <PhotoSwipeDom />
       </div>
     )

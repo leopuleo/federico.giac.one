@@ -1,0 +1,11 @@
+.cookie-bar {
+  z-index: 99999;
+}
+
+
+@media screen and (min-width: 992px) {
+  .cookie-bar {
+    right: 2em!important;
+    bottom: 2em!important;
+  }
+}

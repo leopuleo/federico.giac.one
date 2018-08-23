@@ -15,6 +15,7 @@
     "gatsby-transformer-sharp": "^1.6.27",
     "hamburgers": "^0.9.3",
     "photoswipe": "^4.1.2",
+    "react-cookie-consent": "^1.7.0",
     "react-hamburgers": "^1.0.0",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
