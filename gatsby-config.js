@@ -4,6 +4,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Federico Giacone',
+    siteUrl: 'https://federico.giac.one'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -44,6 +45,24 @@ module.exports = {
           }
         },
       },
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        output: '/sitemap_index.xml',
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-124531745-1',
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true
+      },
+    },
   ],
 }
