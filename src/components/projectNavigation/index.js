@@ -9,7 +9,7 @@ import './style.css'
 
 const ProjectNavigation = ({ next, prev }) => (
   <BottomBar cssClasses='project-bottom-bar'>
-    <div className='project-navigation flex whitespace-no-wrap overflow-x-auto px-4 py-2 lg:whitespace-normal md:px-0 md:py-0 md:mt-10'>
+    <div className='project-navigation flex whitespace-no-wrap overflow-x-auto px-4 py-3 lg:whitespace-normal md:px-0 md:py-0 md:mt-10'>
       <div className='project-prev w-1/3 flex flex-wrap justify-start text-left md:w-1/2'>
         {prev && (
           <Link
@@ -18,7 +18,11 @@ const ProjectNavigation = ({ next, prev }) => (
           >
             <Icon
               icon='arrow-slim-left'
-              cssClasses='mr-1 md:text-xl md:mr-3'
+              cssClasses='text-xl mr-3 hidden md:block'
+            />
+            <Icon
+              icon='arrow-sm-left'
+              cssClasses='text-2xl mr-1 block md:hidden'
             />
             <span className='font-sans-bold text-lowercase hidden md:block'>
               <small className='font-sans text-grey text-xs block'>
@@ -57,7 +61,11 @@ const ProjectNavigation = ({ next, prev }) => (
             </span>
             <Icon
               icon='arrow-slim-right'
-              cssClasses='ml-1 md:text-xl md:ml-3'
+              cssClasses='text-xl ml-3 hidden md:block'
+            />
+            <Icon
+              icon='arrow-sm-right'
+              cssClasses='text-2xl ml-1 block md:hidden'
             />
           </Link>
         )}
