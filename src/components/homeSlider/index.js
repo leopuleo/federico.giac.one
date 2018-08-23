@@ -14,7 +14,8 @@ const PrevArrow = props => {
   const { className, onClick } = props
   return (
     <div className={`${className} absolute md:p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-left' cssClasses='text-2xl text-white md:text-4xl' />
+      <Icon icon='arrow-sm-left' cssClasses='text-2xl text-white block md:hidden' />
+      <Icon icon='arrow-slim-left' cssClasses='text-4xl text-white hidden md:block' />
     </div>
   )
 }
@@ -23,7 +24,8 @@ const NextArrow = props => {
   const { className, onClick } = props
   return (
     <div className={`${className} absolute md:p-2`} onClick={onClick}>
-      <Icon icon='arrow-slim-right' cssClasses='text-2xl text-white md:text-4xl' />
+      <Icon icon='arrow-sm-right' cssClasses='text-2xl text-white block md:hidden' />
+      <Icon icon='arrow-slim-right' cssClasses='text-4xl text-white hidden md:block' />
     </div>
   )
 }
