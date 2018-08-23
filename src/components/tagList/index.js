@@ -32,12 +32,12 @@ class TagList extends Component {
     }
 
     return (
-      <BottomBar cssClasses='tag-list-bottom-bar'>
+      <BottomBar cssClasses='tag-list-bottom-bar sm:mt-10'>
         <div className='tag-list whitespace-no-wrap overflow-x-auto px-4 pr-8 py-3 lg:whitespace-normal md:px-0 md:py-0'>
           <button
             className={`${activeClass(
               ''
-            )} font-sans-bold uppercase text-sm py-1 px-2 rounded-full hover:bg-grey-darkest hover:text-white md:py-4 md:px-6 md:text-base`}
+            )} font-sans-bold uppercase text-sm py-2 px-3 rounded-full hover:bg-grey-darkest hover:text-white md:py-3 md:px-4 md:mb-2 md:text-base xl:py-4 xl:px-6`}
             onClick={() => filterByTag('')}
           >
             Tutti i progetti
@@ -48,7 +48,7 @@ class TagList extends Component {
                 key={tag}
                 className={`${activeClass(
                   tag
-                )} font-sans-bold rounded-full uppercase text-sm py-1 px-2 ml-1 hover:bg-grey-darkest hover:text-white md:py-4 md:px-6 md:ml-3 md:text-base`}
+                )} font-sans-bold rounded-full uppercase text-sm py-2 px-3 ml-1 hover:bg-grey-darkest hover:text-white md:py-3 md:px-4 md:mb-2 md:ml-2 md:text-base xl:py-4 xl:px-6 xl:ml-3`}
                 onClick={() => filterByTag(tag)}
               >
                 {tag}

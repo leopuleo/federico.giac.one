@@ -82,7 +82,7 @@ class PortfolioArchive extends Component {
 
           <div
             ref={element => (this.element = element)}
-            className='portfolio-grid flex flex-wrap sm:-mx-2 lg:-mx-5'
+            className='portfolio-grid flex flex-wrap mt-8 sm:mt-0 sm:-mx-2 lg:-mx-5'
           >
             {projects.edges.map((project, i) => {
               return (
