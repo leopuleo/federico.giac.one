@@ -90,7 +90,7 @@ query AboutQuery {
                     maxWidth: 1200
                     quality: 70
                   ) {
-                    ...GatsbyImageSharpSizes
+                    ...GatsbyImageSharpSizes_withWebp
                   }
                 }
               }

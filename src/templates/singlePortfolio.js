@@ -76,7 +76,7 @@ export const pageQuery = graphql`
                   quality: 70
                   cropFocus: CENTER
                 ) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes_withWebp
                 }
                 vertical: sizes(
                   maxWidth: 565
@@ -84,7 +84,7 @@ export const pageQuery = graphql`
                   quality: 70
                   cropFocus: CENTER
                 ) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes_withWebp
                 }
                 square: sizes(
                   maxWidth: 420
@@ -92,7 +92,7 @@ export const pageQuery = graphql`
                   quality: 30
                   cropFocus: CENTER
                 ) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes_withWebp
                 }
                 original: resize(
                   width: 1800

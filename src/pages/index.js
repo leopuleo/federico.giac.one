@@ -42,10 +42,10 @@ export const pageQuery = graphql`
                 horizontal: sizes(
                   maxWidth: 1800
                   maxHeight: 1000
-                  quality: 90
+                  quality: 65
                   cropFocus: CENTER
                 ) {
-                  ...GatsbyImageSharpSizes
+                  ...GatsbyImageSharpSizes_withWebp
                   originalName
                 }
               }
