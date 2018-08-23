@@ -21,7 +21,18 @@ function activeTag (state = '', action) {
   }
 }
 
+function windowHeight (state = '100vh', action) {
+  const { type, height } = action
+  switch (type) {
+    case actions.WINDOW_HEIGHT:
+      return height
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   drawerOpen,
   activeTag,
+  windowHeight
 })

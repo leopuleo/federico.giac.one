@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
 import Img from 'gatsby-image'
@@ -27,7 +28,7 @@ const NextArrow = props => {
   )
 }
 
-const HomeSlider = ({ slides }) => {
+const HomeSlider = ({ slides, windowHeight }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -77,7 +78,8 @@ const HomeSlider = ({ slides }) => {
               <Img
                 sizes={slide.slider_image.localFile.childImageSharp.horizontal}
                 fadeIn
-                className='slide-image w-screen h-screen'
+                style={{ height: windowHeight }}
+                className='slide-image w-screen'
                 outerWrapperClassName='slide-image-wrapper'
               />
               <div className='slide-content absolute px-6 py-8 md:px-10 md:py-10 text-white md:leading-none'>
@@ -119,6 +121,16 @@ NextArrow.propTypes = {
 
 HomeSlider.propTypes = {
   slides: PropTypes.array,
+  windowHeight: PropTypes.string
 }
 
-export default HomeSlider
+const mapStateToProps = ({ windowHeight }) => {
+  return {
+    windowHeight,
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(HomeSlider)

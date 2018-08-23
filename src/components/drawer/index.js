@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+
+import { setWindowHeight as setWindowHeightAction } from '../../store/actions'
 
 import Navigation from './navigation'
 import Hamburger from './hamburger'
@@ -14,18 +17,11 @@ class Drawer extends Component {
   static propTypes = {
     navigation: PropTypes.object,
     footer: PropTypes.object,
-    height: PropTypes.string
+    setWindowHeight: PropTypes.func,
+    windowHeight: PropTypes.string
   }
 
-  defaultProps = {
-    height: '100vh'
-  };
-
-  constructor (props) {
-    super(props)
-    this.state = { height: props.height }
-  }
-
+  // Set window height + add event listener
   componentDidMount () {
     this.handleWindowSizeChange() // Set height
     window.addEventListener('resize', this.handleWindowSizeChange)
@@ -37,15 +33,17 @@ class Drawer extends Component {
     window.removeEventListener('resize', this.handleWindowSizeChange)
   }
 
+  // Handle window height value
   handleWindowSizeChange = () => {
-    this.setState({ height: window.innerHeight })
+    const { setWindowHeight } = this.props
+    setWindowHeight(window.innerHeight)
   }
 
   render () {
-    const { navigation, footer } = this.props
+    const { navigation, footer, windowHeight } = this.props
 
     return (
-      <div style={{ height: this.state.height }} className='drawer w-screen fixed px-5 lg:px-11 lg:py-11 lg:pl-14 bg-white font-sans'>
+      <div style={{ height: windowHeight }} className='drawer w-screen fixed px-5 lg:px-11 lg:py-11 lg:pl-14 bg-white font-sans'>
         <div className='drawer-toggle fixed hidden lg:inline-block'>
           <Hamburger />
         </div>
@@ -56,4 +54,19 @@ class Drawer extends Component {
   }
 }
 
-export default Drawer
+const mapStateToProps = ({ windowHeight }) => {
+  return {
+    windowHeight,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setWindowHeight: open => dispatch(setWindowHeightAction(open)),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Drawer)
