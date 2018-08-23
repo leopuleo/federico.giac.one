@@ -24,23 +24,21 @@ class Drawer extends Component {
   constructor (props) {
     super(props)
     this.state = { height: props.height }
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
   }
 
-  componentWillMount () {
-    this.updateWindowDimensions()
-    window.addEventListener('resize', this.updateWindowDimensions)
+  componentDidMount () {
+    this.handleWindowSizeChange() // Set height
+    window.addEventListener('resize', this.handleWindowSizeChange)
   }
 
+  // make sure to remove the listener
+  // when the component is not mounted anymore
   componentWillUnmount () {
-    window.removeEventListener('resize', this.updateWindowDimensions)
+    window.removeEventListener('resize', this.handleWindowSizeChange)
   }
 
-  // Update window height
-  updateWindowDimensions () {
-    this.setState({
-      height: window.innerHeight
-    })
+  handleWindowSizeChange = () => {
+    this.setState({ height: window.innerHeight })
   }
 
   render () {
