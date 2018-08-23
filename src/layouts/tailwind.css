@@ -57,7 +57,8 @@ h1 {
  */
 
 figcaption,
-figure {
+figure,
+main {
   /* 1 */
   display: block;
 }
@@ -102,7 +103,8 @@ a {
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
 
-b {
+b,
+strong {
   font-weight: inherit;
 }
 
@@ -110,7 +112,8 @@ b {
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-b {
+b,
+strong {
   font-weight: bolder;
 }
 
@@ -147,9 +150,19 @@ small {
  * Add the correct display in IE 9-.
  */
 
+audio,
+video {
+  display: inline-block;
+}
+
 /**
  * Add the correct display in iOS 4-7.
  */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
 
 /**
  * Remove the border on images inside links in IE 10-.
@@ -379,6 +392,9 @@ html {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 figure,
 p {
   margin: 0;
@@ -844,6 +860,10 @@ button,
   text-transform: uppercase;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .no-underline {
   text-decoration: none;
 }
@@ -970,6 +990,10 @@ button,
 
   .md\:overflow-x-auto {
     overflow-x: auto;
+  }
+
+  .md\:p-2 {
+    padding: .5rem;
   }
 
   .md\:p-6 {
@@ -1196,6 +1220,10 @@ button,
 
   .xl\:hidden {
     display: none;
+  }
+
+  .xl\:ml-3 {
+    margin-left: .75rem;
   }
 
   .xl\:px-0 {

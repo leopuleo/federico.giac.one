@@ -20,7 +20,7 @@ const CookieBar = () => (
     expires={365}
   >
   Questo sito o gli strumenti terzi da questo utilizzati si avvalgono di cookie necessari al funzionamento ed utili alle finalità illustrate nella cookie policy.
-  Cliccando su Accetto acconsenti all'utilizzo dei cookie da parte nostra.
+  Chiudendo il banner, cliccando su “Accetto” o scorrendo la presente pagina acconsenti all’uso dei cookie.
     <Link
       to='/cookie-policy/'
       className='w-2/3 py-3 px-4 mx-auto my-4 bg-black text-white font-sans-bold uppercase leading-none text-sm no-underline rounded-full border-white border-2 block sm:w-2/5 md:w-4/5 xl:w-3/5 xxl:w-2/3 lg:text-base'
