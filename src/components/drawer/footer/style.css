@@ -64,3 +64,10 @@
     display: block;
   }
 }
+
+/* Small desktop */
+@media screen and (max-height: 575px) {
+  .footer-presentation {
+    display: none!important;
+  }
+}

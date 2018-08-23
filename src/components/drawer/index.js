@@ -36,7 +36,7 @@ class Drawer extends Component {
   // Handle window height value
   handleWindowSizeChange = () => {
     const { setWindowHeight } = this.props
-    setWindowHeight(window.innerHeight)
+    setWindowHeight(window.innerHeight + 'px')
   }
 
   render () {
