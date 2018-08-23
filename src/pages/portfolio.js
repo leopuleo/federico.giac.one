@@ -59,22 +59,6 @@ class PortfolioArchive extends Component {
       data: { projects, page },
     } = this.props
 
-    const getCardFormat = (image, i) => {
-      if ((i % 5 === 0 && i !== 0 && i % 10 !== 0) || (i - 1) % 10 === 0) {
-        return {
-          image: image.horizontal,
-          cssClass:
-            'project-card portfolio-card__horizontal w-full mb-5 sm:w-1/2 xl:w-2/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
-        }
-      } else {
-        return {
-          image: image.vertical,
-          cssClass:
-            'project-card portfolio-card__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5',
-        }
-      }
-    }
-
     const getTagList = list => {
       let tagList = list.map(el => el.node.tags).filter(el => el.length !== 0)
       return unique(flatten(tagList))
@@ -101,22 +85,19 @@ class PortfolioArchive extends Component {
             className='portfolio-grid flex flex-wrap sm:-mx-2 lg:-mx-5'
           >
             {projects.edges.map((project, i) => {
-              const card = getCardFormat(
-                project.node.data.featured_image.localFile.childImageSharp,
-                i
-              )
-
               return (
                 <ProjectCard
                   key={project.node.uid}
                   link={project.node.fields.slug}
                   title={project.node.data.title.text}
-                  featuredImage={card.image}
+                  featuredImage={
+                    project.node.data.featured_image.localFile.childImageSharp
+                      .vertical
+                  }
                   featuredImageMobile={
                     project.node.data.featured_image.localFile.childImageSharp
                       .square
                   }
-                  cssClass={card.cssClass}
                   excerpt={project.node.data.excerpt.html}
                   tags={project.node.tags}
                 />
@@ -174,14 +155,6 @@ export const pageQuery = graphql`
             featured_image {
               localFile {
                 childImageSharp {
-                  horizontal: sizes(
-                    maxWidth: 1200
-                    maxHeight: 770
-                    quality: 70
-                    cropFocus: CENTER
-                  ) {
-                    ...GatsbyImageSharpSizes
-                  }
                   vertical: sizes(
                     maxWidth: 565
                     maxHeight: 770

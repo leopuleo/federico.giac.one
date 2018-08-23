@@ -20,10 +20,3 @@
   font-size: 1.063rem;
   line-height: 1.2em;
 }
-
-@media screen and (min-width: 1200px) {
-  .portfolio-card__horizontal .project-card-content {
-      -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-}

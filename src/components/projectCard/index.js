@@ -16,7 +16,6 @@ class ProjectCard extends Component {
     featuredImage: PropTypes.object.isRequired,
     featuredImageMobile: PropTypes.object.isRequired,
     excerpt: PropTypes.string,
-    cssClass: PropTypes.string.isRequired,
     tags: PropTypes.array,
   }
 
@@ -27,12 +26,11 @@ class ProjectCard extends Component {
       featuredImage,
       featuredImageMobile,
       excerpt,
-      cssClass,
       tags,
     } = this.props
 
     return (
-      <div className={cssClass} data-groups={JSON.stringify(tags)}>
+      <div className='project-card portfolio-card__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5' data-groups={JSON.stringify(tags)}>
         <Link to={link}>
           <div className='project-card-wrapper'>
             <Img
