@@ -31,8 +31,19 @@ function windowHeight (state = '100vh', action) {
   }
 }
 
+function cookieConsent (state = false, action) {
+  const { type, value } = action
+  switch (type) {
+    case actions.COOKIE_CONSENT:
+      return value
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   drawerOpen,
   activeTag,
-  windowHeight
+  windowHeight,
+  cookieConsent
 })
