@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import Helmet from 'react-helmet'
 
 import { toggleDrawer as toggleDrawerAction } from '../store/actions'
 
@@ -38,6 +39,16 @@ class Index extends Component {
 
     return (
       <div className={changeClass('root')}>
+        <Helmet
+          meta={[
+            {
+              name: 'viewport',
+              content: 'width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0'
+            }
+          ]}
+        >
+          <html lang='en' />
+        </Helmet>
         <Seo
           title={this.props.data.siteMeta.siteMetadata.title}
           description={this.props.data.siteMeta.siteMetadata.title}
