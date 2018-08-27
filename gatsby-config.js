@@ -66,7 +66,7 @@ module.exports = {
       options: {
         name: `Federico Giacone`,
         short_name: `Portfolio`,
-        start_url: `/?utm_source=PWA&?utm_medium=`,
+        start_url: `/?utm_source=PWA&?utm_medium=HomeIcon`,
         background_color: `#f5f5f5`,
         theme_color: `#161616`,
         display: `fullscreen`,
