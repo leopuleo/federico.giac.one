@@ -33,7 +33,7 @@ class CookieBar extends Component {
         acceptOnScrollPercentage={25}
         buttonText='Accetto'
         cookieName='CookieConsent'
-        containerClasses='cookie-bar w-full bg-black px-5 py-8 text-white font-sans text-antialiased text-sm leading-normal text-center lg:w-1/3 lg:rounded lg:text-base'
+        containerClasses='cookie-bar w-full bg-black p-8 text-white font-sans text-antialiased text-sm leading-normal text-center lg:w-1/3 lg:rounded lg:text-base'
         contentClasses='cookie-bar__content'
         buttonClasses='cookie-bar__button w-2/3 bg-white py-3 px-4 mx-auto text-black font-sans-bold uppercase text-sm rounded-full block sm:w-2/5 md:w-4/5 xl:w-3/5 xxl:w-2/3 lg:text-base'
         expires={365}
