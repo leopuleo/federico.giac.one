@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import { createExcerpt } from '../../utils'
 
+import favicon from '../../../static/favicon.png'
+
 const Seo = ({ title, description, image }) => {
   const siteName = 'Federico Giacone'
   const siteDomain = 'https://federico.giac.one'
@@ -29,6 +31,7 @@ const Seo = ({ title, description, image }) => {
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content={seoTitle} />
       <meta name='twitter:description' content={seoDesc} />
+      <link rel='icon' href={favicon} type='image/png' />
     </Helmet>
   )
 }

@@ -4,11 +4,11 @@
 }
 
 .slick-slider {
-  display: none;
+  display: none!important;
 }
 
 .slick-initialized {
-  display: block;
+  display: block!important;
 }
 
 /* Slick Slider */
