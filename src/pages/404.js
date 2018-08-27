@@ -1,15 +1,19 @@
 import React from 'react'
 
 import Seo from '../components/seo'
+import Main from '../components/main'
+import Title from '../components/title'
+import Content from '../components/content'
 
 const NotFoundPage = () => (
-  <div>
+  <Main>
     <Seo
       title='Pagina non trovata'
+      description='Spiacente, la pagina che hai cercato non esiste.'
     />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </div>
+    <Title title='Pagina non trovata' cssClasses='lg:text-7xl' />
+    <Content content='Spiacente, la pagina che hai cercato non esiste.' />
+  </Main>
 )
 
 export default NotFoundPage
