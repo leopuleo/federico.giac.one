@@ -32,6 +32,9 @@ module.exports = {
         },
         htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
           switch (element.type) {
+            case 'heading2':
+              return `<h2 class='text-lg md:text-2xl xl:text-3xl'>${children.join('')}</h2>`
+
             case 'strong':
               return `<strong class='font-sans-bold text-grey-darkest'>${children.join('')}</strong>`
 
