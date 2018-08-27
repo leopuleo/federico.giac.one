@@ -1,5 +1,14 @@
 .home-slider {
     margin-top: -59px;
+
+}
+
+.slick-slider {
+  display: none;
+}
+
+.slick-initialized {
+  display: block;
 }
 
 /* Slick Slider */
