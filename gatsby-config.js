@@ -61,5 +61,17 @@ module.exports = {
         includeInDevelopment: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Federico Giacone`,
+        short_name: `Federico Giacone`,
+        start_url: `/?utm_source=webapp`,
+        background_color: `#f5f5f5`,
+        theme_color: `#161616`,
+        display: `fullscreen`,
+        icon: `static/icon.png`, // This path is relative to the root of the site.
+      },
+    },
   ],
 }
