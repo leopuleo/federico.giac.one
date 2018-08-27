@@ -65,11 +65,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Federico Giacone`,
-        short_name: `Federico Giacone`,
-        start_url: `/?utm_source=webapp`,
+        short_name: `Portfolio`,
+        start_url: `/?utm_source=PWA&?utm_medium=`,
         background_color: `#f5f5f5`,
         theme_color: `#161616`,
         display: `fullscreen`,
+        orientation: `portrait`,
         icon: `static/icon.png`, // This path is relative to the root of the site.
       },
     },
