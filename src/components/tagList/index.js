@@ -37,7 +37,7 @@ class TagList extends Component {
           <button
             className={`${activeClass(
               ''
-            )} font-sans-bold uppercase text-sm py-2 px-3 rounded-full hover:bg-grey-darkest hover:text-white md:py-3 md:px-4 md:mb-2 md:text-base xl:py-4 xl:px-6`}
+            )} font-sans-bold uppercase text-sm py-2 px-3 rounded-full md:py-3 md:px-4 md:mb-2 md:text-base md:hover:bg-grey-darkest md:hover:text-white xl:py-4 xl:px-6`}
             onClick={() => filterByTag('')}
           >
             Tutti i progetti
@@ -48,7 +48,7 @@ class TagList extends Component {
                 key={tag}
                 className={`${activeClass(
                   tag
-                )} font-sans-bold rounded-full uppercase text-sm py-2 px-3 ml-1 hover:bg-grey-darkest hover:text-white md:py-3 md:px-4 md:mb-2 md:ml-2 md:text-base xl:py-4 xl:px-6 xl:ml-3`}
+                )} font-sans-bold rounded-full uppercase text-sm py-2 px-3 ml-1 md:py-3 md:px-4 md:mb-2 md:ml-2 md:text-base md:hover:bg-grey-darkest md:hover:text-white xl:py-4 xl:px-6 xl:ml-3`}
                 onClick={() => filterByTag(tag)}
               >
                 {tag}
