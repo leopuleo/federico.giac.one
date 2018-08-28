@@ -1,7 +1,6 @@
 [class^="icn-"], [class*=" icn-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'feddy-icon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -11,6 +10,13 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  visibility: hidden;
+  font-display: block;
+}
+
+.wf-feddyicon-n4-active [class^="icn-"], .wf-feddyicon-n4-active [class*=" icn-"] {
+  visibility: visible;
 }
 
 .icn-grid-nav:before {

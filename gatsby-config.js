@@ -11,6 +11,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['titilliumregular', 'titilliumitalic', 'titilliumbold', 'gilroyextrabold', 'feddy-icon']
+        }
+      }
+    },
+    {
       resolve: 'gatsby-source-prismic',
       options: {
         repositoryName: 'federicogiaconeportfolio',
