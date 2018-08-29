@@ -47,12 +47,12 @@ class ProjectCard extends Component {
               outerWrapperClassName='image-wrapper image-wrapper--desktop hidden xl:block xxl:block'
               alt={title}
             />
-            <div className='project-card-content flex flex-col items-start justify-end p-4 md:p-6 lg:p-8'>
+            <div className='project-card-content flex flex-col items-start justify-end p-6 md:p-6 lg:p-8'>
               <h2 className='title font-accent-bold text-white text-lowercase'>
                 {title}
               </h2>
               <div
-                className='excerpt text-white mt-3'
+                className='excerpt text-white text-base md:text-lg leading-tight mt-3 mb-0'
                 dangerouslySetInnerHTML={{ __html: excerpt }}
               />
             </div>
