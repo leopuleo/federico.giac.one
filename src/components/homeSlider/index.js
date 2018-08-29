@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Slider from 'react-slick'
@@ -30,85 +30,107 @@ const NextArrow = props => {
   )
 }
 
-const HomeSlider = ({ slides, windowHeight }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    lazyLoad: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    speed: 600,
-    fade: true,
-    swipeToSlide: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  }
-
-  const SliderLink = ({ children, link }) => {
-    if (link) {
-      if (link.raw.link_type === 'Document') {
-        return (
-          <Link to={link.url} className='no-underline'>
-            {children}
-          </Link>
-        )
-      } else {
-        return (
-          <Link href={link.url} className='no-underline'>
-            {children}
-          </Link>
-        )
-      }
-    } else {
-      return <div className='no-link'>{children}</div>
+class HomeSlider extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      loaded: false
     }
   }
 
-  return (
-    <Slider className='home-slider relative' {...settings}>
-      {slides.map(slide => {
-        return (
-          <div
-            key={
-              slide.slider_image.localFile.childImageSharp.horizontal.originalName
-            }
-            className='slide relative'
-          >
-            <SliderLink link={slide.slider_link}>
-              <Img
-                sizes={slide.slider_image.localFile.childImageSharp.horizontal}
-                fadeIn
-                style={{ height: windowHeight }}
-                className='slide-image w-screen'
-                outerWrapperClassName='slide-image-wrapper'
-              />
-              <div className='slide-content absolute px-6 py-8 md:px-10 md:py-10 text-white md:leading-none'>
-                <div className='slide-content-inside pt-14 md:pt-16 md:px-10 xl:pt-16 xl:pl-16 xl:w-4/5 xxl:w-2/3 xxl:pt-16 xxl:pl-16'>
-                  {slide.slider_title && (
-                    <h2 className='slide-title text-lowercase font-accent-bold leading-none mb-4 md:mb-6 text-4xl md:text-6xl xl:text-7xl xxl:text-8xl'>
-                      {slide.slider_title}
-                    </h2>
-                  )}
-                  {slide.slider_excerpt && (
-                    <p className='slide-excerpt leading-normal mb:leading-tight mb-6 md:mb-8 text-xl xxl:mb-10 xxl:text-2xl'>
-                      {slide.slider_excerpt}
-                    </p>
-                  )}
-                  {slide.slider_link && (
-                    <button className='font-sans-bold uppercase text-sm bg-transparent border-2 border-white text-white rounded-full py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
-                      Leggi di più
-                    </button>
-                  )}
+  componentDidMount () {
+    this.setState({
+      loaded: true
+    })
+  }
+
+  render () {
+    const { slides, windowHeight } = this.props
+    const { loaded } = this.state
+
+    const SliderLink = ({ children, link }) => {
+      if (link) {
+        if (link.raw.link_type === 'Document') {
+          return (
+            <Link to={link.url} className='no-underline'>
+              {children}
+            </Link>
+          )
+        } else {
+          return (
+            <Link href={link.url} className='no-underline'>
+              {children}
+            </Link>
+          )
+        }
+      } else {
+        return <div className='no-link'>{children}</div>
+      }
+    }
+
+    const settings = {
+      dots: true,
+      infinite: true,
+      lazyLoad: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 600,
+      fade: true,
+      swipeToSlide: true,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+    }
+
+    return (
+      <div>
+        {loaded &&
+          <Slider className='home-slider relative' {...settings}>
+            {slides.map(slide => {
+              return (
+                <div
+                  key={
+                    slide.slider_image.localFile.childImageSharp.horizontal.originalName
+                  }
+                  className='slide relative'
+                >
+                  <SliderLink link={slide.slider_link}>
+                    <Img
+                      sizes={slide.slider_image.localFile.childImageSharp.horizontal}
+                      fadeIn
+                      style={{ height: windowHeight }}
+                      className='slide-image w-screen'
+                      outerWrapperClassName='slide-image-wrapper'
+                    />
+                    <div className='slide-content absolute px-6 py-8 md:px-10 md:py-10 text-white md:leading-none'>
+                      <div className='slide-content-inside pt-14 md:pt-16 md:px-10 xl:pt-16 xl:pl-16 xl:w-4/5 xxl:w-2/3 xxl:pt-16 xxl:pl-16'>
+                        {slide.slider_title && (
+                          <h2 className='slide-title text-lowercase font-accent-bold leading-none mb-4 md:mb-6 text-4xl md:text-6xl xl:text-7xl xxl:text-8xl'>
+                            {slide.slider_title}
+                          </h2>
+                        )}
+                        {slide.slider_excerpt && (
+                          <p className='slide-excerpt leading-normal mb:leading-tight mb-6 md:mb-8 text-xl xxl:mb-10 xxl:text-2xl'>
+                            {slide.slider_excerpt}
+                          </p>
+                        )}
+                        {slide.slider_link && (
+                          <button className='font-sans-bold uppercase text-sm bg-transparent border-2 border-white text-white rounded-full py-3 px-4 hover:bg-white hover:text-grey-darkest md:text-base xxl:py-3 xxl:px-6'>
+                            Leggi di più
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  </SliderLink>
                 </div>
-              </div>
-            </SliderLink>
-          </div>
-        )
-      })}
-    </Slider>
-  )
+              )
+            })}
+          </Slider>
+        }
+      </div>
+    )
+  }
 }
 
 PrevArrow.propTypes = {
