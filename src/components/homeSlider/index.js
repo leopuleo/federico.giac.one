@@ -34,7 +34,7 @@ const HomeSlider = ({ slides, windowHeight }) => {
   const settings = {
     dots: true,
     infinite: true,
-    lazyLoad: false,
+    lazyLoad: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
