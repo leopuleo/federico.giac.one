@@ -43,6 +43,12 @@ module.exports = {
             case 'heading2':
               return `<h2 class='text-lg md:text-2xl xl:text-3xl'>${children.join('')}</h2>`
 
+            case 'heading3':
+              return `<h3 class="font-sans-bold text-grey-darkest text-xl md:text-2xl xl:text-2xl mt-8 mb-3">${children.join('')}</h3>`
+
+            case 'heading4':
+              return `<h3 class="font-sans-bold text-grey-darkest text-xl md:text-2xl xl:text-2xl mt-8 mb-3">${children.join('')}</h3>`
+
             case 'strong':
               return `<strong class='font-sans-bold text-grey-darkest'>${children.join('')}</strong>`
 
@@ -84,6 +90,7 @@ module.exports = {
         orientation: `portrait`,
         icon: `static/icon.png`, // This path is relative to the root of the site.
       },
-    }
+    },
+    'gatsby-plugin-offline'
   ],
 }

@@ -1,2 +1,12 @@
+User-agent: Googlebot
+Disallow:
+
+User-agent: msnbot
+Disallow:
+
+User-agent: SemrushBot
+Disallow: /
+
 User-agent: *
-Disallow
+Crawl-delay: 5
+Disallow:
