@@ -25,6 +25,7 @@
 }
 .footer p {
   display: inline;
+  margin-right: 7px;
 }
 
 .footer a {
@@ -62,6 +63,7 @@
   }
   .footer p {
     display: block;
+    margin-right: 0;
   }
 }
 
