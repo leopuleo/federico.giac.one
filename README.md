@@ -19,7 +19,7 @@ Here below the full stack:
 *In alternative of Firebase, the website can be deployed to [Netlify](https://www.netlify.com) by simply pushing code to this repository.*
 
 ## Requisites
-In order to run develop the website you need:
+In order to develop the website you need:
 
 1. Node 10.X.X
 2. Yarn 1.7.0
