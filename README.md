@@ -1,26 +1,39 @@
-# gatsby-starter-default
-The default Gatsby starter.
+# Federico Giacone Website 
+[![CircleCI](https://circleci.com/gh/leopuleo/federico.giac.one.svg?style=svg)](https://circleci.com/gh/leopuleo/federico.giac.one)
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+An awesome website for an awesome brother - https://federico.giac.one
+
+![Website screenshot](https://federico.giac.one/screenshot.png)
+
+
+## Introduction
+This website is made using [Gatsby](https://www.gatsbyjs.org/).
+
+Here below the full stack:
+
+1. [Gatsby](https://www.gatsbyjs.org/): website static generator
+2. [Prismic](https://prismic.io/): headlessCMS
+3. [CicleCI](https://circleci.com/): code test, static website generation and deplyment
+4. [Firebase](https://firebase.google.com/): hosting
+
+*In alternative of Firebase, the website can be deployed to [Netlify](https://www.netlify.com) by simply pushing code to this repository.*
+
+## Requisites
+In order to run develop the website you need:
+
+1. Node 10.X.X
+2. Yarn 1.7.0
 
 ## Install
+To install the webstie on your computer follow these simple instructions:
 
-Make sure that you have the Gatsby CLI program installed:
-```sh
-npm install --global gatsby-cli
-```
+1. Download this repository
+2. Run `yarn install` to install all the dependencies
+3. Run `yarn run develop` for live preview
+4. Run `yarn run build` for production build
+5. Run `yarn run serve` to navigate the local production build
 
-And run from your CLI:
-```sh
-gatsby new gatsby-example-site
-```
-
-Then you can run it by:
-```sh
-cd gatsby-example-site
-gatsby develop
-```
-
-## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+### Other commands
+1. `yarn run build:css`to build [Tailwind](https://tailwindcss.com/) stylesheet
+2. `yarn run format`to format css and js files using [Prettier](https://prettier.io/)
+3. `yarn run lint` to lint the the code using [ESlint](https://eslint.org/)
