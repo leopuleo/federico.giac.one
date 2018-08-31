@@ -17,6 +17,7 @@ export const createExcerpt = (string, maxLenght) => {
   return trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(' ')))
 }
 
+// Simple function to get a cookie
 export const getCookie = (cname) => {
   var name = cname + '='
   var ca = document.cookie.split(';')
