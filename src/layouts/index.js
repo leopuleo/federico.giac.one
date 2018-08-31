@@ -9,7 +9,7 @@ import Seo from '../components/seo'
 import Header from '../components/header'
 import Drawer from '../components/drawer'
 import CookieBar from '../components/cookieBar'
-import PhotoSwipeDom from '../components/gallery/photoswipe.js'
+import PhotoSwipeDom from '../components/photoswipe'
 
 import './index.css'
 import './tailwind.css'
@@ -23,11 +23,12 @@ class Index extends Component {
     children: PropTypes.element.isRequired,
     drawerOpen: PropTypes.bool,
     toggleDrawer: PropTypes.func,
+    hasPhotoswipe: PropTypes.bool,
     data: PropTypes.object.isRequired,
   }
 
   render () {
-    const { drawerOpen, toggleDrawer } = this.props
+    const { drawerOpen, toggleDrawer, hasPhotoswipe } = this.props
 
     const changeClass = cssClass => {
       if (drawerOpen === true) {
@@ -68,15 +69,20 @@ class Index extends Component {
           {this.props.children()}
         </div>
         <CookieBar />
-        <PhotoSwipeDom />
+
+        { hasPhotoswipe &&
+          // Setting PhotoSwipe DOM only where is needed - Check Gallery component
+          <PhotoSwipeDom />
+        }
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ drawerOpen }) => {
+const mapStateToProps = ({ drawerOpen, hasPhotoswipe }) => {
   return {
     drawerOpen,
+    hasPhotoswipe
   }
 }
 

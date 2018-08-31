@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
+
+import { setPhotoswipe as setPhotoswipeAction } from '../../store/actions'
 
 class Gallery extends Component {
   /*
@@ -9,6 +12,23 @@ class Gallery extends Component {
   static propTypes = {
     gallery: PropTypes.array.isRequired,
     title: PropTypes.object.isRequired,
+    setPhotoswipe: PropTypes.func
+  }
+
+  /*
+   * Setting PhotoSwipe as true in order to render the PhotoSwipe DOM
+   */
+  componentDidMount () {
+    const { setPhotoswipe } = this.props
+    setPhotoswipe(true)
+  }
+
+  /*
+   * Unsetting PhotoSwipe as false in order to remove the PhotoSwipe DOM
+   */
+  componentWillUnmount () {
+    const { setPhotoswipe } = this.props
+    setPhotoswipe(false)
   }
 
   render () {
@@ -88,4 +108,13 @@ class Gallery extends Component {
   }
 }
 
-export default Gallery
+const mapDispatchToProps = dispatch => {
+  return {
+    setPhotoswipe: value => dispatch(setPhotoswipeAction(value)),
+  }
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Gallery)

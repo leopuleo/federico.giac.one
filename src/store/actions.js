@@ -2,6 +2,7 @@ export const DRAWER_OPEN = 'DRAWER_OPEN'
 export const SELECTED_TAG = 'SELECTED_TAG'
 export const WINDOW_HEIGHT = 'WINDOW_HEIGHT'
 export const COOKIE_CONSENT = 'COOKIE_CONSENT'
+export const HAS_PHOTOSWIPE = 'HAS_PHOTOSWIPE'
 
 export const toggleDrawer = open => ({
   type: DRAWER_OPEN,
@@ -24,5 +25,10 @@ export const setWindowHeight = height => ({
 
 export const setCookieConsent = value => ({
   type: COOKIE_CONSENT,
+  value
+})
+
+export const setPhotoswipe = value => ({
+  type: HAS_PHOTOSWIPE,
   value
 })

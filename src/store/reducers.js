@@ -41,9 +41,20 @@ function cookieConsent (state = false, action) {
   }
 }
 
+function hasPhotoswipe (state = false, action) {
+  const { type, value } = action
+  switch (type) {
+    case actions.HAS_PHOTOSWIPE:
+      return value
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   drawerOpen,
   activeTag,
   windowHeight,
-  cookieConsent
+  cookieConsent,
+  hasPhotoswipe
 })
