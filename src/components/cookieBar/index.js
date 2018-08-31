@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { getCookie } from '../../utils/'
+import { getCookie, stringToBool } from '../../utils/'
 
 import { setCookieConsent as setCookieConsentAction } from '../../store/actions'
 
@@ -20,7 +20,7 @@ class CookieBar extends Component {
 
   componentDidMount () {
     const { setCookieConsent } = this.props
-    setCookieConsent(getCookie('CookieConsent') || false)
+    setCookieConsent(stringToBool(getCookie('CookieConsent')) || false)
   }
 
   render () {

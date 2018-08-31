@@ -32,3 +32,23 @@ export const getCookie = (cname) => {
   }
   return ''
 }
+
+// Simple function to transform a string to boolean value
+export const stringToBool = (string) => {
+  switch (string.toLowerCase().trim()) {
+    case 'true':
+      return true
+    case 'yes':
+      return true
+    case '1':
+      return true
+    case 'false':
+      return false
+    case 'no':
+      return false
+    case '0':
+      return false
+    default:
+      return Boolean(string)
+  }
+}
