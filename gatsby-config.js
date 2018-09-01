@@ -91,6 +91,29 @@ module.exports = {
         icon: `static/icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: `https://federico.giac.one`,
+        sitemap: 'https://federico.giac.one/sitemap_index.xml',
+        resolveEnv: () => process.env.ROBOTS_STATUS,
+        env: {
+          testing: {
+            policy: [
+              { userAgent: '*', disallow: '/' }
+            ]
+          },
+          production: {
+            policy: [
+              { userAgent: 'Googlebot', allow: '/' },
+              { userAgent: 'msnbot', allow: '/' },
+              { userAgent: 'SemrushBot', disallow: '/' },
+              { userAgent: '*', crawlDelay: 5, allow: '/' }
+            ]
+          }
+        }
+      }
+    }
   ],
 }
