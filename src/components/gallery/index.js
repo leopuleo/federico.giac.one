@@ -83,6 +83,7 @@ class Gallery extends Component {
                     image.gallery_image.localFile.childImageSharp.original
                       .height
                   }`}
+                  className='rounded overflow-hidden block md:rounded-lg'
                 >
                   <Img
                     sizes={image.gallery_image.localFile.childImageSharp.square}

@@ -381,9 +381,9 @@ module.exports = {
 
   borderRadius: {
     'none': '0',
-    'sm': '.125rem',
-    default: '.25rem',
-    'lg': '.5rem',
+    'sm': '.25rem',
+    default: '.5rem',
+    'lg': '1rem',
     'full': '9999px',
   },
 

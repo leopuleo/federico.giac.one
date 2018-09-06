@@ -32,7 +32,7 @@ class ProjectCard extends Component {
     return (
       <div className='project-card portfolio-card__vertical w-full mb-5 sm:w-1/2 xl:w-1/3 sm:px-2 sm:my-2 lg:px-5 lg:my-5' data-groups={JSON.stringify(tags)}>
         <Link to={link}>
-          <div className='project-card-wrapper'>
+          <div className='project-card-wrapper rounded overflow-hidden block md:rounded-lg'>
             <Img
               sizes={featuredImageMobile}
               fadeIn
