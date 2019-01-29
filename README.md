@@ -13,7 +13,7 @@ Here below the full stack:
 
 1. [Gatsby](https://www.gatsbyjs.org/): website static generator
 2. [Prismic](https://prismic.io/): headlessCMS
-3. [CicleCI](https://circleci.com/): code test, static website generation and deplyment
+3. [CicleCI](https://circleci.com/): code test, static website generation and deployment
 4. [Firebase](https://firebase.google.com/): hosting
 
 *In alternative of Firebase, the website can be deployed to [Netlify](https://www.netlify.com) by simply pushing code to this repository.*
