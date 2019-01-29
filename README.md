@@ -1,5 +1,5 @@
 # Federico Giacone Website 
-[![CircleCI](https://circleci.com/gh/leopuleo/federico.giac.one.svg?style=svg)](https://circleci.com/gh/leopuleo/federico.giac.one)
+[![CircleCI](https://circleci.com/gh/leopuleo/federico.giac.one.svg?style=svg&circle-token=dd2a456e6b8955ab7e0c9dc09467058d98aab827)](https://circleci.com/gh/leopuleo/federico.giac.one)
 
 An awesome website for an awesome brother - https://federico.giac.one
 
