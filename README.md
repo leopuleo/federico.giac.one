@@ -7,7 +7,7 @@ An awesome website for an awesome brother - https://federico.giac.one
 
 
 ## Introduction
-This website is made using [Gatsby](https://www.gatsbyjs.org/).
+This website is crafted using [Gatsby](https://www.gatsbyjs.org/).
 
 Here below the full stack:
 
