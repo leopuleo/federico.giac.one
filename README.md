@@ -16,8 +16,6 @@ Here below the full stack:
 3. [CicleCI](https://circleci.com/): code test, static website generation and deployment
 4. [Firebase](https://firebase.google.com/): hosting
 
-*In alternative of Firebase, the website can be deployed to [Netlify](https://www.netlify.com) by simply pushing code to this repository.*
-
 ## Requisites
 In order to develop the website you need:
 
