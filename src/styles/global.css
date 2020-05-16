@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "gilroy-extrabold";
+  src: url("../../static/fonts/gilroy/gilroy-extrabold.woff2") format("woff2"),
+    url("../../static/fonts/gilroy/gilroy-extrabold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "titillium-regular";
+  src: url("../../static/fonts/titillium/titillium-regular.woff2")
+      format("woff2"),
+    url("../../static/fonts/titillium/titillium-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "titillium-regularitalic";
+  src: url("../../static/fonts/titillium/titillium-regularitalic.woff2")
+      format("woff2"),
+    url("../../static/fonts/titillium/titillium-regularitalic.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "titillium-semibold";
+  src: url("../../static/fonts/titillium/titillium-semibold.woff2")
+      format("woff2"),
+    url("../../static/fonts/titillium/titillium-semibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
