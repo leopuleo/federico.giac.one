@@ -1,19 +1,14 @@
-import React from 'react'
+import React from "react";
 
-import Seo from '../components/seo'
-import Main from '../components/main'
-import Title from '../components/title'
-import Content from '../components/content'
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const NotFoundPage = () => (
-  <Main>
-    <Seo
-      title='Pagina non trovata'
-      description='Spiacente, la pagina che hai cercato non esiste.'
-    />
-    <Title title='Pagina non trovata' cssClasses='lg:text-7xl' />
-    <Content content='Spiacente, la pagina che hai cercato non esiste.' />
-  </Main>
-)
+  <Layout>
+    <SEO title="404: Not found" />
+    <h1>NOT FOUND</h1>
+    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+  </Layout>
+);
 
-export default NotFoundPage
+export default NotFoundPage;
