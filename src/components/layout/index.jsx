@@ -8,10 +8,15 @@ import Footer from "../footer";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteDataQuery {
       site {
         siteMetadata {
           title
+          description
+          navigation {
+            label
+            link
+          }
         }
       }
     }
@@ -19,7 +24,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        title={data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
+        navigation={data.site.siteMetadata.navigation}
+      />
       <main>{children}</main>
       <Footer siteTitle={data.site.siteMetadata.title} />
     </>

@@ -1,20 +1,59 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "gatsby";
+import Container from "../container";
 
-const Header = ({ siteTitle }) => (
+import {
+  Brand,
+  Description,
+  Logo,
+  Title,
+  Written,
+  Content,
+  BrandLink,
+  Navigation,
+  NavList,
+  NavItem,
+  NavLink,
+} from "./styled";
+
+const Header = ({ title, description, navigation }) => (
   <header>
-    <Link to="/">{siteTitle}</Link>
+    <Container>
+      <Content>
+        <Brand>
+          <BrandLink to="/">
+            <Logo />
+            <Written>
+              <Title>{title}</Title>
+              <Description>{description}</Description>
+            </Written>
+          </BrandLink>
+        </Brand>
+        <Navigation>
+          <NavList>
+            {navigation.map((item, index) => (
+              <NavItem key={`nav-item-${index}`}>
+                <NavLink to={item.link}>{item.label}</NavLink>
+              </NavItem>
+            ))}
+          </NavList>
+        </Navigation>
+      </Content>
+    </Container>
   </header>
 );
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  navigation: PropTypes.arrayOf(PropTypes.object),
 };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  title: ``,
+  description: ``,
+  navigation: [],
 };
 
 export default Header;
