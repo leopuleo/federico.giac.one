@@ -6,16 +6,20 @@ import { Link } from "gatsby";
 import LogoImg from "../../assets/images/federico-giacone-logo.svg";
 
 export const Content = styled.div`
-  ${tw`py-10 flex items-center justify-between`};
+  ${tw`py-10 flex items-center justify-between z-50 relative`};
 `;
 
-export const Brand = styled.div``;
+export const Brand = styled.div`
+  ${tw`text-white`};
+`;
 
 export const BrandLink = styled(Link)`
   ${tw`no-underline flex items-center leading-tight`};
 `;
 
 export const Logo = styled(LogoImg)`
+  ${tw`text-white fill-current`};
+
   width: 80px;
 `;
 
@@ -52,5 +56,5 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
-  ${tw`no-underline`};
+  ${tw`text-white no-underline`};
 `;
