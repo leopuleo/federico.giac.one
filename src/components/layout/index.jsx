@@ -13,8 +13,15 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
           description
+          email
+          phone
+          vat
           navigation {
             label
+            link
+          }
+          social {
+            type
             link
           }
         }
@@ -22,15 +29,28 @@ const Layout = ({ children }) => {
     }
   `);
 
+  const {
+    title,
+    description,
+    email,
+    phone,
+    vat,
+    navigation,
+    social,
+  } = data.site.siteMetadata;
+
   return (
     <>
-      <Header
-        title={data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
-        navigation={data.site.siteMetadata.navigation}
-      />
+      <Header title={title} description={description} navigation={navigation} />
       <main>{children}</main>
-      <Footer siteTitle={data.site.siteMetadata.title} />
+      <Footer
+        title={title}
+        description={description}
+        email={email}
+        phone={phone}
+        vat={vat}
+        social={social}
+      />
     </>
   );
 };
