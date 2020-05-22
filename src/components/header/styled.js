@@ -20,7 +20,7 @@ export const Logo = styled(LogoImg)`
 `;
 
 export const Written = styled.div`
-  ${tw`pl-3`}
+  ${tw`pl-6`}
 `;
 
 export const Title = styled.div`

@@ -51,8 +51,8 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  title: ``,
-  description: ``,
+  title: "",
+  description: "",
   navigation: [],
 };
 
