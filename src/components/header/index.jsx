@@ -30,15 +30,17 @@ const Header = ({ title, description, navigation }) => (
             </Written>
           </BrandLink>
         </Brand>
-        <Navigation>
-          <NavList>
-            {navigation.map((item, index) => (
-              <NavItem key={`nav-item-${index}`}>
-                <NavLink to={item.link}>{item.label}</NavLink>
-              </NavItem>
-            ))}
-          </NavList>
-        </Navigation>
+        {navigation.length > 0 && (
+          <Navigation>
+            <NavList>
+              {navigation.map((item, index) => (
+                <NavItem key={`nav-item-${index}`}>
+                  <NavLink to={item.link}>{item.label}</NavLink>
+                </NavItem>
+              ))}
+            </NavList>
+          </Navigation>
+        )}
       </Content>
     </Container>
   </header>
