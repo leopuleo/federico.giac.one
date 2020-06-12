@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import { default as GatsbyImage } from "gatsby-image";
 import tw from "twin.macro";
-
-import TopShade from "../../../../assets/shades/top-shade.svg";
 
 export const Title = styled.h2`
   ${tw`font-display antialiased text-4xl`}
@@ -36,10 +33,8 @@ export const ImageColInner = styled.div`
   ${tw`absolute top-auto w-full`}
 `;
 
-export const Image = styled(GatsbyImage)``;
-
 export const WrapperSecondary = styled.div`
-  ${tw`py-12`};
+  ${tw`py-12 bg-gray-300`};
 
   ${Title} {
     ${tw`mb-6`}
