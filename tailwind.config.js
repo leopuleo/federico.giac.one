@@ -1,6 +1,17 @@
 module.exports = {
   purge: [],
   theme: {
+    colors: {
+      white: "#fff",
+      black: "#000",
+      transparent: "transparent",
+      wood: { light: "#eae8e1", medium: "#a9a291" },
+      gray: {
+        light: "#8a8d8f",
+        medium: "#7e7f7f",
+        dark: "#313131",
+      },
+    },
     fontFamily: {
       display: [
         "gilroy-extrabold",

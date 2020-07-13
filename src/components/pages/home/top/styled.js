@@ -4,7 +4,7 @@ import tw from "twin.macro";
 import TopShade from "../../../../assets/shades/top-shade.svg";
 
 export const Content = styled.div`
-  ${tw`relative w-full overflow-x-hidden`};
+  ${tw`relative w-full overflow-hidden`};
   margin-top: -168px;
 `;
 

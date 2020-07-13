@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import tw from "twin.macro";
 
-export const Title = styled.h2`
-  ${tw`font-display antialiased uppercase text-5xl mb-6`}
+export const Wrapper = styled.section`
+  ${tw`mt-48`}
 `;
 
-export const Wrapper = styled.div`
+export const Content = styled.div`
   ${tw`py-0`};
 `;
 
 export const ContentLeft = styled.div`
-  ${tw`flex flex-row-reverse items-center bg-gray-300 text-right`};
+  ${tw`flex flex-row-reverse items-center bg-wood-light text-right`};
 `;
 
 export const ContentRight = styled.div`
@@ -19,6 +19,10 @@ export const ContentRight = styled.div`
 
 export const TextCol = styled.div`
   ${tw`w-6/12 p-20 text-lg leading-relaxed`}
+`;
+
+export const Title = styled.h2`
+  ${tw`font-display antialiased text-4xl leading-tight mb-6`}
 `;
 
 export const Text = styled.p`

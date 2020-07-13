@@ -6,10 +6,10 @@ export const Title = styled.h2`
 `;
 
 export const WrapperMain = styled.div`
-  ${tw`py-10`};
+  ${tw`pt-4 pb-16`};
 
   ${Title} {
-    ${tw`text-center mb-16`}
+    ${tw`text-center mb-20`}
   }
 `;
 
@@ -34,7 +34,7 @@ export const ImageColInner = styled.div`
 `;
 
 export const WrapperSecondary = styled.div`
-  ${tw`py-12 bg-gray-300`};
+  ${tw`py-20 bg-wood-light`};
 
   ${Title} {
     ${tw`mb-6`}

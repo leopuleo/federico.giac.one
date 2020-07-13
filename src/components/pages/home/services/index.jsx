@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Container from "../../../container";
 
 import {
+  Content,
   ContentLeft,
   ContentRight,
   ImageCol,
@@ -50,8 +51,8 @@ const Services = () => {
   `);
 
   return (
-    <>
-      <Wrapper>
+    <Wrapper>
+      <Content>
         <ContentRight>
           <ImageCol>
             <ImageColInner>
@@ -62,7 +63,7 @@ const Services = () => {
             </ImageColInner>
           </ImageCol>
           <TextCol>
-            <Title>{"Costruzione"}</Title>
+            <Title>{'"L\'arte di costruire, per durare nel tempo..."'}</Title>
             <Text>
               L’arte di costruire deve essere fatta per durare nel tempo, per
               cercare un integrazione tra le preesistenze, la natura del
@@ -79,9 +80,9 @@ const Services = () => {
             </Text>
           </TextCol>
         </ContentRight>
-      </Wrapper>
+      </Content>
 
-      <Wrapper>
+      <Content>
         <ContentLeft>
           <ImageCol>
             <ImageColInner>
@@ -105,9 +106,9 @@ const Services = () => {
             </Text>
           </TextCol>
         </ContentLeft>
-      </Wrapper>
+      </Content>
 
-      <Wrapper>
+      <Content>
         <ContentRight>
           <ImageCol>
             <ImageColInner>
@@ -127,8 +128,8 @@ const Services = () => {
             </Text>
           </TextCol>
         </ContentRight>
-      </Wrapper>
-    </>
+      </Content>
+    </Wrapper>
   );
 };
 
