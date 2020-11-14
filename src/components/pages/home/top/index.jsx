@@ -1,11 +1,11 @@
 import React from "react";
-import Image from "gatsby-image";
 
 import { useStaticQuery, graphql } from "gatsby";
 
 import {
   Content,
   ImageContainer,
+  ImageCover,
   Heading,
   HeadingContainer,
   Shade,
@@ -32,7 +32,7 @@ const Top = () => {
   return (
     <Content>
       <ImageContainer>
-        <Image
+        <ImageCover
           alt="Progettazione e costruzione in legno"
           fluid={TopImage.childImageSharp.fluid}
         />

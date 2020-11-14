@@ -6,28 +6,6 @@ module.exports = {
     email: "federico@giac.one",
     phone: "+39 329 53 56 947",
     vat: "IT03746370042",
-    navigation: [
-      {
-        label: "Home",
-        link: "#",
-      },
-      {
-        label: "Lavori",
-        link: "#",
-      },
-      {
-        label: "Approccio e servizi",
-        link: "#",
-      },
-      {
-        label: "Formazione",
-        link: "#",
-      },
-      {
-        label: "Contatti",
-        link: "#",
-      },
-    ],
     social: [
       {
         type: "instagram",
@@ -58,6 +36,12 @@ module.exports = {
       options: {
         name: "images",
         path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: "gatsby-source-instagram",
+      options: {
+        username: "5813675480",
       },
     },
     {

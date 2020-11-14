@@ -16,10 +16,6 @@ const Layout = ({ children }) => {
           email
           phone
           vat
-          navigation {
-            label
-            link
-          }
           social {
             type
             link

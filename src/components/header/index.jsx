@@ -30,7 +30,7 @@ const Header = ({ title, description, navigation }) => (
             </Written>
           </BrandLink>
         </Brand>
-        {navigation.length > 0 && (
+        {navigation && navigation.length > 0 && (
           <Navigation>
             <NavList>
               {navigation.map((item, index) => (

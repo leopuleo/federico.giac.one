@@ -6,7 +6,7 @@ import { Link } from "gatsby";
 import LogoImg from "../../assets/images/federico-giacone-logo.svg";
 
 export const Content = styled.div`
-  ${tw`py-10 flex items-center justify-between z-50 relative`};
+  ${tw`py-4 md:py-10 flex items-center justify-between md:justify-center z-50 relative`};
 `;
 
 export const Brand = styled.div`
@@ -14,25 +14,28 @@ export const Brand = styled.div`
 `;
 
 export const BrandLink = styled(Link)`
-  ${tw`no-underline flex items-center leading-tight`};
+  ${tw`no-underline flex md:block items-center leading-tight`};
 `;
 
 export const Logo = styled(LogoImg)`
-  ${tw`text-white fill-current`};
+  ${tw`m-auto text-white fill-current`};
+  width: 50px;
 
-  width: 80px;
+  @media screen and (min-width: 768px) {
+    width: 80px;
+  }
 `;
 
 export const Written = styled.div`
-  ${tw`pl-6`}
+  ${tw` pl-3 md:pl-0 mt-0 md:mt-4 md:text-center`}
 `;
 
 export const Title = styled.div`
-  ${tw`font-display antialiased uppercase text-2xl`};
+  ${tw`font-display antialiased uppercase text-xl md:text-2xl`};
 `;
 
 export const Description = styled.div`
-  ${tw`font-sans text-xl`};
+  ${tw`font-sans text-base md:text-xl`};
 `;
 
 export const Navigation = styled.nav`

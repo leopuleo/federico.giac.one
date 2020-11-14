@@ -12,8 +12,8 @@ import {
   Text,
   TextCol,
   Title,
+  Subtitle,
   WrapperMain,
-  WrapperSecondary,
 } from "./styled";
 
 const About = () => {
@@ -52,30 +52,23 @@ const About = () => {
                 (bosco, legno): il falegname, il carpentiere.
               </Text>
               <Text>
-                Il maisdabòsch è un progettista, è un costruttore, un
-                conoscitore del legno e della materia da costruzione.
+                Il maisdabòsch è un progettista, un costruttore, un conoscitore
+                del legno e della materia da costruzione.
+              </Text>
+              <Subtitle>{"Lavori in legno e non solo"}</Subtitle>
+              <Text>
+                Il lavoro di un Maisdabòsch è quello di creare manufatti in legno
+                che si sposano con materiali differenti della tradizione.
+              </Text>
+              <Text>
+                La sua opera si basa su principi semplici e fondamentali, come la
+                sostenibilità e la funzionalità, uniti per creare oggetti che
+                racchiudano bellezza e solidità.
               </Text>
             </TextCol>
           </Content>
         </Container>
       </WrapperMain>
-
-      <WrapperSecondary>
-        <Container>
-          <TextCol>
-            <Title>{"Lavori in legno e non solo"}</Title>
-            <Text>
-              Il lavoro di un Maisdabòsch è quello di creare manufatti in legno
-              che si sposano con materiali differenti della tradizione.
-            </Text>
-            <Text>
-              La sua opera si basa su principi semplici e fondamentali, come la
-              sostenibilità e la funzionalità, uniti per creare oggetti che
-              racchiudano bellezza e solidità.
-            </Text>
-          </TextCol>
-        </Container>
-      </WrapperSecondary>
     </>
   );
 };
