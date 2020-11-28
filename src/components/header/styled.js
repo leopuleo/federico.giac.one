@@ -3,7 +3,7 @@ import tw from "twin.macro";
 
 import { Link } from "gatsby";
 
-import LogoImg from "../../assets/images/federico-giacone-logo.svg";
+import LogoImg from "../../assets/images/logo-federico-giacone.svg";
 
 export const Content = styled.div`
   ${tw`py-4 md:py-10 flex items-center justify-between md:justify-center z-50 relative`};
@@ -20,6 +20,7 @@ export const BrandLink = styled(Link)`
 export const Logo = styled(LogoImg)`
   ${tw`m-auto text-white fill-current`};
   width: 50px;
+  height: auto;
 
   @media screen and (min-width: 768px) {
     width: 80px;

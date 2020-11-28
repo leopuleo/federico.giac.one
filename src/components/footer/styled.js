@@ -5,7 +5,7 @@ import Link from "../link";
 
 import FacebookLogo from "../../assets/images/facebook.svg";
 import InstagramLogo from "../../assets/images/instagram.svg";
-import LogoImg from "../../assets/images/federico-giacone-logo.svg";
+import LogoImg from "../../assets/images/logo-federico-giacone.svg";
 
 export const Wrapper = styled.div`
   ${tw`bg-wood-light`};
@@ -22,6 +22,7 @@ export const BrandLink = styled(Link)`
 export const Logo = styled(LogoImg)`
   ${tw`m-auto`};
   width: 80px;
+  height: auto;
 `;
 
 export const Written = styled.div`
