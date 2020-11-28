@@ -54,6 +54,7 @@ module.exports = {
         theme_color: "#161616",
         display: "fullscreen",
         orientation: "portrait",
+        icon: `src/assets/images/icon.png`,
       },
     },
     "gatsby-plugin-offline",
