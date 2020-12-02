@@ -5,7 +5,6 @@ require("dotenv").config({
 const {
     NODE_ENV,
     GOOGLE_TAGMANAGER_ID,
-    INSTAGRAM_ID,
     URL: NETLIFY_SITE_URL = "https://federico.giac.one",
     DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
     CONTEXT: NETLIFY_ENV = NODE_ENV
@@ -66,7 +65,7 @@ module.exports = {
         {
             resolve: "gatsby-source-instagram",
             options: {
-                username: INSTAGRAM_ID
+                username: "5813675480"
             }
         },
         {
