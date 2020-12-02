@@ -1,72 +1,74 @@
 {
-  "name": "federico.giac.one",
-  "description": "Gatsby website for Federico Giacone",
-  "version": "1.0.0",
-  "author": "Leonardo Giacone <leonardo.giacone@gmail.com>",
-  "dependencies": {
-    "gatsby": "^1.9.247",
-    "gatsby-image": "^1.0.55",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-catch-links": "^1.0.22",
-    "gatsby-plugin-google-tagmanager": "^1.0.19",
-    "gatsby-plugin-manifest": "^1.0.27",
-    "gatsby-plugin-offline": "^1.0.18",
-    "gatsby-plugin-react-helmet": "^2.0.11",
-    "gatsby-plugin-robots-txt": "^1.3.0",
-    "gatsby-plugin-sharp": "^1.6.48",
-    "gatsby-plugin-sitemap": "^1.2.25",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
-    "gatsby-source-filesystem": "^1.5.38",
-    "gatsby-source-prismic": "^1.0.1",
-    "gatsby-transformer-sharp": "^1.6.27",
-    "hamburgers": "^0.9.3",
-    "photoswipe": "^4.1.2",
-    "react-cookie-consent": "^1.7.0",
-    "react-hamburgers": "^1.0.0",
-    "react-helmet": "^5.2.0",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.3.1",
-    "react-slick": "^0.23.1",
-    "redux": "^4.0.0",
-    "redux-devtools": "^3.4.1",
-    "redux-thunk": "^2.3.0",
-    "shufflejs": "^5.1.2",
-    "slick-carousel": "^1.8.1",
-    "styled-components": "^3.3.2",
-    "yarn": "^1.9.4"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build:css": "tailwind build ./src/layouts/index.tailwind.css -c ./tailwind.config.js -o ./src/layouts/tailwind.css",
-    "build": "npm run build:css && purgecss -c ./purgecss.config.js -o ./src/layouts && gatsby build",
-    "develop": "npm run build:css && gatsby develop",
-    "format": "prettier --write src/**/*.js src/**/**/*.js src/**/**/**/*.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .",
-    "lint:fix": "yarn lint -- --fix",
-    "serve": "yarn run gatsby serve"
-  },
-  "devDependencies": {
-    "babel-eslint": "^8.2.5",
-    "eslint": "^5.0.1",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-config-standard-react": "^6.0.0",
-    "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react": "^7.10.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "firebase-tools": "^4.2.0",
-    "prettier": "^1.12.0",
-    "purgecss": "^1.0.1",
-    "tailwindcss": "^0.5.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/leopuleo/federico.giac.one"
-  }
+    "name": "federico.giac.one",
+    "description": "Gatsby website for Federico Giacone",
+    "version": "2.0.0",
+    "author": "Leonardo Giacone <leonardo.giacone@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/leopuleo/federico.giac.one"
+    },
+    "keywords": [
+        "gatsby"
+    ],
+    "private": true,
+    "license": "MIT",
+    "scripts": {
+        "develop": "gatsby develop",
+        "build": "gatsby build",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "start": "yarn develop",
+        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    },
+    "dependencies": {
+        "babel-plugin-styled-components": "^1.10.7",
+        "gatsby": "^2.26.1",
+        "gatsby-image": "^2.5.0",
+        "gatsby-plugin-google-tagmanager": "^2.7.0",
+        "gatsby-plugin-manifest": "^2.6.1",
+        "gatsby-plugin-offline": "^3.4.0",
+        "gatsby-plugin-postcss": "^3.1.0",
+        "gatsby-plugin-purgecss": "^5.0.0",
+        "gatsby-plugin-react-helmet": "^3.4.0",
+        "gatsby-plugin-react-svg": "^3.0.0",
+        "gatsby-plugin-robots-txt": "^1.5.3",
+        "gatsby-plugin-sharp": "^2.8.0",
+        "gatsby-plugin-sitemap": "^2.8.0",
+        "gatsby-plugin-smoothscroll": "^1.2.0",
+        "gatsby-plugin-styled-components": "^3.4.0",
+        "gatsby-source-filesystem": "^2.5.0",
+        "gatsby-source-instagram": "^0.9.0",
+        "gatsby-transformer-sharp": "^2.6.0",
+        "postcss": "^8.1.8",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-helmet": "^6.0.0",
+        "react-slick": "^0.27.13",
+        "slick-carousel": "^1.8.1",
+        "styled-components": "^5.2.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "eslint": "^7.13.0",
+        "eslint-config-react-app": "^6.0.0",
+        "husky": "^4.2.5",
+        "jest": "^26.6.3",
+        "prettier": "^2.2.1",
+        "standard-version": "^9.0.0",
+        "tailwindcss": "^2.0.1",
+        "twin.macro": "^1.12.1"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
 }

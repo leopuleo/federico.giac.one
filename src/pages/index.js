@@ -1,58 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
 
-import Main from '../components/main'
-import Seo from '../components/seo'
-import HomeSlider from '../components/homeSlider'
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import InstagramFeed from "../components/instagram-feed";
 
-const IndexPage = ({ data }) => (
-  <Main cssClasses='w-full h-full'>
-    <Seo
-      title={data.home.data.seo_title ? data.home.data.seo_title : ''}
-      description={data.home.data.seo_description ? data.home.data.seo_description : ''}
-    />
-    <HomeSlider slides={data.home.data.slider} />
-  </Main>
-)
+import Top from "../components/pages/home/top";
+import About from "../components/pages/home/about";
+import Services from "../components/pages/home/services";
 
-IndexPage.propTypes = {
-  data: PropTypes.object,
-}
+const IndexPage = () => (
+    <Layout theme="dark">
+        <Seo title="Home" />
+        <Top />
+        <About />
+        <Services />
+        <InstagramFeed />
+    </Layout>
+);
 
-export default IndexPage
-
-export const pageQuery = graphql`
-  query HomeQuery {
-    home: prismicHome {
-      data {
-        seo_title
-        seo_description
-        slider {
-          slider_title
-          slider_excerpt
-          slider_link {
-            url
-            raw {
-              link_type
-            }
-          }
-          slider_image {
-            localFile {
-              childImageSharp {
-                horizontal: sizes(
-                  maxWidth: 1800
-                  maxHeight: 1000
-                  quality: 60
-                  cropFocus: CENTER
-                ) {
-                  ...GatsbyImageSharpSizes_withWebp
-                  originalName
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+export default IndexPage;

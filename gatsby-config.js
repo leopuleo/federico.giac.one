@@ -1,119 +1,128 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV}`
+});
+
+const {
+    NODE_ENV,
+    GOOGLE_TAGMANAGER_ID,
+    INSTAGRAM_ID,
+    URL: NETLIFY_SITE_URL = "https://federico.giac.one",
+    DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+    CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+
+const isNetlifyProduction = NETLIFY_ENV === "production";
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
-  siteMetadata: {
-    title: 'Federico Giacone',
-    siteUrl: 'https://federico.giac.one'
-  },
-  plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['titilliumregular', 'titilliumitalic', 'titilliumbold', 'gilroyextrabold', 'feddy-icon']
-        }
-      }
+    siteMetadata: {
+        title: "Federico Giacone",
+        description: "Il maisdabòsch",
+        author: "Leonardo Giacone",
+        email: "federico@giac.one",
+        phone: "+39 329 53 56 947",
+        vat: "IT03746370042",
+        social: [
+            {
+                type: "instagram",
+                link: "https://www.instagram.com/giacone.federico/"
+            },
+            {
+                type: "facebook",
+                link: "https://www.facebook.com/federico.giacone.5"
+            }
+        ]
     },
-    {
-      resolve: 'gatsby-source-prismic',
-      options: {
-        repositoryName: 'federicogiaconeportfolio',
-        accessToken: `${process.env.PRISMIC_API_KEY}`,
-        linkResolver: ({ node, key, value }) => doc => {
-          let rootLang = '/'
-          if (doc.lang === 'en-gb') {
-            rootLang = '/en/'
-          }
-
-          switch (doc.type) {
-            case 'home':
-              return `${rootLang}`
-            case 'portfolio':
-              return `${rootLang}portfolio/${doc.uid}/`
-            default:
-              return `${rootLang}${doc.uid}/`
-          }
+    plugins: [
+        "gatsby-plugin-styled-components",
+        "gatsby-plugin-react-helmet",
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-sharp",
+        "gatsby-plugin-postcss",
+        "gatsby-plugin-smoothscroll",
+        {
+            resolve: "gatsby-plugin-purgecss",
+            options: {
+                printRejected: false,
+                develop: false,
+                tailwind: true
+            }
         },
-        htmlSerializer: ({ node, key, value }) => (type, element, content, children) => {
-          switch (element.type) {
-            case 'heading2':
-              return `<h2 class='font-sans text-2xl xl:text-3xl'>${children.join('')}</h2>`
-
-            case 'heading3':
-              return `<h3 class="font-sans-bold text-grey-darkest text-xl md:text-2xl xl:text-2xl mt-8 mb-3">${children.join('')}</h3>`
-
-            case 'heading4':
-              return `<h3 class="font-sans-bold text-grey-darkest text-xl md:text-2xl xl:text-2xl mt-8 mb-3">${children.join('')}</h3>`
-
-            case 'strong':
-              return `<strong class='font-sans-bold text-grey-darkest'>${children.join('')}</strong>`
-
-            case 'em':
-              return `<em class='font-sans-italic'>${children.join('')}</em>`
-
-            case 'hyperlink':
-              const target = element.data.target ? `target="${element.data.target}" rel="noopener"` : ''
-              const linkUrl = element.data.url
-              return `<a class='text-grey-darkest underline' ${target} href="${linkUrl}">${children.join('')}</a>`
-          }
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+                rule: {
+                    include: /assets/
+                }
+            }
         },
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        output: '/sitemap_index.xml',
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-MQ9S4XK',
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Federico Giacone`,
-        short_name: `Portfolio`,
-        start_url: `/?utm_source=PWA&utm_medium=HomeIcon`,
-        background_color: `#f5f5f5`,
-        theme_color: `#161616`,
-        display: `fullscreen`,
-        orientation: `portrait`,
-        icon: `static/icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: `https://federico.giac.one`,
-        sitemap: 'https://federico.giac.one/sitemap_index.xml',
-        resolveEnv: () => process.env.ROBOTS_STATUS,
-        env: {
-          testing: {
-            policy: [
-              { userAgent: '*', disallow: '/' }
-            ]
-          },
-          production: {
-            policy: [
-              { userAgent: 'Googlebot', allow: '/' },
-              { userAgent: 'msnbot', allow: '/' },
-              { userAgent: 'SemrushBot', disallow: '/' },
-              { userAgent: '*', crawlDelay: 5, allow: '/' }
-            ]
-          }
+        {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "images",
+                path: `${__dirname}/src/assets/images`
+            }
+        },
+        {
+            resolve: "gatsby-source-instagram",
+            options: {
+                username: INSTAGRAM_ID
+            }
+        },
+        {
+            resolve: "gatsby-plugin-sitemap",
+            options: {
+                output: "/sitemap_index.xml"
+            }
+        },
+        {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+                resolveEnv: () => NETLIFY_ENV,
+                env: {
+                    production: {
+                        host: siteUrl,
+                        sitemap: `${siteUrl}/sitemap_index.xml`,
+                        policy: [
+                            { userAgent: "Googlebot", allow: "/" },
+                            { userAgent: "msnbot", allow: "/" },
+                            { userAgent: "SemrushBot", disallow: "/" },
+                            { userAgent: "*", crawlDelay: 5, allow: "/" }
+                        ]
+                    },
+                    "branch-deploy": {
+                        policy: [{ userAgent: "*", disallow: ["/"] }],
+                        sitemap: null,
+                        host: null
+                    },
+                    "deploy-preview": {
+                        policy: [{ userAgent: "*", disallow: ["/"] }],
+                        sitemap: null,
+                        host: null
+                    }
+                }
+            }
         }
-      }
-    }
-  ],
-}
+        {
+            resolve: "gatsby-plugin-google-tagmanager",
+            options: {
+                id: GOOGLE_TAGMANAGER_ID,
+                includeInDevelopment: false
+            }
+        },
+        {
+            resolve: "gatsby-plugin-manifest",
+            options: {
+                name: "Federico Giacone",
+                short_name: "Portfolio",
+                start_url: "/?utm_source=PWA&utm_medium=HomeIcon",
+                background_color: "#f5f5f5",
+                theme_color: "#161616",
+                display: "fullscreen",
+                orientation: "portrait",
+                icon: `src/assets/images/icon.png`
+            }
+        },
+        "gatsby-plugin-offline"
+    ]
+};
