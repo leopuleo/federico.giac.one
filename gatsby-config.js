@@ -75,34 +75,6 @@ module.exports = {
                 output: "/sitemap_index.xml"
             }
         },
-        // {
-        //     resolve: "gatsby-plugin-robots-txt",
-        //     options: {
-        //         resolveEnv: () => NETLIFY_ENV,
-        //         env: {
-        //             production: {
-        //                 host: siteUrl,
-        //                 sitemap: `${siteUrl}/sitemap_index.xml`,
-        //                 policy: [
-        //                     { userAgent: "Googlebot", allow: "/" },
-        //                     { userAgent: "msnbot", allow: "/" },
-        //                     { userAgent: "SemrushBot", disallow: "/" },
-        //                     { userAgent: "*", crawlDelay: 5, allow: "/" }
-        //                 ]
-        //             },
-        //             "branch-deploy": {
-        //                 policy: [{ userAgent: "*", disallow: ["/"] }],
-        //                 sitemap: null,
-        //                 host: null
-        //             },
-        //             "deploy-preview": {
-        //                 policy: [{ userAgent: "*", disallow: ["/"] }],
-        //                 sitemap: null,
-        //                 host: null
-        //             }
-        //         }
-        //     }
-        // },
         {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
