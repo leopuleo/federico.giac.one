@@ -8,15 +8,14 @@ import Top from "../components/pages/home/top";
 import About from "../components/pages/home/about";
 import Services from "../components/pages/home/services";
 
-
 const IndexPage = () => (
-  <Layout>
-    <Seo title="Home" />
-    <Top />
-    <About />
-    <Services />
-    <InstagramFeed />
-  </Layout>
+    <Layout theme="dark">
+        <Seo title="Home" />
+        <Top />
+        <About />
+        <Services />
+        <InstagramFeed />
+    </Layout>
 );
 
 export default IndexPage;

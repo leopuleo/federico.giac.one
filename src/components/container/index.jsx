@@ -6,7 +6,7 @@ import { Content } from "./styled";
 const Container = ({ children }) => <Content>{children}</Content>;
 
 Container.propTypes = {
-  children: PropTypes.node,
+    children: PropTypes.node
 };
 
 export default Container;

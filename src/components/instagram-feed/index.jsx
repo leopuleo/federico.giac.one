@@ -1,30 +1,21 @@
 import React from "react";
 import Image from "gatsby-image";
+import Slider from "react-slick";
 
 import { useStaticQuery, graphql } from "gatsby";
 
-import {
-    ImageWrapper,
-    Wrapper,
-    WrapperInner
-} from "./styled"
+import { Wrapper } from "./styled";
 
 const InstagramFeed = () => {
     const { InstagramImages } = useStaticQuery(graphql`
         query {
-            InstagramImages: allInstaNode(limit: 24) {
+            InstagramImages: allInstaNode(limit: 12) {
                 nodes {
                     id
-                    username
-                    likes
                     caption
                     localFile {
                         childImageSharp {
-                            fluid(
-                                quality: 70
-                                maxWidth: 600
-                                maxHeight: 600
-                            ) {
+                            fluid(quality: 70, maxWidth: 400, maxHeight: 400) {
                                 ...GatsbyImageSharpFluid_withWebp
                             }
                         }
@@ -32,19 +23,55 @@ const InstagramFeed = () => {
                 }
             }
         }
-  `);
+    `);
 
-  return(
-    <Wrapper>
-        <WrapperInner>
-            {InstagramImages.nodes.map(node => (
-                <ImageWrapper>
-                    <Image id={node.CC75dnhiCHU} alt={node.caption && node.caption.replace(/(\r\n|\n|\r)/gm," ")} fluid={node.localFile.childImageSharp.fluid} />
-                </ImageWrapper>
-            ))}
-        </WrapperInner>
-    </Wrapper>
-  )
-}
+    const settings = {
+        dots: true,
+        arrows: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 600,
+        speed: 4000,
+        fade: false,
+        swipeToSlide: true,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    dots: false
+                }
+            }
+        ]
+    };
+
+    return (
+        <Wrapper>
+            <Slider {...settings}>
+                {InstagramImages.nodes.map(({ id, caption, localFile }) => {
+                    return (
+                        <Image
+                            key={id}
+                            alt={
+                                caption &&
+                                caption.replace(/(\r\n|\n|\r)/gm, " ")
+                            }
+                            fluid={localFile.childImageSharp.fluid}
+                        />
+                    );
+                })}
+            </Slider>
+        </Wrapper>
+    );
+};
 
 export default InstagramFeed;
