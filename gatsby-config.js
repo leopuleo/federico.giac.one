@@ -70,12 +70,6 @@ module.exports = {
             }
         },
         {
-            resolve: "gatsby-plugin-sitemap",
-            options: {
-                output: "/sitemap_index.xml"
-            }
-        },
-        {
             resolve: "gatsby-plugin-google-tagmanager",
             options: {
                 id: GOOGLE_TAGMANAGER_ID,
