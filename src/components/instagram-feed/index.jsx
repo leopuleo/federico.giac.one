@@ -9,7 +9,10 @@ import { Wrapper } from "./styled";
 const InstagramFeed = () => {
     const { InstagramImages } = useStaticQuery(graphql`
         query {
-            InstagramImages: allInstaNode(limit: 12) {
+            InstagramImages: allInstaNode(
+                limit: 12
+                sort: { fields: timestamp, order: DESC }
+            ) {
                 nodes {
                     id
                     caption
