@@ -4,7 +4,7 @@
 
 An awesome website for an awesome brother - https://federico.giac.one
 
-![Website screenshot](https://federico.giac.one/screenshot.png)
+![Website screenshot](https://federico.giac.one/images/screenshot.png)
 
 ## Introduction
 
