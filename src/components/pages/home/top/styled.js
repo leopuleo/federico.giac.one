@@ -4,7 +4,7 @@ import tw from "twin.macro";
 
 export const Content = styled.section`
     ${tw`relative w-full h-screen overflow-hidden bg-gray-medium`};
-    margin-top: -239px;
+    margin-top: -244px;
 `;
 
 export const ImageContainer = styled.div`
