@@ -12,6 +12,6 @@
   prettyURLs = true
   trailingSlash = true
   exclude = [
-    "./404/",
-    "./offline-plugin-app-shell-fallback/"
+    "/404/",
+    "/offline-plugin-app-shell-fallback/"
   ]
