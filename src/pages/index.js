@@ -10,7 +10,7 @@ import Services from "../components/pages/home/services";
 
 const IndexPage = () => (
     <Layout theme="dark">
-        <Seo title="Home" />
+        <Seo title="Progettazione e costruzione in legno" />
         <Top />
         <About />
         <Services />
