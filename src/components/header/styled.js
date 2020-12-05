@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 
 import LogoImg from "../../assets/images/logo-federico-giacone.svg";
 
-const setTheme = theme => {
+const setThemeColor = theme => {
     switch (theme) {
         case "light":
             return tw`text-gray-dark`;
@@ -19,7 +19,7 @@ export const Content = styled.div`
 `;
 
 export const Brand = styled.div`
-    ${props => setTheme(props.theme)}
+    ${props => setThemeColor(props.theme)}
 `;
 
 export const BrandLink = styled(Link)`
@@ -28,7 +28,7 @@ export const BrandLink = styled(Link)`
 
 export const Logo = styled(LogoImg)`
     ${tw`m-auto fill-current`};
-    ${props => setTheme(props.theme)}
+    ${props => setThemeColor(props.theme)}
     width: 50px;
     height: auto;
 
