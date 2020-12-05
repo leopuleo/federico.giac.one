@@ -19,6 +19,7 @@
         "clean": "gatsby clean",
         "start": "yarn develop",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+        "release": "standard-version",
         "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
     },
     "dependencies": {
