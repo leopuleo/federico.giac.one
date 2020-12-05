@@ -19,7 +19,7 @@ const Page = ({ data: { prismicPage } }) => {
         <Layout>
             <Seo
                 title={data.seo_title}
-                description={data.description}
+                description={data.seo_description}
                 lang={lang}
             />
             <PageHeader>{data.title.text}</PageHeader>
