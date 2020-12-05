@@ -5,6 +5,7 @@ require("dotenv").config({
 const {
     NODE_ENV,
     GOOGLE_TAGMANAGER_ID,
+    PRISMIC_API_KEY,
     URL: NETLIFY_SITE_URL = "https://federico.giac.one",
     DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
     CONTEXT: NETLIFY_ENV = NODE_ENV
@@ -39,6 +40,46 @@ module.exports = {
         "gatsby-plugin-sharp",
         "gatsby-plugin-postcss",
         "gatsby-plugin-smoothscroll",
+        {
+            resolve: "gatsby-source-prismic",
+            options: {
+                repositoryName: "federicogiaconeportfolio",
+                accessToken: PRISMIC_API_KEY,
+                linkResolver: ({ node, key, value }) => doc => {
+                    switch (doc.type) {
+                        default:
+                            return `${doc.uid}/`;
+                    }
+                },
+                htmlSerializer: ({ node, key, value }) => (
+                    type,
+                    element,
+                    content,
+                    children
+                ) => {
+                    switch (element.type) {
+                        case "hyperlink":
+                            const target = element.data.target
+                                ? `target="${element.data.target}" rel="noopener"`
+                                : "";
+                            const linkUrl = element.data.url;
+                            return `<a class='underline' ${target} href="${linkUrl}">${children.join(
+                                ""
+                            )}</a>`;
+                        default:
+                    }
+                    switch (content) {
+                        case "[cookies-preferences]":
+                            return `<button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button>`;
+                        case "[cookies-table]":
+                            return `<div id="ot-sdk-cookie-policy"></div>`;
+                    }
+                },
+                schemas: {
+                    page: require("./src/schemas/page.json")
+                }
+            }
+        },
         {
             resolve: "gatsby-plugin-purgecss",
             options: {

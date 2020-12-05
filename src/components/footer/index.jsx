@@ -72,7 +72,7 @@ const Footer = ({ title, description, email, phone, vat, social }) => (
                         </p>
                         <p>
                             partita iva: {vat} –{" "}
-                            <Link className="underline" to="/cookie-policy">
+                            <Link className="underline" to="/cookie-policy/">
                                 cookie policy
                             </Link>
                         </p>
