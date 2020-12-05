@@ -6,7 +6,7 @@ const setSize = size => {
         case "small":
             return tw`text-sm px-6 py-1 border-2 rounded`;
         case "large":
-            return tw`text-2xl px-16 py-3 border-4 rounded-lg`;
+            return tw`text-xl md:text-2xl px-10 md:px-16 py-2 md:py-3 border-4 rounded-lg`;
         default:
             return tw`text-lg px-10 py-2 border-2 rounded-md`;
     }

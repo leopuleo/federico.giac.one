@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-    ${tw`py-20`};
+    ${tw`py-12 md:py-20`};
 `;
 
 export const BrandLink = styled(Link)`
