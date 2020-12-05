@@ -1,0 +1,44 @@
+{
+    "Main": {
+        "title": {
+            "type": "StructuredText",
+            "config": {
+                "single": "heading1",
+                "label": "Titolo",
+                "placeholder": "Inserire il titolo di questa pagina"
+            }
+        },
+        "uid": {
+            "type": "UID",
+            "config": {
+                "label": "Link",
+                "placeholder": "Inserire la parte finale del link di questa pagina"
+            }
+        },
+        "content": {
+            "type": "StructuredText",
+            "config": {
+                "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+                "allowTargetBlank": true,
+                "label": "Contenuto",
+                "placeholder": "Inserire il contenuto  di questa pagina"
+            }
+        }
+    },
+    "SEO": {
+        "seo_title": {
+            "type": "Text",
+            "config": {
+                "label": "SEO - Title",
+                "placeholder": "Inserisci qui il title di questa pagina"
+            }
+        },
+        "seo_description": {
+            "type": "Text",
+            "config": {
+                "label": "SEO - Description",
+                "placeholder": "Inserisci qui la description di questa pagina"
+            }
+        }
+    }
+}
