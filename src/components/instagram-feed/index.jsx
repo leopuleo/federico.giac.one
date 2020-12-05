@@ -4,7 +4,10 @@ import Slider from "react-slick";
 
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Wrapper } from "./styled";
+import Link from "../link";
+import { Heading3 } from "../elements";
+
+import { Inner, Text, Wrapper } from "./styled";
 
 const InstagramFeed = () => {
     const { InstagramImages } = useStaticQuery(graphql`
@@ -59,20 +62,32 @@ const InstagramFeed = () => {
 
     return (
         <Wrapper>
-            <Slider {...settings}>
-                {InstagramImages.nodes.map(({ id, caption, localFile }) => {
-                    return (
-                        <Image
-                            key={id}
-                            alt={
-                                caption &&
-                                caption.replace(/(\r\n|\n|\r)/gm, " ")
-                            }
-                            fluid={localFile.childImageSharp.fluid}
-                        />
-                    );
-                })}
-            </Slider>
+            <Text>
+                <Heading3 style={{ textAlign: "left" }}>
+                    {"Immagini dal bosco..."}
+                </Heading3>
+            </Text>
+            <Inner>
+                <Slider {...settings}>
+                    {InstagramImages.nodes.map(({ id, caption, localFile }) => {
+                        return (
+                            <Link
+                                key={id}
+                                to={`https://instagram.com/p/${id}`}
+                                target="_blank"
+                            >
+                                <Image
+                                    alt={
+                                        caption &&
+                                        caption.replace(/(\r\n|\n|\r)/gm, " ")
+                                    }
+                                    fluid={localFile.childImageSharp.fluid}
+                                />
+                            </Link>
+                        );
+                    })}
+                </Slider>
+            </Inner>
         </Wrapper>
     );
 };

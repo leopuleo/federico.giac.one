@@ -2,12 +2,12 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 export const Wrapper = styled.section`
-    ${tw`pb-0 md:pt-24 relative`}
+    ${tw`pb-0 md:pt-24 relative flex flex-wrap items-center`}
 
     &::before {
         ${tw`bg-wood-light absolute w-full left-0 bottom-0`}
         content: "";
-        height: 60%;
+        height: 50%;
     }
 
     .slick-slide {
@@ -15,7 +15,7 @@ export const Wrapper = styled.section`
     }
 
     .slick-dots {
-        ${tw`mt-10 text-center md:mt-16`}
+        ${tw`mt-10 text-center md:mt-10`}
     }
 
     .slick-dots > li {
@@ -36,4 +36,12 @@ export const Wrapper = styled.section`
     .slick-dots .slick-active button {
         ${tw`bg-wood-medium`}
     }
+`;
+
+export const Inner = styled.div`
+    ${tw`w-full md:w-3/4`}
+`;
+
+export const Text = styled.div`
+    ${tw`w-full hidden z-10 md:w-1/4 md:px-8 md:block`}
 `;

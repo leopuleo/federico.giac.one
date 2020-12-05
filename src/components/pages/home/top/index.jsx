@@ -62,9 +62,8 @@ const Top = () => {
         <Content>
             <Slider {...settings}>
                 {TopImages.nodes.map((node, index) => (
-                    <ImageContainer>
+                    <ImageContainer key={node.id}>
                         <ImageCover
-                            key={node.id}
                             alt={`Progettazione e costruzione in legno - ${
                                 index + 1
                             }`}
