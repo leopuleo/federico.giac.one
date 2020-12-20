@@ -123,11 +123,11 @@ module.exports = {
                 name: "Federico Giacone",
                 short_name: "Portfolio",
                 start_url: "/?utm_source=PWA&utm_medium=HomeIcon",
-                background_color: "#f5f5f5",
-                theme_color: "#161616",
+                background_color: "#fff",
+                theme_color: "#313131",
                 display: "fullscreen",
                 orientation: "portrait",
-                icon: `src/assets/images/icon.png`
+                icon: `src/assets/images/pwa-icon.png`
             }
         },
         "gatsby-plugin-offline"
